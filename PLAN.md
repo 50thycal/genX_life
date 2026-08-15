@@ -1,6 +1,8 @@
 # Our Gen X Life — Website Rebuild Plan
 
-Prepared for Keith & Abby · Revision 3 · 15 August 2026
+Prepared for Keith & Abby · Revision 4 · 15 August 2026
+
+**Live preview: https://ourgenxlife.vercel.app**
 
 Formatted version: https://claude.ai/code/artifact/2cd2ef40-af42-4328-97ad-c40c310704e8
 
@@ -21,10 +23,11 @@ Move that to a form on the site and the whole thing changes character. The site 
 collecting stories, building a list you own, and selling merch to people who already feel
 like part of the show instead of to strangers passing through.
 
-Two things turned up along the way that weren't on the original list: the podcast is still
-introducing itself under the old brand name, and the most original of the three channels
-has been sitting idle for two years. Both are cheap to fix and both are worth more than
-anything else here.
+Three things turned up along the way that weren't on the original list. The podcast is
+still introducing itself under the old brand name. The most original of the three channels
+has been idle for two years. And once the new site started reading the feed live, it showed
+the podcast hasn't published since December 2024 either. None of that is a website problem
+— but it does decide what this website should be built to do.
 
 ---
 
@@ -89,7 +92,7 @@ as confirmed.
 | Podcast — Audible | `audible.com/pd/…/B09WMFLB5Y` | Bonus | Wasn't on the list — worth linking |
 | Podcast — Podbean | `podbean.com/podcast-detail/4xfdm-262f56` | Bonus | Wasn't on the list — worth linking |
 | Podcast — Google | — | Delete | Platform no longer exists |
-| RSS feed | `anchor.fm/s/8d488824/podcast/rss` | Demote to footer | Healthy |
+| RSS feed | `anchor.fm/s/8d488824/podcast/rss` | Demote to footer | Feed healthy; newest episode Dec 2024 |
 | Podcast host | Spotify for Creators (was Anchor) | Answered | Owner account: `teacher.abby16@gmail.com` |
 | Gen X Files | `ourgenxlife@gmail.com` | Rebuild as form | Biggest opportunity on the site |
 | Second domain | `our80slife.com` | Rebuild the redirect | Already redirects — breaks on move unless recreated |
@@ -154,12 +157,21 @@ Google shut Google Podcasts down entirely in 2024 and moved listeners to YouTube
 Nothing to fix, nothing to point it at. Remove the button, put **YouTube Music** in that
 slot. Audible and Podbean both carry the show and aren't linked anywhere — those go in too.
 
-### The RSS feed shows a wall of text — that's a healthy feed
+### The RSS feed shows a wall of text — the feed is fine, the show is the problem
 
 RSS is an XML file, not a web page. It's written for podcast apps to read, so a browser
-shows raw markup. This one is in good shape — rebuilt 8 August, so it's live and updating.
-It belongs as a small footer icon, not a nav item: an RSS link in the main navigation sends
-curious people to a screen full of code and makes the site feel broken.
+shows raw markup. Nothing is broken there.
+
+**But now that the site pulls the feed live, it turned up a correction.** I said the feed
+was "live and updating" because it rebuilt on 8 August. The feed rebuilds on its own — the
+*show* hasn't. The most recent episode is **30 December 2024**, about twenty months ago.
+
+So the honest scoreboard: the main channel is active, Abby's Retro Rescue is active, and
+**both the podcast and Your Life On Tape have gone quiet.** No website fixes that, but it
+changes what this one should be built to do — see Moves 1 and 4.
+
+On the feed itself: move the RSS link out of the nav and into the footer. Sending curious
+people to a screen full of code makes the site feel broken.
 
 ### Is there a third channel? — yes, Your Life On Tape
 
@@ -193,6 +205,13 @@ of an inbox thread. What that's worth:
 - **A reason to email on release day.** "Your story is in this week's episode" pulls people
   to YouTube the hour it goes live — the window the algorithm watches. The most direct lever
   available on view counts.
+
+There's a fourth thing, and after finding the podcast has been quiet since December 2024 it
+may be the important one. **Shows stop because making them is work.** A submission queue is
+the cheapest content supply there is — you sit down to a folder of other people's stories
+instead of a blank page, and "what do we talk about this week" stops being a question. The
+form isn't only an audience-building tool; it's what makes the next episode easy enough to
+actually record.
 
 ### Move 2 — Stop filing Spreadshop and Etsy under "Stores"
 
@@ -282,9 +301,10 @@ form goes live.
 left is agreeing the look, and deciding whether Your Life On Tape restarts or is presented
 as an archive.
 
-**2. The landing page.** One page with everything: hero, all three channels, Gen X Files
-form, merch split in two, podcast player, socials, about and contact. The whole original
-ask, live on a real URL. Most of the value lands here.
+**2. The landing page.** Built and live at https://ourgenxlife.vercel.app — all three
+channels with a line each, the Gen X Files form, the tape form, the podcast reading straight
+from the feed, merch split in two, socials, about and contact. Nothing points at
+ourgenxlife.com yet; the current site is untouched.
 
 **3. The archive and the list.** Submissions into a database, an archive page per story,
 email capture, automatic notifications. Where the site stops being a brochure and starts
