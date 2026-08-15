@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+    /* Paper grain. Subtle enough to read as texture, not noise. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    @apply bg-kodak/40;
+  }
+
+  :focus-visible {
+    outline: 3px solid #26707f;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* A gummed label, like the one on a home-recorded tape. */
+  .label-strip {
+    @apply font-label text-[11px] uppercase tracking-[0.18em];
+  }
+
+  /* Section headings share one measure so the page reads as a system. */
+  .measure {
+    @apply max-w-[62ch];
+  }
+
+  .rule-top {
+    @apply border-t-2 border-ink;
+  }
+
+  /* The index-card surface used by the Gen X Files and the tape form. */
+  .card-surface {
+    @apply bg-card border-2 border-ink shadow-card;
+  }
+}
