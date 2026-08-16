@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Zilla_Slab, Courier_Prime } from "next/font/google";
+import { VT323 } from "next/font/google";
 import "./globals.css";
 
-const display = Archivo_Black({
+// Only the DOS window needs a webfont — the rest of the interface uses Tahoma,
+// which is what the era actually shipped with and is already on the machine.
+const terminal = VT323({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-display",
-  display: "swap",
-});
-
-const body = Zilla_Slab({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const label = Courier_Prime({
-  subsets: ["latin"],
-  weight: ["400", "700"],
   variable: "--font-label",
   display: "swap",
 });
@@ -40,11 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${label.variable}`}>
+    <html lang="en" className={terminal.variable}>
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:font-label focus:text-[12px] focus:uppercase focus:tracking-widest focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-[13px] focus:font-bold focus:text-black"
         >
           Skip to content
         </a>

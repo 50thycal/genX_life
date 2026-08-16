@@ -74,7 +74,7 @@ export function SubmitForm({
   if (status.kind === "sent") {
     return (
       <div className="card-surface p-8" role="status">
-        <h3 className="font-display text-xl uppercase tracking-tight text-tape">
+        <h3 className="text-lg font-bold text-[#000080]">
           {successTitle}
         </h3>
         <p className="measure mt-3 text-[16.5px] leading-relaxed text-ink-soft">
@@ -104,7 +104,7 @@ export function SubmitForm({
                 rows={field.rows ?? 6}
                 required={field.required}
                 placeholder={field.placeholder}
-                className="w-full resize-y border-2 border-ink bg-paper/60 px-4 py-3 font-body text-[16.5px] leading-relaxed text-ink placeholder:text-ink-faint"
+                className="field-95 w-full resize-y leading-relaxed"
               />
             ) : (
               <input
@@ -113,7 +113,7 @@ export function SubmitForm({
                 type={field.type}
                 required={field.required}
                 placeholder={field.placeholder}
-                className="w-full border-2 border-ink bg-paper/60 px-4 py-3 font-body text-[16.5px] text-ink placeholder:text-ink-faint"
+                className="field-95 w-full"
               />
             )}
 
@@ -123,7 +123,7 @@ export function SubmitForm({
           </div>
         ))}
 
-        <fieldset className="border-2 border-rule p-4">
+        <fieldset className="bevel-in p-4">
           <legend className="label-strip px-2 text-ink">Your name</legend>
           <div className="space-y-2">
             {[
@@ -148,14 +148,14 @@ export function SubmitForm({
       <button
         type="submit"
         disabled={status.kind === "sending"}
-        className="mt-7 w-full border-2 border-ink bg-rec px-6 py-3.5 font-display text-sm uppercase tracking-wide text-card transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
+        className="btn-95 mt-7 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status.kind === "sending" ? "Sending…" : submitLabel}
       </button>
 
       {status.kind === "notReady" ? (
         <p
-          className="mt-5 border-l-4 border-kodak bg-kodak/10 px-4 py-3 text-[16px] leading-relaxed text-ink-soft"
+          className="bevel-in mt-5 px-4 py-3 text-[15px] leading-relaxed"
           role="status"
         >
           {status.message}
@@ -164,7 +164,7 @@ export function SubmitForm({
 
       {status.kind === "error" ? (
         <p
-          className="mt-5 border-l-4 border-rec bg-rec/10 px-4 py-3 text-[16px] leading-relaxed text-ink-soft"
+          className="bevel-in mt-5 px-4 py-3 text-[15px] leading-relaxed text-[#A80000]"
           role="alert"
         >
           {status.message}

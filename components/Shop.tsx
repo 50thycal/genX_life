@@ -24,13 +24,13 @@ export function Shop() {
           target="_blank"
           rel="noopener noreferrer"
           data-track="shop:etsy"
-          className="card-surface group flex flex-col p-8 transition-transform hover:-translate-y-1"
+          className="card-surface group flex flex-col p-6"
         >
           <span className="label-strip mb-4 inline-flex w-fit items-center gap-2 border border-rec px-2 py-1 text-rec">
             One of each — when it&apos;s gone, it&apos;s gone
           </span>
 
-          <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-balance sm:text-3xl">
+          <h3 className="text-xl font-bold leading-tight text-balance">
             Abby&apos;s Retro Rescue
           </h3>
 
@@ -53,11 +53,11 @@ export function Shop() {
           target="_blank"
           rel="noopener noreferrer"
           data-track="shop:spreadshop"
-          className="group flex flex-col border-2 border-ink bg-kraft/60 p-8 transition-transform hover:-translate-y-1"
+          className="card-surface group flex flex-col p-6"
         >
           <span className="label-strip mb-4 text-ink-faint">Shirts, mugs, the usual</span>
 
-          <h3 className="font-display text-xl uppercase leading-tight tracking-tight text-balance sm:text-2xl">
+          <h3 className="text-xl font-bold leading-tight text-balance">
             Wear the brand
           </h3>
 

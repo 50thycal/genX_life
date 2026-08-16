@@ -2,20 +2,21 @@ import { CONTACT, PODCAST, SOCIALS } from "@/lib/links";
 
 export function Footer() {
   return (
-    <footer className="border-t-2 border-ink bg-shell text-paper">
-      <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-        <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
-          <div>
-            <p className="font-display text-2xl uppercase tracking-tight">Our Gen X Life</p>
-            <p className="label-strip mt-3 text-paper/60">
-              1970s <span className="mx-1.5 text-rec">/</span> 1980s{" "}
-              <span className="mx-1.5 text-rec">/</span> 1990s
-            </p>
+    <footer className="px-3 pb-4 sm:px-6">
+      <div className="mx-auto w-full max-w-6xl window">
+        <div className="title-bar">
+          <span className="title-bar-text flex-1 truncate">Our Gen X Life — Contact</span>
+          <div className="flex shrink-0 gap-0.5" aria-hidden="true">
+            <span className="title-bar-button">_</span>
+            <span className="title-bar-button">□</span>
+            <span className="title-bar-button">✕</span>
           </div>
+        </div>
 
-          <nav aria-label="Social links">
-            <p className="label-strip mb-4 text-paper/50">Find them</p>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+        <div className="grid gap-6 px-4 py-6 sm:grid-cols-2 sm:px-7">
+          <div>
+            <p className="label-strip mb-3">Find them</p>
+            <ul className="space-y-1.5">
               {SOCIALS.map((social) => (
                 <li key={social.href}>
                   <a
@@ -23,36 +24,54 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-track={`social:${social.name}`}
-                    className="font-body text-[16.5px] text-paper/85 underline-offset-4 hover:text-kodak hover:underline"
+                    className="text-[15px] text-[#000080] underline underline-offset-2"
                   >
                     {social.name}
                   </a>
                 </li>
               ))}
             </ul>
-          </nav>
-        </div>
+          </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-paper/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-label text-[12px] leading-relaxed text-paper/55">
-            {CONTACT.email} · {CONTACT.poBox}
-          </p>
-
-          <div className="flex items-center gap-5">
-            <a
-              href={PODCAST.rss}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-track="podcast:rss"
-              title="Podcast RSS feed — for podcast apps"
-              className="label-strip text-paper/45 hover:text-kodak"
-            >
-              RSS
-            </a>
-            <p className="label-strip text-paper/45">
-              © {new Date().getFullYear()} Our Gen X Life
+          <div>
+            <p className="label-strip mb-3">Write to them</p>
+            <p className="text-[15px] leading-relaxed">
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="text-[#000080] underline underline-offset-2"
+              >
+                {CONTACT.email}
+              </a>
+              <br />
+              {CONTACT.poBox}
+            </p>
+            <p className="mt-3 text-[13px]">
+              <a
+                href={PODCAST.rss}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-track="podcast:rss"
+                title="Podcast RSS feed — for podcast apps"
+                className="text-[#000080] underline underline-offset-2"
+              >
+                RSS feed
+              </a>
             </p>
           </div>
+        </div>
+
+        {/* Taskbar */}
+        <div className="mt-1 flex items-center gap-2 bevel-out p-1">
+          <span className="btn-95 !min-w-0 !px-3 !py-1 text-[13px]">
+            <span aria-hidden="true">⊞</span> Start
+          </span>
+          <span aria-hidden="true" className="h-6 w-px bg-[#808080]" />
+          <span className="hidden flex-1 text-[12px] font-bold sm:block">
+            © {new Date().getFullYear()} Our Gen X Life
+          </span>
+          <span className="status-field ml-auto shrink-0">
+            1970s–1990s
+          </span>
         </div>
       </div>
     </footer>

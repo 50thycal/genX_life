@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Windows 95.
+
+  The whole look is three-dimensional borders drawn with 2px of inset shadow —
+  light on the top-left, dark on the bottom-right for anything raised, and the
+  reverse for anything sunken. Get that right and everything else follows.
+*/
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -22,37 +30,146 @@
 
   body {
     @apply bg-paper text-ink font-body antialiased;
-    /* Paper grain. Subtle enough to read as texture, not noise. */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   ::selection {
-    @apply bg-kodak/40;
+    background: #000080;
+    color: #ffffff;
   }
 
   :focus-visible {
-    outline: 3px solid #26707f;
-    outline-offset: 2px;
+    outline: 1px dotted #000000;
+    outline-offset: 1px;
   }
 }
 
 @layer components {
-  /* A gummed label, like the one on a home-recorded tape. */
-  .label-strip {
-    @apply font-label text-[11px] uppercase tracking-[0.18em];
+  /* ---- the bevel system ---- */
+
+  .bevel-out {
+    background: #c0c0c0;
+    box-shadow:
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #ffffff,
+      inset -2px -2px #808080,
+      inset 2px 2px #dfdfdf;
   }
 
-  /* Section headings share one measure so the page reads as a system. */
+  .bevel-in {
+    background: #ffffff;
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf,
+      inset 2px 2px #808080;
+  }
+
+  /* A window: bevelled face plus a navy title bar. */
+  .window {
+    @apply bevel-out;
+    padding: 3px;
+  }
+
+  .title-bar {
+    background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+    @apply flex items-center gap-2 px-2 py-1 text-white;
+  }
+
+  .title-bar-text {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+  }
+
+  /* The little minimise / maximise / close cluster. Decorative. */
+  .title-bar-button {
+    @apply bevel-out;
+    width: 16px;
+    height: 14px;
+    font-family: Tahoma, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 12px;
+    text-align: center;
+    color: #000;
+  }
+
+  /* ---- shared surfaces the page components ask for ---- */
+
+  .card-surface {
+    @apply bevel-out;
+  }
+
+  .label-strip {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
   .measure {
-    @apply max-w-[62ch];
+    @apply max-w-[68ch];
   }
 
   .rule-top {
-    @apply border-t-2 border-ink;
+    border-top: 1px solid #808080;
   }
 
-  /* The index-card surface used by the Gen X Files and the tape form. */
-  .card-surface {
-    @apply bg-card border-2 border-ink shadow-card;
+  /* ---- controls ---- */
+
+  .btn-95 {
+    @apply bevel-out;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    padding: 7px 18px;
+    min-width: 90px;
+    text-align: center;
+  }
+
+  .btn-95:active {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf,
+      inset 2px 2px #808080;
+    padding: 8px 17px 6px 19px;
+  }
+
+  .field-95 {
+    @apply bevel-in;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 14px;
+    color: #000;
+    padding: 6px 8px;
+    border: none;
+  }
+
+  .field-95::placeholder {
+    color: #808080;
+  }
+
+  /* A DOS window, used once in the hero. */
+  .terminal {
+    background: #000000;
+    color: #00ff00;
+    font-family: var(--font-label), ui-monospace, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Status bar along the bottom of a window. */
+  .status-field {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #808080;
+    @apply px-2 py-1;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 11px;
   }
 }

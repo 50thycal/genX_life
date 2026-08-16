@@ -5,27 +5,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Manila folder / index card / tape label. Warm, archival, worn.
-        paper: "#F2EAD9",
-        card: "#FDF9F0",
-        kraft: "#E4D6B8",
-        ink: "#241F1A",
-        "ink-soft": "#5C5348",
-        "ink-faint": "#8A7F6E",
-        rule: "#D6C7AA",
-        rec: "#C4362B",
-        tape: "#26707F",
-        kodak: "#E0951C",
-        shell: "#1C1815",
+        // Windows 95. The exact system palette — teal desktop, silver chrome,
+        // navy title bars. Nothing here is invented.
+        paper: "#008080", // the desktop
+        card: "#C0C0C0", // window face
+        kraft: "#008080",
+        ink: "#000000",
+        "ink-soft": "#3A3A3A",
+        "ink-faint": "#6B6B6B",
+        rule: "#808080", // the dark bevel
+        rec: "#000080", // active title bar navy
+        tape: "#000080",
+        kodak: "#FFFF00",
+        shell: "#C0C0C0",
+        highlight: "#FFFFFF", // the light bevel
+        crt: "#000000",
+        phosphor: "#00FF00",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Arial Black", "sans-serif"],
-        body: ["var(--font-body)", "Georgia", "serif"],
+        // Tahoma and Verdana ship on virtually every machine and are what the
+        // era actually looked like — no webfont download, no fallback risk.
+        display: ["Tahoma", "Verdana", "Geneva", "sans-serif"],
+        body: ["Tahoma", "Verdana", "Geneva", "sans-serif"],
         label: ["var(--font-label)", "ui-monospace", "monospace"],
       },
       boxShadow: {
-        card: "0 1px 0 rgba(36,31,26,0.06), 0 12px 28px -18px rgba(36,31,26,0.55)",
-        lift: "0 2px 0 rgba(36,31,26,0.08), 0 20px 40px -22px rgba(36,31,26,0.6)",
+        card: "none",
+        lift: "none",
       },
     },
   },

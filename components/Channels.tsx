@@ -22,19 +22,17 @@ export function Channels() {
               target="_blank"
               rel="noopener noreferrer"
               data-track={`channel:${channel.name}`}
-              className="card-surface group flex w-full flex-col p-6 transition-transform hover:-translate-y-1"
+              className="card-surface group flex w-full flex-col p-5"
             >
               <span
-                className={`label-strip mb-4 inline-flex w-fit items-center gap-2 border px-2 py-1 ${
-                  channel.active
-                    ? "border-tape text-tape"
-                    : "border-kodak text-[#8A5A05]"
+                className={`label-strip bevel-in mb-4 inline-flex w-fit items-center gap-2 px-2 py-1 ${
+                  channel.active ? "text-[#000080]" : "text-[#7A0000]"
                 }`}
               >
                 {channel.cadence}
               </span>
 
-              <h3 className="font-display text-xl uppercase leading-tight tracking-tight text-balance">
+              <h3 className="text-[17px] font-bold leading-tight text-balance">
                 {channel.name}
               </h3>
 
