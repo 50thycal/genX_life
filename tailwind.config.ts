@@ -5,27 +5,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Manila folder / index card / tape label. Warm, archival, worn.
-        paper: "#F2EAD9",
-        card: "#FDF9F0",
-        kraft: "#E4D6B8",
-        ink: "#241F1A",
-        "ink-soft": "#5C5348",
-        "ink-faint": "#8A7F6E",
-        rule: "#D6C7AA",
-        rec: "#C4362B",
-        tape: "#26707F",
-        kodak: "#E0951C",
-        shell: "#1C1815",
+        // Magazine stock: warm white, rich black, one spot colour.
+        // The spot is their own hot pink, deepened so it passes contrast as
+        // text — the brand carried forward rather than thrown away.
+        paper: "#FBF9F5",
+        card: "#FFFFFF",
+        kraft: "#F1EDE5",
+        ink: "#131211",
+        "ink-soft": "#4E4941",
+        "ink-faint": "#8A837A",
+        rule: "#D8D1C5",
+        "rule-firm": "#A8A093",
+        rec: "#C4105E", // spot, text-safe
+        "rec-bright": "#FF3D8B", // spot, graphic use only
+        tape: "#1B4D8F",
+        kodak: "#FFD400", // highlighter
+        shell: "#131211",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Arial Black", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         body: ["var(--font-body)", "Georgia", "serif"],
-        label: ["var(--font-label)", "ui-monospace", "monospace"],
+        label: ["var(--font-label)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 0 rgba(36,31,26,0.06), 0 12px 28px -18px rgba(36,31,26,0.55)",
-        lift: "0 2px 0 rgba(36,31,26,0.08), 0 20px 40px -22px rgba(36,31,26,0.6)",
+        card: "none",
+        lift: "none",
       },
     },
   },

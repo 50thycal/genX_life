@@ -24,7 +24,7 @@ export function About() {
       }
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <div className="card-surface p-6">
+        <div className="border-t-2 border-ink pt-5">
           <p className="label-strip mb-3 text-rec">Get in touch</p>
           <p className="text-[16.5px] leading-relaxed text-ink-soft">
             Story, question, or a box of tapes —{" "}
@@ -37,7 +37,7 @@ export function About() {
           </p>
         </div>
 
-        <div className="card-surface p-6">
+        <div className="border-t-2 border-ink pt-5">
           <p className="label-strip mb-3 text-rec">Send something</p>
           <p className="font-label text-[15px] leading-relaxed text-ink-soft">
             Our Gen X Life

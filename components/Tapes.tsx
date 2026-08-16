@@ -25,7 +25,7 @@ export function Tapes() {
     >
       <div className="grid gap-8 lg:grid-cols-[minmax(320px,420px)_1fr]">
         <aside className="space-y-5 lg:order-2">
-          <div className="card-surface p-6">
+          <div className="border-t-2 border-ink pt-5">
             <p className="label-strip mb-3 text-rec">The deal</p>
             <ul className="space-y-3 text-[16.5px] leading-relaxed text-ink-soft">
               <li>
@@ -43,7 +43,7 @@ export function Tapes() {
             </ul>
           </div>
 
-          <div className="border-2 border-dashed border-rule p-6">
+          <div className="border border-dashed border-rule-firm p-6">
             <p className="label-strip mb-2 text-ink-faint">Mail to</p>
             <p className="font-label text-[15px] leading-relaxed text-ink-soft">
               Our Gen X Life

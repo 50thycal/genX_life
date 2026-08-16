@@ -1,88 +1,96 @@
 import { CONTACT } from "@/lib/links";
 
-/**
- * The page opens on the most characteristic object in this brand's world:
- * a home-recorded tape with a handwritten label. Everything else on the page
- * stays quiet so this can carry the personality.
- */
+const CONTENTS = [
+  ["01", "The channels", "#channels"],
+  ["02", "The Gen X Files", "#genxfiles"],
+  ["03", "The podcast", "#podcast"],
+  ["04", "The shop", "#shop"],
+  ["05", "Your tapes", "#tapes"],
+];
+
 export function Hero() {
   return (
-    <header className="relative overflow-hidden">
-      <div className="mx-auto w-full max-w-6xl px-5 pb-14 pt-8 sm:px-8 sm:pb-20 sm:pt-12">
-        <nav className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-2 sm:mb-14">
-          <span className="label-strip text-ink-faint">Andover, Kansas</span>
-          <div className="hidden flex-1 border-t border-rule sm:block" />
-          <ul className="flex flex-wrap gap-x-5 gap-y-2">
-            {[
-              ["Channels", "#channels"],
-              ["Gen X Files", "#genxfiles"],
-              ["Podcast", "#podcast"],
-              ["Shop", "#shop"],
-              ["Tapes", "#tapes"],
-            ].map(([text, href]) => (
+    <header>
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        {/* Folio line */}
+        <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1 py-3 label-strip text-ink-faint">
+          <span>Andover, Kansas</span>
+          <span aria-hidden="true">·</span>
+          <span>The 70s, 80s &amp; 90s</span>
+          <span className="ml-auto">{CONTACT.email}</span>
+        </div>
+
+        {/* Nameplate */}
+        <div className="border-y-2 border-ink py-6 sm:py-8">
+          <h1 className="font-display text-[13vw] font-black leading-[0.84] tracking-[-0.03em] text-balance sm:text-7xl lg:text-[6.5rem]">
+            Our Gen X Life
+          </h1>
+        </div>
+
+        {/* Contents bar */}
+        <nav aria-label="Contents" className="border-b border-rule">
+          <ul className="flex flex-wrap gap-x-8 gap-y-2 py-3">
+            {CONTENTS.map(([num, text, href]) => (
               <li key={href}>
-                <a
-                  href={href}
-                  className="label-strip text-ink transition-colors hover:text-rec"
-                >
-                  {text}
+                <a href={href} className="group flex items-baseline gap-2">
+                  <span className="label-strip text-rec">{num}</span>
+                  <span className="label-strip text-ink group-hover:text-rec">{text}</span>
                 </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        {/* The tape */}
-        <div className="shadow-lift">
-          {/* Shell: the dark plastic top edge, with the record light and reel windows */}
-          <div className="flex items-center gap-4 border-2 border-ink bg-shell px-4 py-3 sm:px-6">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rec opacity-70" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rec" />
-            </span>
-            <span className="label-strip text-paper/90">Rec</span>
-            <div className="ml-auto flex items-center gap-2" aria-hidden="true">
-              <span className="h-4 w-4 rounded-full border-2 border-paper/25" />
-              <span className="h-4 w-4 rounded-full border-2 border-paper/25" />
-            </div>
-          </div>
+        {/* Opening spread */}
+        <div className="grid gap-x-12 gap-y-8 py-12 sm:py-16 lg:grid-cols-[1.6fr_1fr]">
+          <div>
+            <p className="label-strip mb-4 text-rec">The premise</p>
 
-          {/* Label */}
-          <div className="border-x-2 border-b-2 border-ink bg-card px-5 py-8 sm:px-10 sm:py-12">
-            <p className="label-strip mb-5 text-ink-faint">
-              1970s <span className="mx-2 text-rec">/</span> 1980s{" "}
-              <span className="mx-2 text-rec">/</span> 1990s
+            <h2 className="font-display text-4xl font-black leading-[1.02] tracking-[-0.02em] text-balance sm:text-5xl">
+              Everything your parents threw out,{" "}
+              <span className="marker">rescued on camera</span>.
+            </h2>
+
+            <p className="drop-cap measure mt-7 text-[19px] leading-[1.7] text-ink-soft">
+              Keith and Abby spend their weekends at estate sales, in the back rooms of
+              church basements and at the far end of somebody&apos;s driveway at seven in the
+              morning. They come home with dolls nobody wanted, videotapes nobody can play,
+              and the specific plastic smell of a decade that is not coming back. Then they
+              bring all of it here, so you can remember it with them.
             </p>
 
-            <h1 className="font-display text-[13vw] uppercase leading-[0.86] tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl">
-              Our Gen X Life
-            </h1>
-
-            <p className="measure mt-7 text-lg leading-relaxed text-ink-soft sm:text-xl">
-              Keith and Abby spend their weekends at estate sales rescuing the things
-              everyone else threw out — the toys, the tapes, the whole decade. Then they
-              bring it back here, so you can remember it with them.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#channels"
-                className="inline-flex items-center justify-center border-2 border-ink bg-rec px-6 py-3 font-display text-sm uppercase tracking-wide text-card transition-transform hover:-translate-y-0.5"
-              >
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href="#channels" className="btn-ed-solid">
                 Watch the channels
               </a>
-              <a
-                href="#genxfiles"
-                className="inline-flex items-center justify-center border-2 border-ink bg-card px-6 py-3 font-display text-sm uppercase tracking-wide text-ink transition-transform hover:-translate-y-0.5"
-              >
+              <a href="#genxfiles" className="btn-ed-ghost">
                 Send us your story
               </a>
             </div>
-
-            <p className="label-strip mt-8 text-ink-faint">
-              {CONTACT.email}
-            </p>
           </div>
+
+          {/* Standfirst column — the pitch, set like a sidebar */}
+          <aside className="border-t-2 border-ink pt-5 lg:border-l lg:border-t-0 lg:border-rule-firm lg:pl-8 lg:pt-0">
+            <p className="label-strip mb-4 text-ink-faint">In this issue</p>
+            <p className="font-display text-2xl font-bold leading-snug text-balance">
+              &ldquo;Everyone thinks the decade they grew up in was the best one. We just
+              happen to be right.&rdquo;
+            </p>
+            <p className="label-strip mt-5 text-ink-faint">Keith &amp; Abby</p>
+
+            <dl className="mt-8 space-y-3 border-t border-rule pt-5">
+              {[
+                ["Channels", "Three"],
+                ["Podcast", "Since 2022"],
+                ["Stories filed", "Always open"],
+              ].map(([term, value]) => (
+                <div key={term} className="flex items-baseline justify-between gap-4">
+                  <dt className="label-strip text-ink-faint">{term}</dt>
+                  <dd className="font-display text-lg font-bold">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </div>
       </div>
     </header>

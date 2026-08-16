@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Editorial.
+
+  The point of this one is that a submitted story should look published.
+  Hairline rules, a strict measure, real hierarchy, one spot colour used with
+  discipline — the vocabulary of a printed feature rather than a landing page.
+*/
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -22,37 +30,80 @@
 
   body {
     @apply bg-paper text-ink font-body antialiased;
-    /* Paper grain. Subtle enough to read as texture, not noise. */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    font-size: 18px;
+    line-height: 1.65;
   }
 
   ::selection {
-    @apply bg-kodak/40;
+    @apply bg-kodak text-ink;
   }
 
   :focus-visible {
-    outline: 3px solid #26707f;
-    outline-offset: 2px;
+    outline: 2px solid #c4105e;
+    outline-offset: 3px;
   }
 }
 
 @layer components {
-  /* A gummed label, like the one on a home-recorded tape. */
+  /* Small caps caption, the way a magazine sets a credit line. */
   .label-strip {
-    @apply font-label text-[11px] uppercase tracking-[0.18em];
+    @apply font-label text-[11px] font-semibold uppercase tracking-[0.16em];
   }
 
-  /* Section headings share one measure so the page reads as a system. */
   .measure {
-    @apply max-w-[62ch];
+    @apply max-w-[64ch];
   }
 
   .rule-top {
-    @apply border-t-2 border-ink;
+    @apply border-t border-rule-firm;
   }
 
-  /* The index-card surface used by the Gen X Files and the tape form. */
+  /* A plate: bordered image-block, the way a magazine frames a photo. */
   .card-surface {
-    @apply bg-card border-2 border-ink shadow-card;
+    @apply border border-rule-firm bg-card;
+  }
+
+  /* The opening letter of the lead paragraph. */
+  .drop-cap::first-letter {
+    @apply font-display text-rec;
+    float: left;
+    font-size: 3.6em;
+    line-height: 0.82;
+    padding-right: 0.08em;
+    padding-top: 0.06em;
+    font-weight: 900;
+  }
+
+  /* Highlighter, used once or twice — never as decoration. */
+  .marker {
+    background: linear-gradient(180deg, transparent 58%, #ffd400 58%);
+  }
+
+  .btn-ed {
+    @apply inline-flex items-center justify-center border border-ink px-7 py-3 font-label text-[12px] font-semibold uppercase tracking-[0.16em] transition-colors;
+  }
+
+  .btn-ed-solid {
+    @apply btn-ed bg-ink text-paper;
+  }
+
+  .btn-ed-solid:hover {
+    @apply bg-rec border-rec;
+  }
+
+  .btn-ed-ghost {
+    @apply btn-ed bg-transparent text-ink;
+  }
+
+  .btn-ed-ghost:hover {
+    @apply bg-ink text-paper;
+  }
+
+  .field-ed {
+    @apply w-full border border-rule-firm bg-card px-4 py-3 font-body text-[17px] text-ink placeholder:text-ink-faint;
+  }
+
+  .field-ed:focus {
+    @apply border-ink;
   }
 }

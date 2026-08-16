@@ -6,15 +6,16 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div>
-            <p className="font-display text-2xl uppercase tracking-tight">Our Gen X Life</p>
-            <p className="label-strip mt-3 text-paper/60">
-              1970s <span className="mx-1.5 text-rec">/</span> 1980s{" "}
-              <span className="mx-1.5 text-rec">/</span> 1990s
+            <p className="font-display text-3xl font-black tracking-[-0.02em]">
+              Our Gen X Life
+            </p>
+            <p className="label-strip mt-3 text-paper/50">
+              The 70s, 80s &amp; 90s · Andover, Kansas
             </p>
           </div>
 
           <nav aria-label="Social links">
-            <p className="label-strip mb-4 text-paper/50">Find them</p>
+            <p className="label-strip mb-4 text-paper/45">Find them</p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {SOCIALS.map((social) => (
                 <li key={social.href}>
@@ -23,7 +24,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-track={`social:${social.name}`}
-                    className="font-body text-[16.5px] text-paper/85 underline-offset-4 hover:text-kodak hover:underline"
+                    className="text-[17px] text-paper/85 underline-offset-4 hover:text-paper hover:underline"
                   >
                     {social.name}
                   </a>
@@ -34,7 +35,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-paper/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-label text-[12px] leading-relaxed text-paper/55">
+          <p className="label-strip leading-relaxed text-paper/50">
             {CONTACT.email} · {CONTACT.poBox}
           </p>
 
@@ -45,7 +46,7 @@ export function Footer() {
               rel="noopener noreferrer"
               data-track="podcast:rss"
               title="Podcast RSS feed — for podcast apps"
-              className="label-strip text-paper/45 hover:text-kodak"
+              className="label-strip text-paper/45 hover:text-paper"
             >
               RSS
             </a>
