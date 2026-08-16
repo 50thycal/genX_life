@@ -26,7 +26,7 @@ export function Shop() {
           data-track="shop:etsy"
           className="card-surface group flex flex-col p-8 transition-transform hover:-translate-y-1"
         >
-          <span className="label-strip mb-4 inline-flex w-fit items-center gap-2 border border-rec px-2 py-1 text-rec">
+          <span className="label-strip mb-4 inline-flex w-fit items-center gap-2 rounded-full border-2 border-ink bg-rec px-3 py-1 text-white">
             One of each — when it&apos;s gone, it&apos;s gone
           </span>
 
@@ -53,7 +53,7 @@ export function Shop() {
           target="_blank"
           rel="noopener noreferrer"
           data-track="shop:spreadshop"
-          className="group flex flex-col border-2 border-ink bg-kraft/60 p-8 transition-transform hover:-translate-y-1"
+          className="group flex flex-col rounded-xl border-[3px] border-ink bg-holo p-8 shadow-card transition-transform hover:-translate-y-1"
         >
           <span className="label-strip mb-4 text-ink-faint">Shirts, mugs, the usual</span>
 

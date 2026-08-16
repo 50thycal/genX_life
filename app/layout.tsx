@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Zilla_Slab, Courier_Prime } from "next/font/google";
+import { Archivo_Black, Nunito_Sans, Fredoka } from "next/font/google";
 import "./globals.css";
 
+// Archivo Black matches the blocky poster letters in the channel banner.
 const display = Archivo_Black({
   subsets: ["latin"],
   weight: "400",
@@ -9,16 +10,18 @@ const display = Archivo_Black({
   display: "swap",
 });
 
-const body = Zilla_Slab({
+// Friendly and open at size — this audience is reading on phones at arm's length.
+const body = Nunito_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
 
-const label = Courier_Prime({
+// The rounded voice from Abby's channel art, used for small labels.
+const label = Fredoka({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["500", "600", "700"],
   variable: "--font-label",
   display: "swap",
 });
@@ -44,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:font-label focus:text-[12px] focus:uppercase focus:tracking-widest focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:border-[3px] focus:border-ink focus:bg-kodak focus:px-5 focus:py-2 focus:font-label focus:text-[13px] focus:font-bold focus:uppercase focus:text-ink"
         >
           Skip to content
         </a>

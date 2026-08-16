@@ -65,7 +65,7 @@ export function Podcast({ show }: { show: Show | null }) {
           ))}
         </ul>
       ) : (
-        <div className="border-2 border-dashed border-rule p-8">
+        <div className="rounded-xl border-[3px] border-dashed border-ink/40 p-8">
           <p className="measure text-[16.5px] leading-relaxed text-ink-soft">
             Episodes load straight from the podcast feed, so this list stays current on its
             own. It isn&apos;t reachable from here at the moment — pick a platform below in
@@ -84,7 +84,7 @@ export function Podcast({ show }: { show: Show | null }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-track={`podcast:${platform.name}`}
-                className="inline-flex border-2 border-ink bg-card px-5 py-2.5 font-display text-xs uppercase tracking-wide text-ink transition-transform hover:-translate-y-0.5"
+                className="btn-pop bg-cyan !px-5 !py-2 !text-xs text-ink"
               >
                 {platform.name}
               </a>

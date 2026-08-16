@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Their existing identity, carried onto the site.
+
+  The logo sets the rules: chunky letters sitting on hard colour blocks, thick
+  black outlines, and the Memphis palette — hot pink, cyan, purple, yellow.
+  Cards borrow the same construction so the page reads as the same brand as
+  the channel art.
+*/
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -22,37 +31,71 @@
 
   body {
     @apply bg-paper text-ink font-body antialiased;
-    /* Paper grain. Subtle enough to read as texture, not noise. */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    font-size: 17px;
+    line-height: 1.6;
   }
 
   ::selection {
-    @apply bg-kodak/40;
+    @apply bg-kodak text-ink;
   }
 
   :focus-visible {
-    outline: 3px solid #26707f;
-    outline-offset: 2px;
+    outline: 3px solid #7b3fd4;
+    outline-offset: 3px;
   }
 }
 
 @layer components {
-  /* A gummed label, like the one on a home-recorded tape. */
   .label-strip {
-    @apply font-label text-[11px] uppercase tracking-[0.18em];
+    @apply font-label text-[12px] font-bold uppercase tracking-[0.12em];
   }
 
-  /* Section headings share one measure so the page reads as a system. */
   .measure {
     @apply max-w-[62ch];
   }
 
   .rule-top {
-    @apply border-t-2 border-ink;
+    @apply border-t-[3px] border-ink;
   }
 
-  /* The index-card surface used by the Gen X Files and the tape form. */
+  /* White card, heavy outline, hard offset — the logo's construction. */
   .card-surface {
-    @apply bg-card border-2 border-ink shadow-card;
+    @apply rounded-xl border-[3px] border-ink bg-card shadow-card;
+  }
+
+  /* One letter of the wordmark, sitting on its colour block. */
+  .ransom {
+    @apply inline-block rounded-[4px] px-[0.14em] leading-[0.95];
+  }
+
+  /* Confetti behind the hero — stars and dots, like the channel banner. */
+  .confetti {
+    background-image:
+      radial-gradient(circle at 12% 22%, #ff3d8b 0 5px, transparent 6px),
+      radial-gradient(circle at 82% 14%, #45d9e8 0 4px, transparent 5px),
+      radial-gradient(circle at 66% 78%, #ffe034 0 5px, transparent 6px),
+      radial-gradient(circle at 26% 84%, #9b5de5 0 4px, transparent 5px),
+      radial-gradient(circle at 94% 60%, #ff3d8b 0 3px, transparent 4px),
+      radial-gradient(circle at 45% 8%, #45d9e8 0 3px, transparent 4px);
+    background-repeat: no-repeat;
+  }
+
+  .btn-pop {
+    @apply inline-flex items-center justify-center rounded-full border-[3px] border-ink px-7 py-3 font-display text-sm uppercase tracking-wide transition-transform;
+    box-shadow: 4px 4px 0 #17161c;
+  }
+
+  .btn-pop:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #17161c;
+  }
+
+  .btn-pop:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #17161c;
+  }
+
+  .field-pop {
+    @apply w-full rounded-lg border-[3px] border-ink bg-white px-4 py-3 text-[16.5px] text-ink placeholder:text-ink-faint;
   }
 }

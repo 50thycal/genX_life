@@ -25,10 +25,8 @@ export function Channels() {
               className="card-surface group flex w-full flex-col p-6 transition-transform hover:-translate-y-1"
             >
               <span
-                className={`label-strip mb-4 inline-flex w-fit items-center gap-2 border px-2 py-1 ${
-                  channel.active
-                    ? "border-tape text-tape"
-                    : "border-kodak text-[#8A5A05]"
+                className={`label-strip mb-4 inline-flex w-fit items-center gap-2 rounded-full border-2 border-ink px-3 py-1 ${
+                  channel.active ? "bg-cyan text-ink" : "bg-kodak text-ink"
                 }`}
               >
                 {channel.cadence}

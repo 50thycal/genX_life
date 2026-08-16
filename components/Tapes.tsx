@@ -43,7 +43,7 @@ export function Tapes() {
             </ul>
           </div>
 
-          <div className="border-2 border-dashed border-rule p-6">
+          <div className="rounded-xl border-[3px] border-dashed border-ink/40 p-6">
             <p className="label-strip mb-2 text-ink-faint">Mail to</p>
             <p className="font-label text-[15px] leading-relaxed text-ink-soft">
               Our Gen X Life

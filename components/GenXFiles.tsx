@@ -76,7 +76,7 @@ export function GenXFiles() {
             </ol>
           </div>
 
-          <div className="border-2 border-dashed border-rule p-6">
+          <div className="rounded-xl border-[3px] border-dashed border-ink/40 p-6">
             <p className="text-[16px] leading-relaxed text-ink-soft">
               Rather just email it? That works too —{" "}
               <a

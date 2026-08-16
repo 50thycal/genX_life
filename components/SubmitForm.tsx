@@ -104,7 +104,7 @@ export function SubmitForm({
                 rows={field.rows ?? 6}
                 required={field.required}
                 placeholder={field.placeholder}
-                className="w-full resize-y border-2 border-ink bg-paper/60 px-4 py-3 font-body text-[16.5px] leading-relaxed text-ink placeholder:text-ink-faint"
+                className="field-pop resize-y leading-relaxed"
               />
             ) : (
               <input
@@ -113,7 +113,7 @@ export function SubmitForm({
                 type={field.type}
                 required={field.required}
                 placeholder={field.placeholder}
-                className="w-full border-2 border-ink bg-paper/60 px-4 py-3 font-body text-[16.5px] text-ink placeholder:text-ink-faint"
+                className="field-pop"
               />
             )}
 
@@ -123,7 +123,7 @@ export function SubmitForm({
           </div>
         ))}
 
-        <fieldset className="border-2 border-rule p-4">
+        <fieldset className="rounded-lg border-[3px] border-ink p-4">
           <legend className="label-strip px-2 text-ink">Your name</legend>
           <div className="space-y-2">
             {[
@@ -136,7 +136,7 @@ export function SubmitForm({
                   name="attribution"
                   value={value}
                   defaultChecked={value === "credit"}
-                  className="mt-1.5 h-4 w-4 accent-[#C4362B]"
+                  className="mt-1.5 h-4 w-4 accent-[#FF3D8B]"
                 />
                 <span className="text-ink-soft">{text}</span>
               </label>
@@ -148,14 +148,14 @@ export function SubmitForm({
       <button
         type="submit"
         disabled={status.kind === "sending"}
-        className="mt-7 w-full border-2 border-ink bg-rec px-6 py-3.5 font-display text-sm uppercase tracking-wide text-card transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
+        className="btn-pop mt-7 w-full bg-rec text-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status.kind === "sending" ? "Sending…" : submitLabel}
       </button>
 
       {status.kind === "notReady" ? (
         <p
-          className="mt-5 border-l-4 border-kodak bg-kodak/10 px-4 py-3 text-[16px] leading-relaxed text-ink-soft"
+          className="mt-5 rounded-lg border-[3px] border-ink bg-kodak/40 px-4 py-3 text-[16px] leading-relaxed text-ink"
           role="status"
         >
           {status.message}
@@ -164,7 +164,7 @@ export function SubmitForm({
 
       {status.kind === "error" ? (
         <p
-          className="mt-5 border-l-4 border-rec bg-rec/10 px-4 py-3 text-[16px] leading-relaxed text-ink-soft"
+          className="mt-5 rounded-lg border-[3px] border-rec bg-rec/10 px-4 py-3 text-[16px] leading-relaxed text-ink"
           role="alert"
         >
           {status.message}
