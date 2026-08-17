@@ -27,7 +27,7 @@ export function Podcast({ show }: { show: Show | null }) {
                 ) : null}
               </div>
 
-              <h3 className="mt-2 text-[17px] font-bold leading-tight text-balance">
+              <h3 className="mt-2 font-display text-[17px] leading-tight text-balance">
                 {episode.link ? (
                   <a
                     href={episode.link}

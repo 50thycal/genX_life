@@ -1,12 +1,44 @@
 import { CONTACT } from "@/lib/links";
 
 const SHORTCUTS = [
-  { label: "Channels", href: "#channels", glyph: "📺" },
+  { label: "Videos", href: "#videos", glyph: "📺" },
+  { label: "Channels", href: "#channels", glyph: "🎬" },
   { label: "Gen X Files", href: "#genxfiles", glyph: "🗂️" },
   { label: "Podcast", href: "#podcast", glyph: "🎧" },
   { label: "Shop", href: "#shop", glyph: "🛍️" },
+  { label: "Photos", href: "#photos", glyph: "📷" },
   { label: "Tapes", href: "#tapes", glyph: "📼" },
 ];
+
+/** Rebuilt from their logo: OUR and LIFE plain, GEN on colour blocks, big X. */
+function Wordmark() {
+  const blocks = [
+    { letter: "G", bg: "bg-rec" },
+    { letter: "E", bg: "bg-purple" },
+    { letter: "N", bg: "bg-cyan" },
+  ];
+
+  return (
+    <h1 className="font-display leading-[0.9] tracking-tight">
+      <span className="sr-only">Our Gen X Life</span>
+      <span aria-hidden="true" className="flex flex-wrap items-center gap-x-2.5 gap-y-2">
+        <span className="text-[9vw] text-ink sm:text-4xl lg:text-5xl">OUR</span>
+        <span className="flex gap-1.5">
+          {blocks.map((block) => (
+            <span
+              key={block.letter}
+              className={`ransom ${block.bg} text-[10vw] text-white sm:text-5xl lg:text-6xl`}
+            >
+              {block.letter}
+            </span>
+          ))}
+        </span>
+        <span className="text-[14vw] text-rec sm:text-[4.5rem] lg:text-[5.5rem]">X</span>
+        <span className="text-[9vw] text-ink sm:text-4xl lg:text-5xl">LIFE</span>
+      </span>
+    </h1>
+  );
+}
 
 export function Hero() {
   return (
@@ -19,12 +51,12 @@ export function Hero() {
               <li key={shortcut.href}>
                 <a
                   href={shortcut.href}
-                  className="flex w-[76px] flex-col items-center gap-1 p-1 text-center hover:bg-[#000080]/25"
+                  className="flex w-[78px] flex-col items-center gap-1 p-1 text-center hover:bg-white/15"
                 >
                   <span aria-hidden="true" className="text-2xl leading-none">
                     {shortcut.glyph}
                   </span>
-                  <span className="text-[12px] font-bold leading-tight text-white">
+                  <span className="text-[12px] font-bold leading-tight text-white drop-shadow-[1px_1px_0_rgba(36,28,61,0.9)]">
                     {shortcut.label}
                   </span>
                 </a>
@@ -33,7 +65,6 @@ export function Hero() {
           </ul>
         </nav>
 
-        {/* Main window */}
         <div className="window">
           <div className="title-bar">
             <span className="title-bar-text flex-1 truncate">
@@ -46,33 +77,33 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="grid gap-6 px-4 py-7 sm:px-8 sm:py-9 lg:grid-cols-[1.35fr_1fr] lg:items-start">
+          <div className="grid gap-6 px-4 py-7 sm:px-8 sm:py-9 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <div>
-              <p className="label-strip mb-3">1970s · 1980s · 1990s</p>
+              <p className="label-strip mb-4 text-rec-deep">
+                1970s <span className="text-purple">★</span> 1980s{" "}
+                <span className="text-purple">★</span> 1990s
+              </p>
 
-              <h1 className="text-[9vw] font-bold leading-[1.02] tracking-tight text-balance sm:text-5xl lg:text-[3.4rem]">
-                Our Gen X Life
-              </h1>
+              <Wordmark />
 
-              <p className="measure mt-5 text-[16px] leading-relaxed">
+              <p className="measure mt-6 text-[16px] leading-relaxed">
                 Keith and Abby spend their weekends at estate sales rescuing the things
                 everyone else threw out — the toys, the tapes, the whole decade. Then they
                 bring it back here, so you can remember it with them.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
-                <a href="#channels" className="btn-95">
-                  Watch the channels
+                <a href="#videos" className="btn-hot">
+                  Watch the latest
                 </a>
-                <a href="#genxfiles" className="btn-95">
+                <a href="#genxfiles" className="btn-sun">
                   Send us your story
                 </a>
               </div>
 
-              <p className="label-strip mt-6 text-[#3A3A3A]">{CONTACT.email}</p>
+              <p className="label-strip mt-6 text-ink-faint">{CONTACT.email}</p>
             </div>
 
-            {/* A DOS box, because of course there's a DOS box */}
             <div className="bevel-in p-1">
               <div className="terminal p-3">
                 <p>C:\&gt; DIR *.MEMORIES</p>

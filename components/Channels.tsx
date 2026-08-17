@@ -26,13 +26,13 @@ export function Channels() {
             >
               <span
                 className={`label-strip bevel-in mb-4 inline-flex w-fit items-center gap-2 px-2 py-1 ${
-                  channel.active ? "text-[#000080]" : "text-[#7A0000]"
+                  channel.active ? "text-tape" : "text-rec-deep"
                 }`}
               >
                 {channel.cadence}
               </span>
 
-              <h3 className="text-[17px] font-bold leading-tight text-balance">
+              <h3 className="font-display text-[17px] leading-tight text-balance">
                 {channel.name}
               </h3>
 

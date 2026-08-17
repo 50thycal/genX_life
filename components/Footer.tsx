@@ -24,7 +24,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-track={`social:${social.name}`}
-                    className="text-[15px] text-[#000080] underline underline-offset-2"
+                    className="text-[15px] text-tape underline underline-offset-2"
                   >
                     {social.name}
                   </a>
@@ -38,7 +38,7 @@ export function Footer() {
             <p className="text-[15px] leading-relaxed">
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="text-[#000080] underline underline-offset-2"
+                className="text-tape underline underline-offset-2"
               >
                 {CONTACT.email}
               </a>
@@ -52,7 +52,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 data-track="podcast:rss"
                 title="Podcast RSS feed — for podcast apps"
-                className="text-[#000080] underline underline-offset-2"
+                className="text-tape underline underline-offset-2"
               >
                 RSS feed
               </a>
@@ -62,10 +62,10 @@ export function Footer() {
 
         {/* Taskbar */}
         <div className="mt-1 flex items-center gap-2 bevel-out p-1">
-          <span className="btn-95 !min-w-0 !px-3 !py-1 text-[13px]">
+          <span className="btn-sun !min-w-0 !px-3 !py-1 text-[13px]">
             <span aria-hidden="true">⊞</span> Start
           </span>
-          <span aria-hidden="true" className="h-6 w-px bg-[#808080]" />
+          <span aria-hidden="true" className="h-6 w-px bg-rule" />
           <span className="hidden flex-1 text-[12px] font-bold sm:block">
             © {new Date().getFullYear()} Our Gen X Life
           </span>

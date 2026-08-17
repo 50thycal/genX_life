@@ -74,7 +74,7 @@ export function SubmitForm({
   if (status.kind === "sent") {
     return (
       <div className="card-surface p-8" role="status">
-        <h3 className="text-lg font-bold text-[#000080]">
+        <h3 className="font-display text-lg text-tape">
           {successTitle}
         </h3>
         <p className="measure mt-3 text-[16.5px] leading-relaxed text-ink-soft">
@@ -136,7 +136,7 @@ export function SubmitForm({
                   name="attribution"
                   value={value}
                   defaultChecked={value === "credit"}
-                  className="mt-1.5 h-4 w-4 accent-[#C4362B]"
+                  className="mt-1.5 h-4 w-4 accent-[#FF3D8B]"
                 />
                 <span className="text-ink-soft">{text}</span>
               </label>
@@ -148,7 +148,7 @@ export function SubmitForm({
       <button
         type="submit"
         disabled={status.kind === "sending"}
-        className="btn-95 mt-7 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="btn-hot mt-7 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status.kind === "sending" ? "Sending…" : submitLabel}
       </button>
@@ -164,7 +164,7 @@ export function SubmitForm({
 
       {status.kind === "error" ? (
         <p
-          className="bevel-in mt-5 px-4 py-3 text-[15px] leading-relaxed text-[#A80000]"
+          className="bevel-in mt-5 px-4 py-3 text-[15px] leading-relaxed text-rec-deep"
           role="alert"
         >
           {status.message}

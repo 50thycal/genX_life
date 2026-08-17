@@ -1,4 +1,5 @@
 import { SHOP } from "@/lib/links";
+import type { Listing } from "@/lib/etsy";
 import { Section } from "./Section";
 
 /**
@@ -6,19 +7,53 @@ import { Section } from "./Section";
  * Etsy is one-of-a-kind and sells on scarcity; Spreadshop is unlimited stock
  * and sells on identity. Giving them equal weight would flatten both.
  */
-export function Shop() {
+export function Shop({ listings }: { listings: Listing[] | null }) {
   return (
     <Section
       id="shop"
       eyebrow="The shop"
       title="Take something home"
-      intro={
-        <p>
-          Two very different things live here, so they get two different shelves.
-        </p>
-      }
+      intro={<p>Two very different things live here, so they get two different shelves.</p>}
     >
-      <div className="grid gap-6 lg:grid-cols-[1.25fr_1fr]">
+      {/* Just rescued — the scarcity play, live from Etsy */}
+      {listings && listings.length > 0 ? (
+        <div className="mb-6">
+          <p className="label-strip mb-3 text-rec-deep">
+            Just rescued — one of each, when it&apos;s gone it&apos;s gone
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {listings.map((listing) => (
+              <li key={listing.id}>
+                <a
+                  href={listing.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-track={`etsy:${listing.id}`}
+                  className="window block"
+                >
+                  {listing.image ? (
+                    <div className="bevel-in m-1 p-1">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={listing.image}
+                        alt={listing.title}
+                        loading="lazy"
+                        className="block aspect-square w-full object-cover"
+                      />
+                    </div>
+                  ) : null}
+                  <p className="line-clamp-2 px-2 pt-1 text-[13px] font-bold leading-snug">
+                    {listing.title}
+                  </p>
+                  <p className="status-field m-1 mt-1.5">{listing.price ?? "View"}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      <div className="grid gap-5 lg:grid-cols-[1.25fr_1fr]">
         <a
           href={SHOP.etsy.href}
           target="_blank"
@@ -26,23 +61,26 @@ export function Shop() {
           data-track="shop:etsy"
           className="card-surface group flex flex-col p-6"
         >
-          <span className="label-strip mb-4 inline-flex w-fit items-center gap-2 border border-rec px-2 py-1 text-rec">
+          <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-rec-deep">
             One of each — when it&apos;s gone, it&apos;s gone
           </span>
 
-          <h3 className="text-xl font-bold leading-tight text-balance">
+          <h3 className="font-display text-xl leading-tight text-balance">
             Abby&apos;s Retro Rescue
           </h3>
 
-          <p className="measure mt-4 flex-1 text-[16.5px] leading-relaxed text-ink-soft">
+          <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink-soft">
             The dolls and toys Abby finds at estate sales, cleaned up, re-rooted and
             restored by hand. Every piece is the only one of its kind, and most of them
             appear on the channel before they appear in the shop.
           </p>
 
-          <span className="label-strip mt-8 inline-flex items-center gap-2 text-rec">
+          <span className="label-strip mt-5 inline-flex items-center gap-2 text-rec-deep">
             See what&apos;s available
-            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-1"
+            >
               →
             </span>
           </span>
@@ -55,20 +93,25 @@ export function Shop() {
           data-track="shop:spreadshop"
           className="card-surface group flex flex-col p-6"
         >
-          <span className="label-strip mb-4 text-ink-faint">Shirts, mugs, the usual</span>
+          <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-tape">
+            Shirts, mugs, the usual
+          </span>
 
-          <h3 className="text-xl font-bold leading-tight text-balance">
+          <h3 className="font-display text-xl leading-tight text-balance">
             Wear the brand
           </h3>
 
-          <p className="measure mt-4 flex-1 text-[16.5px] leading-relaxed text-ink-soft">
+          <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink-soft">
             For anyone who spots another Gen Xer across a parking lot and wants them to
             know. Printed to order, so nothing sells out.
           </p>
 
-          <span className="label-strip mt-8 inline-flex items-center gap-2 text-tape">
+          <span className="label-strip mt-5 inline-flex items-center gap-2 text-tape">
             Browse the merch
-            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-1"
+            >
               →
             </span>
           </span>

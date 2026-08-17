@@ -30,7 +30,7 @@ export function Section({
         </div>
 
         <div className="px-4 py-6 sm:px-7 sm:py-8">
-          <h2 className="text-2xl font-bold leading-tight text-balance sm:text-3xl">
+          <h2 className="font-display text-2xl leading-tight text-balance sm:text-3xl">
             {title}
           </h2>
 
