@@ -57,6 +57,7 @@ const terms: Term[] = [
   { term: "Zima", kind: "object", era: "90s", category: "snacks", merch: true, object: true },
   { term: "The Electric Company", kind: "media", era: "70s", category: "tv" },
   { term: "80s nostalgia", kind: "barometer", era: "80s", category: "era" },
+  { term: "Sears Wish Book", kind: "phrase", era: "80s", category: "retail", merch: true },
 ];
 
 // Trapper Keeper spiking hard, Zima flat, Electric Company mild, barometer spiking.
@@ -88,6 +89,9 @@ const signals: Signal[] = [
   },
   { term: "The Electric Company", source: "wikipedia", level: 250, ratio: 1.3, z: 1.1 },
   { term: "80s nostalgia", source: "wikipedia", level: 5_000, ratio: 2.5, z: 5 },
+  // Real ratio, but under the old 15% text threshold — the exact shape that
+  // shipped as "Steady — no movement" on a term the report was ranking.
+  { term: "Sears Wish Book", source: "wikipedia", level: 320, ratio: 1.06, z: 0.3 },
 ];
 
 const outliers: Outlier[] = [
@@ -129,7 +133,7 @@ const history: Snapshot[] = [
 console.log("\nscoring");
 const scored = scoreTerms(terms, structuredClone(signals), outliers, history);
 
-check("every term with a signal is scored", scored.length === 4, `got ${scored.length}`);
+check("every term with a signal is scored", scored.length === 5, `got ${scored.length}`);
 check(
   "the spiking term outranks the flat one",
   (scored.find((s) => s.term.term === "Trapper Keeper")?.score ?? 0) >
@@ -153,6 +157,17 @@ check("scores stay within 0–100", scored.every((s) => s.score >= 0 && s.score 
 check(
   "the reason names its evidence",
   (scored.find((s) => s.term.term === "Trapper Keeper")?.because ?? "").includes("Wikipedia"),
+);
+
+// Regression: a term ranked purely on a modest-but-real z-score used to print
+// "Steady — no movement" because its ratio fell short of an unrelated 15%
+// text cutoff, while the momentum floor that got it ranked runs on z alone.
+const wishBook = scored.find((s) => s.term.term === "Sears Wish Book");
+check("a modest real move clears the momentum floor", (wishBook?.factors.momentum ?? 0) > 0);
+check(
+  "its evidence names the move instead of contradicting the ranking",
+  (wishBook?.because ?? "").includes("Wikipedia") && !(wishBook?.because ?? "").includes("Steady"),
+  `got "${wishBook?.because}"`,
 );
 
 // ── Report ──────────────────────────────────────────────────────────────────
