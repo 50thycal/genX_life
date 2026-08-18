@@ -1,0 +1,72 @@
+name: Nostalgia Desk
+
+# Monday mornings, plus a manual button for testing.
+#
+# 13:00 UTC is 8am Central, so the report is waiting rather than arriving
+# mid-morning. GitHub's scheduler runs late under load — a report that shows up
+# at 8:40 is normal and not a fault.
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+# The job commits the week's snapshot and report back to the repo.
+permissions:
+  contents: write
+
+# Never let two runs write snapshots at once.
+concurrency:
+  group: nostalgia-desk
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      # The scoring and rendering are pure, so a break here would produce a
+      # wrong report rather than a failed one. Cheaper to catch it before the run.
+      - name: Self-test
+        run: npm run bot:selftest
+
+      - name: Collect and report
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+        run: npm run bot:run
+
+      - name: Commit the week
+        run: |
+          git config user.name "nostalgia-desk"
+          git config user.email "actions@github.com"
+          git add bot/history bot/reports bot/cache
+          if git diff --staged --quiet; then
+            echo "Nothing to commit — the run produced no new files."
+            exit 0
+          fi
+          git commit -m "Nostalgia Desk: week of $(date -u +%Y-%m-%d)"
+          git push
+
+      # Puts the report in the run summary, so it's readable from the phone
+      # notification without cloning anything.
+      - name: Post the report to the run summary
+        if: always()
+        run: |
+          latest=$(ls -1 bot/reports/*.md 2>/dev/null | tail -1)
+          if [ -n "$latest" ]; then
+            cat "$latest" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No report was produced this run." >> "$GITHUB_STEP_SUMMARY"
+          fi
