@@ -59,12 +59,22 @@ function fromMonetizable(term: Term): number {
   return 0.3;
 }
 
-/** Plain-language reason, so no line in the report is unexplained. */
+/**
+ * Plain-language reason, so no line in the report is unexplained.
+ *
+ * Gated on `z > 0` for wiki and YouTube — the same test `fromZ` uses to decide
+ * whether a signal contributes to momentum at all. An earlier version gated
+ * this text on `ratio > 1.15` instead, which meant a term could clear the
+ * momentum floor on a modest-but-statistically-unusual move, rank in a list,
+ * and still print "Steady — no movement" because its ratio fell short of an
+ * unrelated 15% cutoff. Same test everywhere avoids the report contradicting
+ * its own ranking.
+ */
 function explain(term: Term, signals: Signal[], outlier: Outlier | undefined): string {
   const parts: string[] = [];
 
   const wiki = signals.find((s) => s.source === "wikipedia");
-  if (wiki && wiki.ratio > 1.15) {
+  if (wiki && wiki.z > 0) {
     parts.push(
       `Wikipedia views up ${Math.round((wiki.ratio - 1) * 100)}% on its 90-day average ` +
         `(${Math.round(wiki.level)}/day)`,
@@ -78,7 +88,7 @@ function explain(term: Term, signals: Signal[], outlier: Outlier | undefined): s
   }
 
   const yt = signals.find((s) => s.source === "youtube");
-  if (yt && yt.ratio > 1.15) {
+  if (yt && yt.z > 0) {
     parts.push(`YouTube interest up ${Math.round((yt.ratio - 1) * 100)}% week over week`);
   }
 
