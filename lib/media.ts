@@ -1,33 +1,17 @@
 import type { Video } from "./youtube";
 
 /**
- * ── WHERE PHOTOS GO ──────────────────────────────────────────────────────
+ * ── WHERE PHOTOS AND VIDEO GO ────────────────────────────────────────────
  *
- * Every image file lives in  public/photos/  and gets referenced below by
- * file name. There are five places a photo can appear on the page:
+ * Images live in  public/photos/  and video in  public/video/ , referenced
+ * below by file name. Every slot is optional — an empty one renders nothing
+ * and the layout holds without it.
  *
- *   SLOT 1  PORTRAIT        Keith and Abby, in the About window at the bottom.
- *                           One landscape or square shot of the two of them.
+ * File names: lowercase, hyphens, no spaces or apostrophes. Spaces have to be
+ * escaped in a URL and break on some hosts.
  *
- *   SLOT 2  CHANNEL_IMAGES  A still for each of the three channel cards.
- *                           Landscape, roughly 16:9. Optional per channel.
- *
- *   SLOT 3  PHOTOS          The gallery grid — "the shoebox". As many as you
- *                           like. Landscape sits best. This is the main one.
- *
- *   SLOT 4  TAPES_PHOTO     One shot beside the tape-submission form. A stack
- *                           of VHS tapes or a camcorder does the job.
- *
- *   SLOT 5  BENCH_PHOTO     One shot beside the shop — a rescue in progress
- *                           at Abby's bench.
- *
- *   SLOT 6  HERO_VIDEO      The channel intro, top right of the hero. An MP4
- *                           in  public/video/  rather than public/photos/.
- *                           Until one is set, the DOS box shows there instead.
- *
- * Any slot left empty just doesn't render; the page still works without it.
- *
- * Prep: JPG, about 1600px on the long edge, under 1MB each.
+ * Prep: JPG or WebP for photographs (PNG only when transparency is needed),
+ * about 1600px on the long edge, under 1MB each.
  * ─────────────────────────────────────────────────────────────────────────
  */
 
@@ -40,22 +24,28 @@ export type Photo = {
   caption?: string;
 };
 
-/** SLOT 1 — Keith and Abby, in the About window. */
-export const PORTRAIT: Photo | null = null;
-// e.g. { file: "keith-and-abby.jpg", alt: "Keith and Abby in the workshop" }
-
-/** SLOT 2 — one still per channel card. Keys must match the names in links.ts. */
-export const CHANNEL_IMAGES: Record<string, Photo> = {
-  // "Our Gen X Life": { file: "channel-main.jpg", alt: "Keith and Abby filming an episode" },
-  // "Abby's Retro Rescue": { file: "channel-rescue.jpg", alt: "A half-restored doll on the bench" },
-  // "Your Life On Tape": { file: "channel-tape.jpg", alt: "A stack of unlabelled VHS tapes" },
+/** SLOT 1 — the banner across the top of the hero. Both of them, plus the logo. */
+export const HERO_BANNER: Photo | null = {
+  file: "genx-banner-long.png",
+  alt: "Keith and Abby beside the Our Gen X Life logo",
 };
 
-/** SLOT 3 — the gallery grid. Add as many as you like. */
+/** SLOT 2 — a still on each channel card. Keys match the names in links.ts. */
+export const CHANNEL_IMAGES: Record<string, Photo> = {
+  "Our Gen X Life": {
+    file: "genx-logo.png",
+    alt: "The Our Gen X Life logo",
+  },
+  "Abby's Retro Rescue": {
+    file: "retro-rescue-banner.png",
+    alt: "Abby holding rescued plush toys, beside the Abby's Retro Rescue logo",
+  },
+  // "Your Life On Tape": waiting on artwork.
+};
+
+/** SLOT 3 — the gallery grid. Workshop shots, finds, rescues in progress. */
 export const PHOTOS: Photo[] = [
-  // { file: "cabbage-patch-before.jpg",
-  //   alt: "A matted 1980s Cabbage Patch doll before restoration",
-  //   caption: "Found at an estate sale outside Wichita. Four hours of hair to go." },
+  // Nothing here yet — these want photographs rather than brand artwork.
 ];
 
 /** SLOT 4 — beside the tape-submission form. */
@@ -64,6 +54,30 @@ export const TAPES_PHOTO: Photo | null = null;
 /** SLOT 5 — beside the shop. */
 export const BENCH_PHOTO: Photo | null = null;
 
+/** SLOT 6 — heading the Gen X Files section. */
+export const GENXFILES_IMAGE: Photo | null = {
+  file: "gen-x-files-logo.png",
+  alt: "The Gen X Files logo — a glowing green X on black",
+};
+
+/** SLOT 7 — the podcast's cover art, beside the episode list. */
+export const PORTRAIT: Photo | null = {
+  file: "abby-portrait.png",
+  alt: "Abby holding a rescued Care Bear",
+};
+
+/**
+ * SLOT 8 — the show's cover art.
+ *
+ * Note this is still the OUR 80s LIFE artwork. It's what Apple and Spotify
+ * show today, so it's the honest thing to display — but it's the one asset
+ * left carrying the old brand, and it wants redoing when the show is renamed.
+ */
+export const PODCAST_IMAGE: Photo | null = {
+  file: "podcast-cover.png",
+  alt: "The podcast cover — Keith and Abby beside the Our 80s Life logo",
+};
+
 export type HeroVideoSlot = {
   /** File name inside public/video/ */
   file: string;
@@ -71,10 +85,12 @@ export type HeroVideoSlot = {
   alt: string;
   /** Optional still shown before it starts, also in public/video/ */
   poster?: string;
+  /** Set when the file has no audio track — hides the sound button. */
+  silent?: boolean;
 };
 
 /**
- * SLOT 6 — the intro, top right of the hero.
+ * SLOT 9 — the intro, top right of the hero.
  *
  * Autoplays muted on a loop with a button to turn sound on, so keep it short:
  * an intro bumper, not a full episode. Under 10MB and it stays snappy; GitHub
@@ -82,9 +98,12 @@ export type HeroVideoSlot = {
  *
  * Export MP4 (H.264 + AAC), 1280x720 is plenty at this size on the page.
  */
-export const HERO_VIDEO: HeroVideoSlot | null = null;
-// e.g. { file: "genx-intro.mp4", alt: "The Our Gen X Life channel intro",
-//        poster: "genx-intro-poster.jpg" }
+export const HERO_VIDEO: HeroVideoSlot | null = {
+  file: "genx-opener.mp4",
+  alt: "The Our Gen X Life channel opener",
+  // This export carries no audio track, so there's nothing to unmute.
+  silent: true,
+};
 
 /** Shown only if YouTube's feed is unreachable. Not something you need to edit. */
 export const FALLBACK_VIDEOS: Video[] = [

@@ -1,5 +1,5 @@
 import { CONTACT } from "@/lib/links";
-import { HERO_VIDEO } from "@/lib/media";
+import { HERO_BANNER, HERO_VIDEO, photoUrl } from "@/lib/media";
 import { HeroVideo } from "./HeroVideo";
 
 const SHORTCUTS = [
@@ -12,7 +12,7 @@ const SHORTCUTS = [
   { label: "Tapes", href: "#tapes", glyph: "📼" },
 ];
 
-/** Rebuilt from their logo: OUR and LIFE plain, GEN on colour blocks, big X. */
+/** Fallback wordmark, rebuilt in CSS. Used only when no banner image is set. */
 function Wordmark() {
   const blocks = [
     { letter: "G", bg: "bg-rec" },
@@ -86,7 +86,19 @@ export function Hero() {
                 <span className="text-purple">★</span> 1990s
               </p>
 
-              <Wordmark />
+              {HERO_BANNER ? (
+                <h1>
+                  <span className="sr-only">Our Gen X Life</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={photoUrl(HERO_BANNER)}
+                    alt={HERO_BANNER.alt}
+                    className="block w-full max-w-2xl"
+                  />
+                </h1>
+              ) : (
+                <Wordmark />
+              )}
 
               <p className="measure mt-6 text-[16px] leading-relaxed">
                 Keith and Abby spend their weekends at estate sales rescuing the things

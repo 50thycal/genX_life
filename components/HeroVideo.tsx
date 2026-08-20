@@ -66,9 +66,12 @@ export function HeroVideo({ video }: { video: HeroVideoSlot }) {
 
       {!reduceMotion ? (
         <div className="flex gap-1 px-1 pb-1">
-          <button type="button" onClick={toggleSound} className="btn-95 !min-w-0 !py-1">
-            {muted ? "🔇 Sound on" : "🔊 Sound off"}
-          </button>
+          {/* No button on a file with no audio track — it would do nothing. */}
+          {video.silent ? null : (
+            <button type="button" onClick={toggleSound} className="btn-95 !min-w-0 !py-1">
+              {muted ? "🔇 Sound on" : "🔊 Sound off"}
+            </button>
+          )}
           <p className="status-field flex-1 truncate">Now playing — the intro</p>
         </div>
       ) : null}

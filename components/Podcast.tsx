@@ -1,4 +1,6 @@
 import { PODCAST } from "@/lib/links";
+import { PODCAST_IMAGE } from "@/lib/media";
+import { Framed } from "./Framed";
 import type { Show } from "@/lib/podcast";
 import { Section } from "./Section";
 
@@ -16,6 +18,13 @@ export function Podcast({ show }: { show: Show | null }) {
         </p>
       }
     >
+      <Framed
+        photo={PODCAST_IMAGE}
+        title="podcast-cover.png"
+        aspect="aspect-square"
+        className="mb-6 max-w-[260px]"
+      />
+
       {show && show.episodes.length > 0 ? (
         <ul className="space-y-4">
           {show.episodes.map((episode) => (

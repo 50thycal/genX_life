@@ -1,4 +1,6 @@
 import { CONTACT } from "@/lib/links";
+import { GENXFILES_IMAGE } from "@/lib/media";
+import { Framed } from "./Framed";
 import { Section } from "./Section";
 import { SubmitForm } from "./SubmitForm";
 
@@ -24,6 +26,13 @@ export function GenXFiles() {
         </>
       }
     >
+      <Framed
+        photo={GENXFILES_IMAGE}
+        title="gen-x-files-logo.png"
+        aspect="aspect-[5/2]"
+        className="mb-6 max-w-lg"
+      />
+
       <div className="grid gap-8 lg:grid-cols-[1fr_minmax(320px,420px)]">
         <SubmitForm
           kind="genxfiles"
