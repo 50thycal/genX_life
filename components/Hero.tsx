@@ -1,87 +1,146 @@
 import { CONTACT } from "@/lib/links";
+import { HERO_BANNER, HERO_VIDEO, photoUrl } from "@/lib/media";
+import { HeroVideo } from "./HeroVideo";
 
-/**
- * The page opens on the most characteristic object in this brand's world:
- * a home-recorded tape with a handwritten label. Everything else on the page
- * stays quiet so this can carry the personality.
- */
+const SHORTCUTS = [
+  { label: "Videos", href: "#videos", glyph: "📺" },
+  { label: "Channels", href: "#channels", glyph: "🎬" },
+  { label: "Gen X Files", href: "#genxfiles", glyph: "🗂️" },
+  { label: "Podcast", href: "#podcast", glyph: "🎧" },
+  { label: "Shop", href: "#shop", glyph: "🛍️" },
+  { label: "Photos", href: "#photos", glyph: "📷" },
+  { label: "Tapes", href: "#tapes", glyph: "📼" },
+];
+
+/** Fallback wordmark, rebuilt in CSS. Used only when no banner image is set. */
+function Wordmark() {
+  const blocks = [
+    { letter: "G", bg: "bg-rec" },
+    { letter: "E", bg: "bg-purple" },
+    { letter: "N", bg: "bg-cyan" },
+  ];
+
+  return (
+    <h1 className="font-display leading-[0.9] tracking-tight">
+      <span className="sr-only">Our Gen X Life</span>
+      <span aria-hidden="true" className="flex flex-wrap items-center gap-x-2.5 gap-y-2">
+        <span className="text-[9vw] text-ink sm:text-4xl lg:text-5xl">OUR</span>
+        <span className="flex gap-1.5">
+          {blocks.map((block) => (
+            <span
+              key={block.letter}
+              className={`ransom ${block.bg} text-[10vw] text-white sm:text-5xl lg:text-6xl`}
+            >
+              {block.letter}
+            </span>
+          ))}
+        </span>
+        <span className="text-[14vw] text-rec sm:text-[4.5rem] lg:text-[5.5rem]">X</span>
+        <span className="text-[9vw] text-ink sm:text-4xl lg:text-5xl">LIFE</span>
+      </span>
+    </h1>
+  );
+}
+
 export function Hero() {
   return (
-    <header className="relative overflow-hidden">
-      <div className="mx-auto w-full max-w-6xl px-5 pb-14 pt-8 sm:px-8 sm:pb-20 sm:pt-12">
-        <nav className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-2 sm:mb-14">
-          <span className="label-strip text-ink-faint">Andover, Kansas</span>
-          <div className="hidden flex-1 border-t border-rule sm:block" />
-          <ul className="flex flex-wrap gap-x-5 gap-y-2">
-            {[
-              ["Channels", "#channels"],
-              ["Gen X Files", "#genxfiles"],
-              ["Podcast", "#podcast"],
-              ["Shop", "#shop"],
-              ["Tapes", "#tapes"],
-            ].map(([text, href]) => (
-              <li key={href}>
+    <header className="px-3 pb-6 pt-4 sm:px-6 sm:pt-6">
+      <div className="mx-auto w-full max-w-6xl">
+        {/* Desktop shortcuts */}
+        <nav aria-label="Sections" className="mb-5">
+          <ul className="flex flex-wrap gap-x-2 gap-y-3">
+            {SHORTCUTS.map((shortcut) => (
+              <li key={shortcut.href}>
                 <a
-                  href={href}
-                  className="label-strip text-ink transition-colors hover:text-rec"
+                  href={shortcut.href}
+                  className="flex w-[78px] flex-col items-center gap-1 p-1 text-center hover:bg-white/15"
                 >
-                  {text}
+                  <span aria-hidden="true" className="text-2xl leading-none">
+                    {shortcut.glyph}
+                  </span>
+                  <span className="text-[12px] font-bold leading-tight text-white drop-shadow-[1px_1px_0_rgba(36,28,61,0.9)]">
+                    {shortcut.label}
+                  </span>
                 </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        {/* The tape */}
-        <div className="shadow-lift">
-          {/* Shell: the dark plastic top edge, with the record light and reel windows */}
-          <div className="flex items-center gap-4 border-2 border-ink bg-shell px-4 py-3 sm:px-6">
-            <span className="relative flex h-2.5 w-2.5 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rec opacity-70" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rec" />
+        <div className="window">
+          <div className="title-bar">
+            <span className="title-bar-text flex-1 truncate">
+              Our Gen X Life — Welcome
             </span>
-            <span className="label-strip text-paper/90">Rec</span>
-            <div className="ml-auto flex items-center gap-2" aria-hidden="true">
-              <span className="h-4 w-4 rounded-full border-2 border-paper/25" />
-              <span className="h-4 w-4 rounded-full border-2 border-paper/25" />
+            <div className="flex shrink-0 gap-0.5" aria-hidden="true">
+              <span className="title-bar-button">_</span>
+              <span className="title-bar-button">□</span>
+              <span className="title-bar-button">✕</span>
             </div>
           </div>
 
-          {/* Label */}
-          <div className="border-x-2 border-b-2 border-ink bg-card px-5 py-8 sm:px-10 sm:py-12">
-            <p className="label-strip mb-5 text-ink-faint">
-              1970s <span className="mx-2 text-rec">/</span> 1980s{" "}
-              <span className="mx-2 text-rec">/</span> 1990s
-            </p>
+          <div className="grid gap-6 px-4 py-7 sm:px-8 sm:py-9 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+            <div>
+              <p className="label-strip mb-4 text-rec-deep">
+                1970s <span className="text-purple">★</span> 1980s{" "}
+                <span className="text-purple">★</span> 1990s
+              </p>
 
-            <h1 className="font-display text-[13vw] uppercase leading-[0.86] tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl">
-              Our Gen X Life
-            </h1>
+              {HERO_BANNER ? (
+                <h1>
+                  <span className="sr-only">Our Gen X Life</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={photoUrl(HERO_BANNER)}
+                    alt={HERO_BANNER.alt}
+                    className="block w-full max-w-2xl"
+                  />
+                </h1>
+              ) : (
+                <Wordmark />
+              )}
 
-            <p className="measure mt-7 text-lg leading-relaxed text-ink-soft sm:text-xl">
-              Keith and Abby spend their weekends at estate sales rescuing the things
-              everyone else threw out — the toys, the tapes, the whole decade. Then they
-              bring it back here, so you can remember it with them.
-            </p>
+              <p className="measure mt-6 text-[16px] leading-relaxed">
+                Keith and Abby spend their weekends at estate sales rescuing the things
+                everyone else threw out — the toys, the tapes, the whole decade. Then they
+                bring it back here, so you can remember it with them.
+              </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#channels"
-                className="inline-flex items-center justify-center border-2 border-ink bg-rec px-6 py-3 font-display text-sm uppercase tracking-wide text-card transition-transform hover:-translate-y-0.5"
-              >
-                Watch the channels
-              </a>
-              <a
-                href="#genxfiles"
-                className="inline-flex items-center justify-center border-2 border-ink bg-card px-6 py-3 font-display text-sm uppercase tracking-wide text-ink transition-transform hover:-translate-y-0.5"
-              >
-                Send us your story
-              </a>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href="#videos" className="btn-hot">
+                  Watch the latest
+                </a>
+                <a href="#genxfiles" className="btn-sun">
+                  Send us your story
+                </a>
+              </div>
+
+              <p className="label-strip mt-6 text-ink-faint">{CONTACT.email}</p>
             </div>
 
-            <p className="label-strip mt-8 text-ink-faint">
-              {CONTACT.email}
-            </p>
+            {HERO_VIDEO ? (
+              <HeroVideo video={HERO_VIDEO} />
+            ) : (
+              /* Placeholder until the intro MP4 lands in public/video/ */
+              <div className="bevel-in p-1">
+              <div className="terminal p-3">
+                <p>C:\&gt; DIR *.MEMORIES</p>
+                <p className="mt-2">CHANNELS &nbsp;&nbsp;&lt;DIR&gt; &nbsp;&nbsp;3</p>
+                <p>GENXFILE &nbsp;&nbsp;TXT &nbsp;&nbsp;&nbsp;&nbsp;∞</p>
+                <p>PODCAST &nbsp;&nbsp;&nbsp;MP3 &nbsp;&nbsp;&nbsp;98</p>
+                <p>TAPES &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VHS &nbsp;&nbsp;????</p>
+                <p className="mt-2">&nbsp;&nbsp;&nbsp;&nbsp;4 FILE(S) FOUND</p>
+                <p className="mt-2">
+                  C:\&gt; <span className="animate-pulse">█</span>
+                </p>
+              </div>
+              </div>
+            )}
+          </div>
+
+          <div className="flex gap-1 px-1 pb-1">
+            <p className="status-field flex-1">Ready</p>
+            <p className="status-field w-40 shrink-0">Andover, Kansas</p>
           </div>
         </div>
       </div>

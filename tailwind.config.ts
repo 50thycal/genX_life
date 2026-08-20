@@ -5,27 +5,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Manila folder / index card / tape label. Warm, archival, worn.
-        paper: "#F2EAD9",
-        card: "#FDF9F0",
-        kraft: "#E4D6B8",
-        ink: "#241F1A",
-        "ink-soft": "#5C5348",
-        "ink-faint": "#8A7F6E",
-        rule: "#D6C7AA",
-        rec: "#C4362B",
-        tape: "#26707F",
-        kodak: "#E0951C",
-        shell: "#1C1815",
+        // A Windows 95 desktop skinned in their own Memphis palette.
+        // The chrome keeps its shape; the colours come from the channel art.
+        paper: "#2B1B6B", // desktop ground
+        card: "#EDE9F7", // window face — pale lavender instead of system grey
+        kraft: "#E2DBF4",
+        ink: "#1E1830",
+        "ink-soft": "#463C63",
+        "ink-faint": "#6F638F",
+        rule: "#7A6BA8", // dark bevel
+        "bevel-mid": "#C7BCE4",
+        rec: "#FF3D8B", // hot pink
+        "rec-deep": "#C4105E", // pink that passes contrast as text
+        tape: "#6D28C9", // purple, link-safe
+        purple: "#9B5DE5",
+        cyan: "#45D9E8",
+        kodak: "#FFE034",
+        shell: "#241C3D",
       },
       fontFamily: {
+        // Chunky poster face for headings, system UI face for the chrome —
+        // the mix is the point.
         display: ["var(--font-display)", "Arial Black", "sans-serif"],
-        body: ["var(--font-body)", "Georgia", "serif"],
+        body: ["Tahoma", "Verdana", "Geneva", "sans-serif"],
         label: ["var(--font-label)", "ui-monospace", "monospace"],
       },
       boxShadow: {
-        card: "0 1px 0 rgba(36,31,26,0.06), 0 12px 28px -18px rgba(36,31,26,0.55)",
-        lift: "0 2px 0 rgba(36,31,26,0.08), 0 20px 40px -22px rgba(36,31,26,0.6)",
+        card: "none",
+        lift: "none",
       },
     },
   },

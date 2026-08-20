@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  A Windows 95 desktop, skinned in their own brand.
+
+  The bevel system is intact — light top-left, dark bottom-right for anything
+  raised, reversed for anything sunken — but every colour comes from the
+  channel art rather than the system palette. Title bars run hot pink to
+  purple, the desktop is a Memphis wallpaper, and the chrome is pale lavender
+  where Windows would have used grey.
+*/
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -22,37 +32,186 @@
 
   body {
     @apply bg-paper text-ink font-body antialiased;
-    /* Paper grain. Subtle enough to read as texture, not noise. */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    font-size: 15px;
+    line-height: 1.55;
+
+    /* Memphis wallpaper: diagonal stripes under a soft colour wash. */
+    background-image:
+      repeating-linear-gradient(
+        115deg,
+        rgba(255, 61, 139, 0.16) 0 22px,
+        rgba(155, 93, 229, 0.16) 22px 44px,
+        rgba(69, 217, 232, 0.1) 44px 66px,
+        transparent 66px 150px
+      ),
+      radial-gradient(ellipse at 15% 0%, rgba(255, 61, 139, 0.42), transparent 55%),
+      radial-gradient(ellipse at 85% 25%, rgba(69, 217, 232, 0.3), transparent 50%),
+      linear-gradient(170deg, #3A2183 0%, #2B1B6B 45%, #1C1246 100%);
+    background-attachment: fixed;
   }
 
   ::selection {
-    @apply bg-kodak/40;
+    background: #ffe034;
+    color: #1e1830;
   }
 
   :focus-visible {
-    outline: 3px solid #26707f;
+    outline: 2px dotted #ffe034;
     outline-offset: 2px;
   }
 }
 
 @layer components {
-  /* A gummed label, like the one on a home-recorded tape. */
-  .label-strip {
-    @apply font-label text-[11px] uppercase tracking-[0.18em];
+  /* ---- the bevel system, retinted ---- */
+
+  .bevel-out {
+    background: #ede9f7;
+    box-shadow:
+      inset -1px -1px #241c3d,
+      inset 1px 1px #ffffff,
+      inset -2px -2px #7a6ba8,
+      inset 2px 2px #f8f6fd;
   }
 
-  /* Section headings share one measure so the page reads as a system. */
+  .bevel-in {
+    background: #ffffff;
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #241c3d,
+      inset -2px -2px #f8f6fd,
+      inset 2px 2px #7a6ba8;
+  }
+
+  .window {
+    @apply bevel-out;
+    padding: 3px;
+  }
+
+  /* The single biggest shift from stock Windows: the title bar. */
+  .title-bar {
+    background: linear-gradient(90deg, #ff3d8b 0%, #9b5de5 55%, #45d9e8 100%);
+    @apply flex items-center gap-2 px-2 py-1.5 text-white;
+  }
+
+  .title-bar-text {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-shadow: 1px 1px 0 rgba(36, 28, 61, 0.55);
+  }
+
+  .title-bar-button {
+    @apply bevel-out;
+    width: 17px;
+    height: 15px;
+    font-family: Tahoma, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 13px;
+    text-align: center;
+    color: #1e1830;
+  }
+
+  /* ---- shared surfaces ---- */
+
+  .card-surface {
+    @apply bevel-out;
+  }
+
+  .label-strip {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
   .measure {
-    @apply max-w-[62ch];
+    @apply max-w-[68ch];
   }
 
   .rule-top {
-    @apply border-t-2 border-ink;
+    border-top: 1px solid #7a6ba8;
   }
 
-  /* The index-card surface used by the Gen X Files and the tape form. */
-  .card-surface {
-    @apply bg-card border-2 border-ink shadow-card;
+  /* ---- controls ---- */
+
+  .btn-95 {
+    @apply bevel-out;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e1830;
+    padding: 8px 20px;
+    min-width: 90px;
+    text-align: center;
+  }
+
+  .btn-95:active {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #241c3d,
+      inset -2px -2px #f8f6fd,
+      inset 2px 2px #7a6ba8;
+    padding: 9px 19px 7px 21px;
+  }
+
+  /* Accent buttons keep the bevel but take a brand colour. */
+  .btn-hot {
+    @apply btn-95;
+    background: #ff3d8b;
+    color: #ffffff;
+    box-shadow:
+      inset -1px -1px #241c3d,
+      inset 1px 1px #ffb3d2,
+      inset -2px -2px #b81f61,
+      inset 2px 2px #ff8ab8;
+  }
+
+  .btn-sun {
+    @apply btn-95;
+    background: #ffe034;
+    color: #1e1830;
+    box-shadow:
+      inset -1px -1px #241c3d,
+      inset 1px 1px #fff8c9,
+      inset -2px -2px #b39400,
+      inset 2px 2px #fff0a0;
+  }
+
+  .field-95 {
+    @apply bevel-in;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 14px;
+    color: #1e1830;
+    padding: 8px 10px;
+    border: none;
+  }
+
+  .field-95::placeholder {
+    color: #8e85a8;
+  }
+
+  .terminal {
+    background: #140e28;
+    color: #45d9e8;
+    font-family: var(--font-label), ui-monospace, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .status-field {
+    box-shadow:
+      inset -1px -1px #ffffff,
+      inset 1px 1px #7a6ba8;
+    @apply px-2 py-1;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 11px;
+  }
+
+  /* One letter of the wordmark on its colour block, from the logo. */
+  .ransom {
+    @apply inline-block px-[0.12em] leading-[0.95];
   }
 }
