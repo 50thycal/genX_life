@@ -1,4 +1,6 @@
 import { CONTACT } from "@/lib/links";
+import { HERO_VIDEO } from "@/lib/media";
+import { HeroVideo } from "./HeroVideo";
 
 const SHORTCUTS = [
   { label: "Videos", href: "#videos", glyph: "📺" },
@@ -104,7 +106,11 @@ export function Hero() {
               <p className="label-strip mt-6 text-ink-faint">{CONTACT.email}</p>
             </div>
 
-            <div className="bevel-in p-1">
+            {HERO_VIDEO ? (
+              <HeroVideo video={HERO_VIDEO} />
+            ) : (
+              /* Placeholder until the intro MP4 lands in public/video/ */
+              <div className="bevel-in p-1">
               <div className="terminal p-3">
                 <p>C:\&gt; DIR *.MEMORIES</p>
                 <p className="mt-2">CHANNELS &nbsp;&nbsp;&lt;DIR&gt; &nbsp;&nbsp;3</p>
@@ -116,7 +122,8 @@ export function Hero() {
                   C:\&gt; <span className="animate-pulse">█</span>
                 </p>
               </div>
-            </div>
+              </div>
+            )}
           </div>
 
           <div className="flex gap-1 px-1 pb-1">

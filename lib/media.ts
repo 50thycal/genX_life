@@ -21,6 +21,10 @@ import type { Video } from "./youtube";
  *   SLOT 5  BENCH_PHOTO     One shot beside the shop — a rescue in progress
  *                           at Abby's bench.
  *
+ *   SLOT 6  HERO_VIDEO      The channel intro, top right of the hero. An MP4
+ *                           in  public/video/  rather than public/photos/.
+ *                           Until one is set, the DOS box shows there instead.
+ *
  * Any slot left empty just doesn't render; the page still works without it.
  *
  * Prep: JPG, about 1600px on the long edge, under 1MB each.
@@ -59,6 +63,28 @@ export const TAPES_PHOTO: Photo | null = null;
 
 /** SLOT 5 — beside the shop. */
 export const BENCH_PHOTO: Photo | null = null;
+
+export type HeroVideoSlot = {
+  /** File name inside public/video/ */
+  file: string;
+  /** Described for anyone who can't play it. */
+  alt: string;
+  /** Optional still shown before it starts, also in public/video/ */
+  poster?: string;
+};
+
+/**
+ * SLOT 6 — the intro, top right of the hero.
+ *
+ * Autoplays muted on a loop with a button to turn sound on, so keep it short:
+ * an intro bumper, not a full episode. Under 10MB and it stays snappy; GitHub
+ * refuses anything over 100MB outright.
+ *
+ * Export MP4 (H.264 + AAC), 1280x720 is plenty at this size on the page.
+ */
+export const HERO_VIDEO: HeroVideoSlot | null = null;
+// e.g. { file: "genx-intro.mp4", alt: "The Our Gen X Life channel intro",
+//        poster: "genx-intro-poster.jpg" }
 
 /** Shown only if YouTube's feed is unreachable. Not something you need to edit. */
 export const FALLBACK_VIDEOS: Video[] = [
