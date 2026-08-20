@@ -336,6 +336,19 @@ signing up for. Neither is worth building before there's traffic to serve.
 
 ## Open items
 
+### Blocked — needs Abby in person
+
+- [ ] **Etsy API key.** Register a free app at etsy.com/developers under Abby's Etsy
+      account, then set `ETSY_API_KEY` in the Vercel project. Public shop listings only
+      need the app key — no OAuth. Until it's set, the "Just Rescued" strip on the
+      homepage stays hidden and the shop section falls back to its written pitch.
+- [ ] **Your Life On Tape channel ID.** YouTube Studio → Settings → Channel → Advanced,
+      copy the `UC…` id. Goes into `CHANNEL_IDS.yourLifeOnTape` in `lib/youtube.ts`.
+      Only the `@handle` is known, and the RSS feed needs the id. Once it's in, that
+      channel's uploads join the video wall automatically like the other two.
+
+### Everything else
+
 - [ ] **Does Your Life On Tape restart, or get listed as an archive?** Move 4 assumes it
       restarts. If there's no appetite for that right now, say so and it gets presented
       honestly as a back catalogue rather than sending people to a channel that looks

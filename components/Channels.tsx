@@ -1,4 +1,6 @@
 import { CHANNELS } from "@/lib/links";
+import { CHANNEL_IMAGES } from "@/lib/media";
+import { photoUrl } from "@/lib/media";
 import { Section } from "./Section";
 
 export function Channels() {
@@ -24,6 +26,18 @@ export function Channels() {
               data-track={`channel:${channel.name}`}
               className="card-surface group flex w-full flex-col p-5"
             >
+              {CHANNEL_IMAGES[channel.name] ? (
+                <div className="bevel-in mb-4 p-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={photoUrl(CHANNEL_IMAGES[channel.name])}
+                    alt={CHANNEL_IMAGES[channel.name].alt}
+                    loading="lazy"
+                    className="block aspect-video w-full object-cover"
+                  />
+                </div>
+              ) : null}
+
               <span
                 className={`label-strip bevel-in mb-4 inline-flex w-fit items-center gap-2 px-2 py-1 ${
                   channel.active ? "text-tape" : "text-rec-deep"

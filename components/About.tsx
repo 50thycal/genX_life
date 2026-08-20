@@ -1,4 +1,6 @@
 import { CONTACT } from "@/lib/links";
+import { PORTRAIT } from "@/lib/media";
+import { Framed } from "./Framed";
 import { Section } from "./Section";
 
 export function About() {
@@ -23,6 +25,13 @@ export function About() {
         </>
       }
     >
+      <Framed
+        photo={PORTRAIT}
+        title="keith-and-abby.jpg"
+        aspect="aspect-[3/2]"
+        className="mb-6 max-w-xl"
+      />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="card-surface p-5">
           <p className="label-strip mb-3 text-rec">Get in touch</p>

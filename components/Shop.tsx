@@ -1,5 +1,7 @@
 import { SHOP } from "@/lib/links";
 import type { Listing } from "@/lib/etsy";
+import { BENCH_PHOTO } from "@/lib/media";
+import { Framed } from "./Framed";
 import { Section } from "./Section";
 
 /**
@@ -52,6 +54,13 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           </ul>
         </div>
       ) : null}
+
+      <Framed
+        photo={BENCH_PHOTO}
+        title="the-bench.jpg"
+        aspect="aspect-[16/9]"
+        className="mb-6 max-w-2xl"
+      />
 
       <div className="grid gap-5 lg:grid-cols-[1.25fr_1fr]">
         <a

@@ -1,24 +1,66 @@
 import type { Video } from "./youtube";
 
 /**
- * ── ADDING YOUR OWN CONTENT ──────────────────────────────────────────────
+ * ── WHERE PHOTOS GO ──────────────────────────────────────────────────────
  *
- * VIDEOS
- *   You don't need to do anything. The video wall reads your YouTube channels
- *   directly, so anything you post shows up here on its own within the hour.
- *   The list below is only a safety net for when YouTube can't be reached.
+ * Every image file lives in  public/photos/  and gets referenced below by
+ * file name. There are five places a photo can appear on the page:
  *
- * PHOTOS
- *   1. Drop the image file into  public/photos/
- *   2. Add a line to PHOTOS below — file name, a short description for screen
- *      readers, and the caption you want printed underneath.
+ *   SLOT 1  PORTRAIT        Keith and Abby, in the About window at the bottom.
+ *                           One landscape or square shot of the two of them.
  *
- *   Keep them under about 1MB each so the page stays quick. Landscape shots
- *   sit best in the grid.
+ *   SLOT 2  CHANNEL_IMAGES  A still for each of the three channel cards.
+ *                           Landscape, roughly 16:9. Optional per channel.
+ *
+ *   SLOT 3  PHOTOS          The gallery grid — "the shoebox". As many as you
+ *                           like. Landscape sits best. This is the main one.
+ *
+ *   SLOT 4  TAPES_PHOTO     One shot beside the tape-submission form. A stack
+ *                           of VHS tapes or a camcorder does the job.
+ *
+ *   SLOT 5  BENCH_PHOTO     One shot beside the shop — a rescue in progress
+ *                           at Abby's bench.
+ *
+ * Any slot left empty just doesn't render; the page still works without it.
+ *
+ * Prep: JPG, about 1600px on the long edge, under 1MB each.
  * ─────────────────────────────────────────────────────────────────────────
  */
 
-/** Shown only if YouTube's feed is unreachable. */
+export type Photo = {
+  /** File name inside public/photos/ */
+  file: string;
+  /** Described for anyone who can't see it. Say what's happening. */
+  alt: string;
+  /** Printed under the picture. Optional for the single-slot photos. */
+  caption?: string;
+};
+
+/** SLOT 1 — Keith and Abby, in the About window. */
+export const PORTRAIT: Photo | null = null;
+// e.g. { file: "keith-and-abby.jpg", alt: "Keith and Abby in the workshop" }
+
+/** SLOT 2 — one still per channel card. Keys must match the names in links.ts. */
+export const CHANNEL_IMAGES: Record<string, Photo> = {
+  // "Our Gen X Life": { file: "channel-main.jpg", alt: "Keith and Abby filming an episode" },
+  // "Abby's Retro Rescue": { file: "channel-rescue.jpg", alt: "A half-restored doll on the bench" },
+  // "Your Life On Tape": { file: "channel-tape.jpg", alt: "A stack of unlabelled VHS tapes" },
+};
+
+/** SLOT 3 — the gallery grid. Add as many as you like. */
+export const PHOTOS: Photo[] = [
+  // { file: "cabbage-patch-before.jpg",
+  //   alt: "A matted 1980s Cabbage Patch doll before restoration",
+  //   caption: "Found at an estate sale outside Wichita. Four hours of hair to go." },
+];
+
+/** SLOT 4 — beside the tape-submission form. */
+export const TAPES_PHOTO: Photo | null = null;
+
+/** SLOT 5 — beside the shop. */
+export const BENCH_PHOTO: Photo | null = null;
+
+/** Shown only if YouTube's feed is unreachable. Not something you need to edit. */
 export const FALLBACK_VIDEOS: Video[] = [
   {
     id: "FnAlXwpI1Fg",
@@ -34,17 +76,6 @@ export const FALLBACK_VIDEOS: Video[] = [
   },
 ];
 
-export type Photo = {
-  /** File name inside public/photos/ */
-  file: string;
-  /** Described for anyone who can't see it. */
-  alt: string;
-  /** Printed under the picture. */
-  caption: string;
-};
-
-export const PHOTOS: Photo[] = [
-  // Example — delete this comment and add real ones:
-  // { file: "workshop.jpg", alt: "Abby re-rooting a Cabbage Patch doll at her bench",
-  //   caption: "Halfway through a rescue. That hair took four hours." },
-];
+export function photoUrl(photo: Photo): string {
+  return `/photos/${photo.file}`;
+}

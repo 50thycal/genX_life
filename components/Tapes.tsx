@@ -1,4 +1,6 @@
 import { CONTACT } from "@/lib/links";
+import { TAPES_PHOTO } from "@/lib/media";
+import { Framed } from "./Framed";
 import { Section } from "./Section";
 import { SubmitForm } from "./SubmitForm";
 
@@ -25,6 +27,7 @@ export function Tapes() {
     >
       <div className="grid gap-8 lg:grid-cols-[minmax(320px,420px)_1fr]">
         <aside className="space-y-5 lg:order-2">
+          <Framed photo={TAPES_PHOTO} title="tapes.jpg" />
           <div className="card-surface p-5">
             <p className="label-strip mb-3 text-rec">The deal</p>
             <ul className="space-y-3 text-[16.5px] leading-relaxed text-ink-soft">
