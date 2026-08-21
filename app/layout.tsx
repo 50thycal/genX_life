@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo_Black, VT323 } from "next/font/google";
+import { Desktop } from "@/components/Desktop";
 import "./globals.css";
 
 // Matches the blocky poster letters in the channel banner.
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        {children}
+        <Desktop>{children}</Desktop>
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-import { CONTACT } from "@/lib/links";
 import { PORTRAIT } from "@/lib/media";
 import { Framed } from "./Framed";
 import { Section } from "./Section";
@@ -32,29 +31,6 @@ export function About() {
         className="mb-6 max-w-xl"
       />
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="card-surface p-5">
-          <p className="label-strip mb-3 text-rec">Get in touch</p>
-          <p className="text-[16.5px] leading-relaxed text-ink-soft">
-            Story, question, or a box of tapes.{" "}
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="font-medium text-tape underline underline-offset-2"
-            >
-              {CONTACT.email}
-            </a>
-          </p>
-        </div>
-
-        <div className="card-surface p-5">
-          <p className="label-strip mb-3 text-rec">Send something</p>
-          <p className="text-[15px] leading-relaxed text-ink-soft">
-            Our Gen X Life
-            <br />
-            {CONTACT.poBox}
-          </p>
-        </div>
-      </div>
     </Section>
   );
 }

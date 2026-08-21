@@ -1,40 +1,11 @@
-import { About } from "@/components/About";
-import { Channels } from "@/components/Channels";
-import { Footer } from "@/components/Footer";
-import { GenXFiles } from "@/components/GenXFiles";
+import { AppWindow } from "@/components/AppWindow";
 import { Hero } from "@/components/Hero";
-import { Podcast } from "@/components/Podcast";
-import { Shop } from "@/components/Shop";
-import { Videos } from "@/components/Videos";
-import { getListings } from "@/lib/etsy";
-import { FALLBACK_VIDEOS } from "@/lib/media";
-import { getShow } from "@/lib/podcast";
-import { getLatestVideos } from "@/lib/youtube";
+import { pageFor } from "@/lib/pages";
 
-// Everything on this page refreshes itself hourly. Nothing needs hand-editing.
-export const revalidate = 3600;
-
-export default async function Home() {
-  const [show, latestVideos, listings] = await Promise.all([
-    getShow(),
-    getLatestVideos(8),
-    getListings(4),
-  ]);
-
-  const videos = latestVideos.length > 0 ? latestVideos : FALLBACK_VIDEOS;
-
+export default function WelcomePage() {
   return (
-    <>
+    <AppWindow title={pageFor("/").title}>
       <Hero />
-      <main id="main">
-        <Videos videos={videos} />
-        <Channels />
-        <GenXFiles />
-        <Podcast show={show} />
-        <Shop listings={listings} />
-        <About />
-      </main>
-      <Footer />
-    </>
+    </AppWindow>
   );
 }
