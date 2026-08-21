@@ -67,7 +67,7 @@ export function Podcast({ show }: { show: Show | null }) {
                   src={episode.audioUrl}
                   className="mt-4 w-full"
                 >
-                  Your browser can&apos;t play audio — use one of the platform links below.
+                  Your browser can&apos;t play audio. Use one of the platform links below.
                 </audio>
               ) : null}
             </li>
@@ -77,8 +77,8 @@ export function Podcast({ show }: { show: Show | null }) {
         <div className="bevel-in p-6">
           <p className="measure text-[16.5px] leading-relaxed text-ink-soft">
             Episodes load straight from the podcast feed, so this list stays current on its
-            own. It isn&apos;t reachable from here at the moment — pick a platform below in
-            the meantime.
+            own. It isn&apos;t reachable from here at the moment, so pick a platform below
+            in the meantime.
           </p>
         </div>
       )}

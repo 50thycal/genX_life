@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="px-3 pb-4 sm:px-6">
       <div className="mx-auto w-full max-w-6xl window">
         <div className="title-bar">
-          <span className="title-bar-text flex-1 truncate">Our Gen X Life — Contact</span>
+          <span className="title-bar-text flex-1 truncate">Contact</span>
           <div className="flex shrink-0 gap-0.5" aria-hidden="true">
             <span className="title-bar-button">_</span>
             <span className="title-bar-button">□</span>
@@ -51,7 +51,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-track="podcast:rss"
-                title="Podcast RSS feed — for podcast apps"
+                title="Podcast RSS feed, for podcast apps"
                 className="text-tape underline underline-offset-2"
               >
                 RSS feed
@@ -70,7 +70,7 @@ export function Footer() {
             © {new Date().getFullYear()} Our Gen X Life
           </span>
           <span className="status-field ml-auto shrink-0">
-            1970s–1990s
+            1970s to 1990s
           </span>
         </div>
       </div>

@@ -11,7 +11,7 @@ export function Channels() {
       title="One household, three obsessions"
       intro={
         <p>
-          They cover different ground, so here&apos;s what each one is actually for — pick
+          They cover different ground, so here&apos;s what each one is actually for. Pick
           the one that sounds like your childhood.
         </p>
       }
@@ -33,7 +33,11 @@ export function Channels() {
                     src={photoUrl(CHANNEL_IMAGES[channel.name])}
                     alt={CHANNEL_IMAGES[channel.name].alt}
                     loading="lazy"
-                    className="block aspect-video w-full object-cover"
+                    className={`block aspect-video w-full ${
+                      CHANNEL_IMAGES[channel.name].fit === "contain"
+                        ? "bg-black object-contain"
+                        : "object-cover"
+                    }`}
                   />
                 </div>
               ) : null}

@@ -20,7 +20,7 @@ export function Section({
       <div className="mx-auto w-full max-w-6xl window">
         <div className="title-bar">
           <span className="title-bar-text flex-1 truncate">
-            {eyebrow} — {title}
+            {title}
           </span>
           <div className="flex shrink-0 gap-0.5" aria-hidden="true">
             <span className="title-bar-button">_</span>
@@ -43,10 +43,6 @@ export function Section({
           <div className="mt-7">{children}</div>
         </div>
 
-        <div className="flex gap-1 px-1 pb-1">
-          <p className="status-field flex-1">{eyebrow}</p>
-          <p className="status-field w-32 shrink-0">ourgenxlife.com</p>
-        </div>
       </div>
     </section>
   );

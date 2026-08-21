@@ -8,8 +8,7 @@ const SHORTCUTS = [
   { label: "Gen X Files", href: "#genxfiles", glyph: "🗂️" },
   { label: "Podcast", href: "#podcast", glyph: "🎧" },
   { label: "Shop", href: "#shop", glyph: "🛍️" },
-  { label: "Photos", href: "#photos", glyph: "📷" },
-  { label: "Tapes", href: "#tapes", glyph: "📼" },
+  { label: "About", href: "#about", glyph: "📼" },
 ];
 
 /** Fallback wordmark, rebuilt in CSS. Used only when no banner image is set. */
@@ -70,7 +69,7 @@ export function Hero() {
         <div className="window">
           <div className="title-bar">
             <span className="title-bar-text flex-1 truncate">
-              Our Gen X Life — Welcome
+              Our Gen X Life
             </span>
             <div className="flex shrink-0 gap-0.5" aria-hidden="true">
               <span className="title-bar-button">_</span>
@@ -101,9 +100,15 @@ export function Hero() {
               )}
 
               <p className="measure mt-6 text-[16px] leading-relaxed">
-                Keith and Abby spend their weekends at estate sales rescuing the things
-                everyone else threw out — the toys, the tapes, the whole decade. Then they
-                bring it back here, so you can remember it with them.
+                We are the generation who survived the untamed decades of the 70s, 80s and
+                90s, the before times of yesteryear. Raised on hose water and little to no
+                supervision, we&apos;ve been adulting since elementary school. We are the
+                last individuals who grew up off-line. These are our stories.
+              </p>
+
+              <p className="measure mt-4 text-[16px] leading-relaxed">
+                Welcome to OUR GEN X LIFE! Come join the party and subscribe to our vlog
+                and podcast.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -138,10 +143,6 @@ export function Hero() {
             )}
           </div>
 
-          <div className="flex gap-1 px-1 pb-1">
-            <p className="status-field flex-1">Ready</p>
-            <p className="status-field w-40 shrink-0">Andover, Kansas</p>
-          </div>
         </div>
       </div>
     </header>

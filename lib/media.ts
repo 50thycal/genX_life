@@ -4,7 +4,7 @@ import type { Video } from "./youtube";
  * ── WHERE PHOTOS AND VIDEO GO ────────────────────────────────────────────
  *
  * Images live in  public/photos/  and video in  public/video/ , referenced
- * below by file name. Every slot is optional — an empty one renders nothing
+ * below by file name. Every slot is optional. An empty one renders nothing
  * and the layout holds without it.
  *
  * File names: lowercase, hyphens, no spaces or apostrophes. Spaces have to be
@@ -22,6 +22,11 @@ export type Photo = {
   alt: string;
   /** Printed under the picture. Optional for the single-slot photos. */
   caption?: string;
+  /**
+   * "contain" letterboxes the whole image on black instead of cropping it.
+   * Use it for banner artwork, whose shape never matches the frame.
+   */
+  fit?: "cover" | "contain";
 };
 
 /** SLOT 1 — the banner across the top of the hero. Both of them, plus the logo. */
@@ -35,12 +40,18 @@ export const CHANNEL_IMAGES: Record<string, Photo> = {
   "Our Gen X Life": {
     file: "genx-logo.png",
     alt: "The Our Gen X Life logo",
+    fit: "contain",
   },
   "Abby's Retro Rescue": {
     file: "retro-rescue-banner.png",
     alt: "Abby holding rescued plush toys, beside the Abby's Retro Rescue logo",
+    fit: "contain",
   },
-  // "Your Life On Tape": waiting on artwork.
+  "Your Life On Tape": {
+    file: "your-life-on-tape.png",
+    alt: "A VHS cassette labelled Your Life On Tape",
+    fit: "contain",
+  },
 };
 
 /** SLOT 3 — the gallery grid. Workshop shots, finds, rescues in progress. */
@@ -57,13 +68,14 @@ export const BENCH_PHOTO: Photo | null = null;
 /** SLOT 6 — heading the Gen X Files section. */
 export const GENXFILES_IMAGE: Photo | null = {
   file: "gen-x-files-logo.png",
-  alt: "The Gen X Files logo — a glowing green X on black",
+  alt: "The Gen X Files logo, a glowing green X on black",
 };
 
-/** SLOT 7 — the podcast's cover art, beside the episode list. */
+/** SLOT 7 — the About window. */
 export const PORTRAIT: Photo | null = {
-  file: "abby-portrait.png",
-  alt: "Abby holding a rescued Care Bear",
+  file: "genx-banner-long.png",
+  alt: "Keith and Abby beside the Our Gen X Life logo",
+  fit: "contain",
 };
 
 /**
@@ -75,7 +87,7 @@ export const PORTRAIT: Photo | null = {
  */
 export const PODCAST_IMAGE: Photo | null = {
   file: "podcast-cover.png",
-  alt: "The podcast cover — Keith and Abby beside the Our 80s Life logo",
+  alt: "The podcast cover: Keith and Abby beside the Our 80s Life logo",
 };
 
 export type HeroVideoSlot = {
@@ -109,7 +121,7 @@ export const HERO_VIDEO: HeroVideoSlot | null = {
 export const FALLBACK_VIDEOS: Video[] = [
   {
     id: "FnAlXwpI1Fg",
-    title: "Our Gen X Life — Episode 1",
+    title: "Our Gen X Life, Episode 1",
     channel: "Our Gen X Life",
     published: null,
   },

@@ -27,8 +27,8 @@ export function About() {
     >
       <Framed
         photo={PORTRAIT}
-        title="keith-and-abby.jpg"
-        aspect="aspect-[3/2]"
+        title="genx-banner-long.png"
+        aspect="aspect-[16/5]"
         className="mb-6 max-w-xl"
       />
 
@@ -36,7 +36,7 @@ export function About() {
         <div className="card-surface p-5">
           <p className="label-strip mb-3 text-rec">Get in touch</p>
           <p className="text-[16.5px] leading-relaxed text-ink-soft">
-            Story, question, or a box of tapes —{" "}
+            Story, question, or a box of tapes.{" "}
             <a
               href={`mailto:${CONTACT.email}`}
               className="font-medium text-tape underline underline-offset-2"

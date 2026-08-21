@@ -9,20 +9,19 @@ import { Section } from "./Section";
  * Etsy is one-of-a-kind and sells on scarcity; Spreadshop is unlimited stock
  * and sells on identity. Giving them equal weight would flatten both.
  */
+
 export function Shop({ listings }: { listings: Listing[] | null }) {
   return (
     <Section
       id="shop"
       eyebrow="The shop"
       title="Take something home"
-      intro={<p>Two very different things live here, so they get two different shelves.</p>}
+      intro={<p>Check out our Etsy shop and merch!</p>}
     >
-      {/* Just rescued — the scarcity play, live from Etsy */}
+      {/* Just rescued: the scarcity play, live from Etsy */}
       {listings && listings.length > 0 ? (
         <div className="mb-6">
-          <p className="label-strip mb-3 text-rec-deep">
-            Just rescued — one of each, when it&apos;s gone it&apos;s gone
-          </p>
+          <p className="label-strip mb-3 text-rec-deep">Just rescued</p>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {listings.map((listing) => (
               <li key={listing.id}>
@@ -71,7 +70,7 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           className="card-surface group flex flex-col p-6"
         >
           <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-rec-deep">
-            One of each — when it&apos;s gone, it&apos;s gone
+            Abby&apos;s Etsy Store
           </span>
 
           <h3 className="font-display text-xl leading-tight text-balance">
@@ -103,7 +102,7 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           className="card-surface group flex flex-col p-6"
         >
           <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-tape">
-            Shirts, mugs, the usual
+            Gen X Life Merch
           </span>
 
           <h3 className="font-display text-xl leading-tight text-balance">

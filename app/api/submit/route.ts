@@ -45,7 +45,7 @@ export async function POST(request: Request) {
 
   if (!name || !email || !body) {
     return NextResponse.json(
-      { message: "Looks like something's still blank — check the required fields." },
+      { message: "Looks like something's still blank. Check the required fields." },
       { status: 400 },
     );
   }
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
   if (!apiKey || !from) {
     return NextResponse.json(
       {
-        message: `Submissions aren't switched on yet — this is a preview of the new site. Email it to ${CONTACT.email} for now and it'll get read just the same.`,
+        message: `Submissions aren't switched on yet. This is a preview of the new site. Email it to ${CONTACT.email} for now and it'll get read just the same.`,
       },
       { status: 503 },
     );
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
   const lines = [
     `Kind: ${config.subject}`,
     `From: ${name} <${email}>`,
-    `Attribution: ${anonymous ? "ANONYMOUS — do not use their name" : "OK to use their name"}`,
+    `Attribution: ${anonymous ? "ANONYMOUS, do not use their name" : "OK to use their name"}`,
     "",
     body,
   ].join("\n");
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
         from,
         to: [CONTACT.email],
         reply_to: email,
-        subject: `${config.subject} — ${anonymous ? "anonymous" : name}`,
+        subject: `${config.subject}: ${anonymous ? "anonymous" : name}`,
         text: lines,
       }),
     });

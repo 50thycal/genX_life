@@ -20,13 +20,13 @@ const terminal = VT323({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ourgenxlife.com"),
-  title: "Our Gen X Life — 70s, 80s and 90s nostalgia with Keith & Abby",
+  title: "Our Gen X Life: 70s, 80s and 90s nostalgia with Keith & Abby",
   description:
     "Three YouTube channels, a podcast, restored vintage toys and a growing archive of Gen X stories sent in by the people who lived them.",
   openGraph: {
     title: "Our Gen X Life",
     description:
-      "70s, 80s and 90s nostalgia with Keith & Abby. Videos, a podcast, rescued vintage, and the Gen X Files.",
+      "70s, 80s and 90s nostalgia with Keith and Abby. Videos, a podcast, rescued vintage, and the Gen X Files.",
     url: "https://www.ourgenxlife.com",
     siteName: "Our Gen X Life",
     type: "website",
