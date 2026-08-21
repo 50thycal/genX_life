@@ -31,7 +31,7 @@ export type Photo = {
 
 /** SLOT 1 — the banner across the top of the hero. Both of them, plus the logo. */
 export const HERO_BANNER: Photo | null = {
-  file: "genx-banner-long.png",
+  file: "genx-banner-long.jpg",
   alt: "Keith and Abby beside the Our Gen X Life logo",
 };
 
@@ -43,12 +43,12 @@ export const CHANNEL_IMAGES: Record<string, Photo> = {
     fit: "contain",
   },
   "Abby's Retro Rescue": {
-    file: "retro-rescue-banner.png",
+    file: "retro-rescue-card.jpg",
     alt: "Abby holding rescued plush toys, beside the Abby's Retro Rescue logo",
     fit: "contain",
   },
   "Your Life On Tape": {
-    file: "your-life-on-tape.png",
+    file: "your-life-on-tape.jpg",
     alt: "A VHS cassette labelled Your Life On Tape",
     fit: "contain",
   },
@@ -65,15 +65,27 @@ export const TAPES_PHOTO: Photo | null = null;
 /** SLOT 5 — beside the shop. */
 export const BENCH_PHOTO: Photo | null = null;
 
+/** SLOT 5b — the artwork on each of the two shop cards. */
+export const SHOP_IMAGES: { etsy: Photo | null; merch: Photo | null } = {
+  etsy: {
+    file: "etsy-shop.jpg",
+    alt: "Abby holding rescued plush toys, beside the Abby's Retro Rescue logo",
+  },
+  merch: {
+    file: "merch-shop.jpg",
+    alt: "A retro television showing the words Our Gen X Life",
+  },
+};
+
 /** SLOT 6 — heading the Gen X Files section. */
 export const GENXFILES_IMAGE: Photo | null = {
-  file: "gen-x-files-logo.png",
+  file: "gen-x-files-logo.jpg",
   alt: "The Gen X Files logo, a glowing green X on black",
 };
 
 /** SLOT 7 — the About window. */
 export const PORTRAIT: Photo | null = {
-  file: "genx-banner-long.png",
+  file: "genx-banner-long.jpg",
   alt: "Keith and Abby beside the Our Gen X Life logo",
   fit: "contain",
 };
@@ -86,7 +98,7 @@ export const PORTRAIT: Photo | null = {
  * left carrying the old brand, and it wants redoing when the show is renamed.
  */
 export const PODCAST_IMAGE: Photo | null = {
-  file: "podcast-cover.png",
+  file: "podcast-cover.jpg",
   alt: "The podcast cover: Keith and Abby beside the Our 80s Life logo",
 };
 

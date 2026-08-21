@@ -1,6 +1,6 @@
 import { SHOP } from "@/lib/links";
 import type { Listing } from "@/lib/etsy";
-import { BENCH_PHOTO } from "@/lib/media";
+import { BENCH_PHOTO, SHOP_IMAGES, photoUrl } from "@/lib/media";
 import { Framed } from "./Framed";
 import { Section } from "./Section";
 
@@ -69,6 +69,18 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           data-track="shop:etsy"
           className="card-surface group flex flex-col p-6"
         >
+          {SHOP_IMAGES.etsy ? (
+            <div className="bevel-in mb-4 p-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={photoUrl(SHOP_IMAGES.etsy)}
+                alt={SHOP_IMAGES.etsy.alt}
+                loading="lazy"
+                className="block w-full object-cover"
+              />
+            </div>
+          ) : null}
+
           <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-rec-deep">
             Abby&apos;s Etsy Store
           </span>
@@ -101,6 +113,18 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           data-track="shop:spreadshop"
           className="card-surface group flex flex-col p-6"
         >
+          {SHOP_IMAGES.merch ? (
+            <div className="bevel-in mb-4 p-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={photoUrl(SHOP_IMAGES.merch)}
+                alt={SHOP_IMAGES.merch.alt}
+                loading="lazy"
+                className="block w-full object-cover"
+              />
+            </div>
+          ) : null}
+
           <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-tape">
             Gen X Life Merch
           </span>

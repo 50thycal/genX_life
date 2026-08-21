@@ -1,4 +1,4 @@
-import { CONTACT } from "@/lib/links";
+import { CONTACT, SOCIALS } from "@/lib/links";
 import { HERO_BANNER, HERO_VIDEO, photoUrl } from "@/lib/media";
 import { HeroVideo } from "./HeroVideo";
 
@@ -118,6 +118,26 @@ export function Hero() {
                 <a href="#genxfiles" className="btn-sun">
                   Send us your story
                 </a>
+              </div>
+
+              {/* Socials up front, so nobody has to reach the footer to find them. */}
+              <div className="mt-8">
+                <p className="label-strip mb-3 text-ink-faint">Follow along</p>
+                <ul className="flex flex-wrap gap-2">
+                  {SOCIALS.map((social) => (
+                    <li key={social.href}>
+                      <a
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-track={`social:${social.name}`}
+                        className="btn-95 !min-w-0 !px-4 !py-1.5 inline-flex text-[12px]"
+                      >
+                        {social.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <p className="label-strip mt-6 text-ink-faint">{CONTACT.email}</p>
