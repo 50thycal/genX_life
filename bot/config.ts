@@ -32,6 +32,18 @@ export const YOUTUBE = {
   minSubscribers: 500,
 } as const;
 
+export const EBAY = {
+  /** Marketplace to search. US only — the audience and the channels are US-based. */
+  marketplace: "EBAY_US",
+  /** Listings pulled per term. Also the sample the median asking price is drawn from. */
+  limit: 50,
+  /**
+   * Below this many total matches, a "median price" is a coin flip on two or
+   * three listings, not a market. Skip the term rather than report noise.
+   */
+  minListings: 3,
+} as const;
+
 export const REDDIT = {
   /** Posts pulled per subreddit for the discovery layer. */
   postsPerSub: 100,

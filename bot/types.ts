@@ -42,7 +42,14 @@ export type Term = {
  */
 export type Signal = {
   term: string;
-  source: "wikipedia" | "youtube" | "reddit";
+  /**
+   * `ebay` is asking-price movement and feeds ranking like any other source.
+   * `ebay-listings` is supply (how many are for sale) — tracked and diffed the
+   * same way, but deliberately excluded from momentum and volume in score.ts.
+   * A pile of new listings appearing is information about supply, not about
+   * attention, and letting it rank a term would blur two different questions.
+   */
+  source: "wikipedia" | "youtube" | "reddit" | "ebay" | "ebay-listings";
   /** Raw current level. Used for the volume floor, not for ranking. */
   level: number;
   /** Change against this term's own recent baseline, as a multiplier. 1 = flat. */

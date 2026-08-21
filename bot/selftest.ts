@@ -58,6 +58,11 @@ const terms: Term[] = [
   { term: "The Electric Company", kind: "media", era: "70s", category: "tv" },
   { term: "80s nostalgia", kind: "barometer", era: "80s", category: "era" },
   { term: "Sears Wish Book", kind: "phrase", era: "80s", category: "retail", merch: true },
+  // Listings alone, rising sharply — must not be able to earn a ranking on its own.
+  { term: "Fisher-Price Little People", kind: "object", era: "70s", category: "toys", object: true },
+  // eBay price alone, no wiki/youtube/reddit at all — proves the price signal
+  // can carry a term into the ranked lists by itself.
+  { term: "Jordache jeans", kind: "object", era: "80s", category: "fashion", merch: true, object: true },
 ];
 
 // Trapper Keeper spiking hard, Zima flat, Electric Company mild, barometer spiking.
@@ -92,6 +97,13 @@ const signals: Signal[] = [
   // Real ratio, but under the old 15% text threshold — the exact shape that
   // shipped as "Steady — no movement" on a term the report was ranking.
   { term: "Sears Wish Book", source: "wikipedia", level: 320, ratio: 1.06, z: 0.3 },
+  // Sharp rise against a flat baseline (25 vs a steady 10) — real positive z.
+  // If the momentum/volume exclusion in score.ts ever regresses, this alone
+  // would be enough to rank the term.
+  { term: "Fisher-Price Little People", source: "ebay-listings", level: 25, ratio: 1, z: 0 },
+  // Price up against a flat $30 baseline; listings down against a flat 40.
+  { term: "Jordache jeans", source: "ebay", level: 45, ratio: 1, z: 0 },
+  { term: "Jordache jeans", source: "ebay-listings", level: 30, ratio: 1, z: 0 },
 ];
 
 const outliers: Outlier[] = [
@@ -115,6 +127,19 @@ const history: Snapshot[] = [
     terms: [
       { term: "Trapper Keeper", signals: [{ term: "Trapper Keeper", source: "youtube", level: 100_000, ratio: 1, z: 0 }], score: 40 },
       { term: "Zima", signals: [{ term: "Zima", source: "youtube", level: 205_000, ratio: 1, z: 0 }], score: 30 },
+      {
+        term: "Fisher-Price Little People",
+        signals: [{ term: "Fisher-Price Little People", source: "ebay-listings", level: 10, ratio: 1, z: 0 }],
+        score: 20,
+      },
+      {
+        term: "Jordache jeans",
+        signals: [
+          { term: "Jordache jeans", source: "ebay", level: 30, ratio: 1, z: 0 },
+          { term: "Jordache jeans", source: "ebay-listings", level: 40, ratio: 1, z: 0 },
+        ],
+        score: 25,
+      },
     ],
     candidates: [],
     degraded: [],
@@ -124,6 +149,19 @@ const history: Snapshot[] = [
     terms: [
       { term: "Trapper Keeper", signals: [{ term: "Trapper Keeper", source: "youtube", level: 110_000, ratio: 1, z: 0 }], score: 42 },
       { term: "Zima", signals: [{ term: "Zima", source: "youtube", level: 195_000, ratio: 1, z: 0 }], score: 31 },
+      {
+        term: "Fisher-Price Little People",
+        signals: [{ term: "Fisher-Price Little People", source: "ebay-listings", level: 10, ratio: 1, z: 0 }],
+        score: 20,
+      },
+      {
+        term: "Jordache jeans",
+        signals: [
+          { term: "Jordache jeans", source: "ebay", level: 30, ratio: 1, z: 0 },
+          { term: "Jordache jeans", source: "ebay-listings", level: 40, ratio: 1, z: 0 },
+        ],
+        score: 25,
+      },
     ],
     candidates: [],
     degraded: [],
@@ -133,7 +171,7 @@ const history: Snapshot[] = [
 console.log("\nscoring");
 const scored = scoreTerms(terms, structuredClone(signals), outliers, history);
 
-check("every term with a signal is scored", scored.length === 5, `got ${scored.length}`);
+check("every term with a signal is scored", scored.length === 7, `got ${scored.length}`);
 check(
   "the spiking term outranks the flat one",
   (scored.find((s) => s.term.term === "Trapper Keeper")?.score ?? 0) >
@@ -168,6 +206,36 @@ check(
   "its evidence names the move instead of contradicting the ranking",
   (wishBook?.because ?? "").includes("Wikipedia") && !(wishBook?.because ?? "").includes("Steady"),
   `got "${wishBook?.because}"`,
+);
+
+// eBay: listings measure supply, not attention, and must never be able to
+// rank a term on their own — only price movement (or a genuine attention
+// signal) should.
+const listingsOnly = scored.find((s) => s.term.term === "Fisher-Price Little People");
+check(
+  "listings rising sharply still can't earn momentum on their own",
+  listingsOnly?.factors.momentum === 0,
+  `got momentum=${listingsOnly?.factors.momentum}`,
+);
+check(
+  "listings rising sharply still can't earn volume on their own",
+  listingsOnly?.factors.volume === 0,
+  `got volume=${listingsOnly?.factors.volume}`,
+);
+
+// eBay price, with no wiki/youtube/reddit signal at all, should be able to
+// carry a term into the ranked lists by itself — that's the point of adding it.
+const jordache = scored.find((s) => s.term.term === "Jordache jeans");
+check("eBay price movement alone earns momentum", (jordache?.factors.momentum ?? 0) > 0);
+check(
+  "its evidence names the price move",
+  (jordache?.because ?? "").includes("eBay asking prices up"),
+  `got "${jordache?.because}"`,
+);
+check(
+  "its evidence names the listings direction, not just the price",
+  (jordache?.because ?? "").includes("eBay listings down"),
+  `got "${jordache?.because}"`,
 );
 
 // ── Report ──────────────────────────────────────────────────────────────────
@@ -205,6 +273,14 @@ check(
   !markdown.includes("Steady — no movement"),
   "a ranked entry contradicted itself",
 );
+
+const watchForSection = markdown.split("## Watch for")[1]?.split("## New terms")[0] ?? "";
+check(
+  "listings-only movement stays out of Watch for",
+  !watchForSection.includes("Fisher-Price Little People"),
+  "an object ranked on listing count alone, which is a supply signal, not attention",
+);
+check("eBay-price-only movement reaches Watch for", watchForSection.includes("Jordache jeans"));
 
 const mature = renderReport(snapshot, scored, 8);
 check("the warning disappears once history is deep enough", !mature.includes("Still building its baseline"));
