@@ -100,9 +100,11 @@ function watchFor(scored: ScoredTerm[]): string {
   }
 
   lines.push(
-    "Objects whose *attention* is rising. This list has no price data behind it yet —",
-    "resale comps arrive with the eBay and Terapeak work, and until then these are",
-    "worth a look, not a valuation.",
+    "Objects whose *attention or eBay asking-price activity* is rising. Prices here",
+    "are current asking prices, not sold comps — a real valuation still means",
+    "checking Terapeak by hand. Rising prices against a shrinking listing count is",
+    "a real supply-tightening signal on its own, but treat this as where to look,",
+    "not what to pay.",
     "",
     "| Object | Score | What moved |",
     "| --- | --- | --- |",

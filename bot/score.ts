@@ -92,6 +92,22 @@ function explain(term: Term, signals: Signal[], outlier: Outlier | undefined): s
     parts.push(`YouTube interest up ${Math.round((yt.ratio - 1) * 100)}% week over week`);
   }
 
+  const ebay = signals.find((s) => s.source === "ebay");
+  if (ebay && ebay.z > 0) {
+    parts.push(`eBay asking prices up ${Math.round((ebay.ratio - 1) * 100)}% (median $${ebay.level.toFixed(2)})`);
+  }
+
+  // Listings run the opposite way from every other signal here: a *falling*
+  // count is the interesting direction (supply tightening), so this can't
+  // share the z > 0 gate the others use. Gated on ratio !== 1 instead — that's
+  // the sentinel `movement()` returns when a term has no real baseline yet,
+  // so this only fires once there's a week to compare against.
+  const listings = signals.find((s) => s.source === "ebay-listings");
+  if (listings && listings.ratio !== 1) {
+    const change = Math.round((listings.ratio - 1) * 100);
+    parts.push(`eBay listings ${change < 0 ? "down" : "up"} ${Math.abs(change)}%`);
+  }
+
   if (outlier) {
     parts.push(
       `"${outlier.title}" did ${outlier.views.toLocaleString()} views from a ` +
@@ -127,11 +143,16 @@ export function scoreTerms(
     const termOutliers = outliers.filter((o) => o.term === term.term);
     const best = termOutliers[0];
 
+    // `ebay-listings` is excluded from both factors below: it measures supply,
+    // not attention, and a raw listing count (tens, not thousands) isn't
+    // comparable to a view or pageview count on the same log scale.
+    const attentionSignals = mine.filter((s) => s.source !== "ebay-listings");
+
     // Momentum takes the strongest single source rather than an average: a term
     // can be genuinely hot on Reddit while flat on Wikipedia, and averaging that
     // to "mild" would bury exactly the signal worth acting on.
-    const momentum = Math.max(0, ...mine.map((s) => fromZ(s.z)));
-    const volume = Math.max(0, ...mine.map((s) => fromVolume(s.level)));
+    const momentum = Math.max(0, ...attentionSignals.map((s) => fromZ(s.z)));
+    const volume = Math.max(0, ...attentionSignals.map((s) => fromVolume(s.level)));
 
     const yt = mine.find((s) => s.source === "youtube");
     const competition = fromCompetition(Number(yt?.detail?.recentVideoCount ?? 0));

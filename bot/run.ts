@@ -19,6 +19,7 @@ import { loadHistory, saveSnapshot } from "./history";
 import { REPORTS_DIR } from "./paths";
 import { renderReport } from "./report";
 import { scoreTerms } from "./score";
+import { collectEbay } from "./sources/ebay";
 import { collectReddit } from "./sources/reddit";
 import { collectWikipedia } from "./sources/wikipedia";
 import { collectYouTube } from "./sources/youtube";
@@ -66,6 +67,16 @@ async function main(): Promise<void> {
   } catch (error) {
     console.error(`  failed: ${(error as Error).message}`);
     degraded.push("Reddit");
+  }
+
+  console.log("eBay…");
+  try {
+    const result = await collectEbay(WATCHLIST);
+    signals.push(...result.signals);
+    if (!result.available) degraded.push("eBay (no credentials)");
+  } catch (error) {
+    console.error(`  failed: ${(error as Error).message}`);
+    degraded.push("eBay");
   }
 
   if (signals.length === 0) {

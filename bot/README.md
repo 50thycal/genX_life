@@ -20,13 +20,14 @@ the output — the baseline is the one thing that can't be bought later.
 
 ## What it does
 
-Roughly a hundred watchlist terms, measured across three sources each week:
+Roughly a hundred watchlist terms, measured across four sources each week:
 
 | Source | Cost | What it contributes |
 | --- | --- | --- |
 | Wikipedia pageviews | Free, no key | Attention on a specific object. Arrives with 90 days of history. |
 | YouTube Data API v3 | Free, 10k units/day | Demand and competition, plus the outlier score |
 | Reddit | Free, non-commercial | Discovery — proposes terms nobody thought of |
+| eBay Browse API | Free, 5k calls/day | Asking-price and listing-count movement for objects — not sold comps |
 
 Two outputs per run, both committed:
 
@@ -81,6 +82,20 @@ on the whole project. Everything else takes minutes.
 Free for non-commercial use at 100 queries a minute. The bot uses about 24 calls
 a week, so the ceiling is irrelevant.
 
+### `EBAY_CLIENT_ID` / `EBAY_CLIENT_SECRET`
+
+App-level access only — no seller account, no user login, and unlike Reddit
+there's no manual review queue.
+
+1. [developer.ebay.com](https://developer.ebay.com/) → sign up for a free
+   developer account
+2. **My Account → Application Keys**
+3. Under **Production**, copy the **App ID** (→ `EBAY_CLIENT_ID`) and the
+   **Cert ID** (→ `EBAY_CLIENT_SECRET`)
+
+Free, 5,000 calls/day. The bot searches one term per object on the watchlist —
+under 100 calls a week, nowhere near the ceiling.
+
 ## The watchlist is the product
 
 `watchlist.ts` decides whether any of this is worth reading. It was seeded from
@@ -117,11 +132,18 @@ down. They get their own section at the bottom of the report.
 
 ## What isn't built yet
 
-The **Watch for — Abby** list currently ranks objects by rising *attention*
-only. There is no price data behind it. Real resale comps need eBay and
-Terapeak, which is the Tier 2 work in the plan — the free APIs give asking
-prices rather than sale prices, and the report is explicit about that rather
-than implying a valuation it can't support.
+**Watch for — Abby** now carries eBay asking-price and listing-count
+movement alongside attention, but it's still not a valuation. eBay's free
+API only exposes active listings — the sold-comps endpoint was shut off in
+February 2025, and the official replacement is business-tier gated in a way
+independent developers don't get through. A real number still means checking
+Terapeak on the shortlist by hand; the report says this explicitly rather
+than implying more than the data supports.
+
+Listing count is tracked but deliberately excluded from ranking — a term
+can't get onto Film this or Print this on listing-count movement alone, only
+on genuine attention (Wikipedia, YouTube, Reddit) or asking-price movement.
+A pile of new listings appearing is supply information, not a video idea.
 
 ## Layout
 
