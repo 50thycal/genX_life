@@ -1,0 +1,722 @@
+<title>Nostalgia Desk</title>
+<style>
+  :root {
+    --paper:      #F7F8F3;
+    --bar:        #E7EDE1;
+    --rule:       #C9D1C4;
+    --ink:        #1D231E;
+    --muted:      #6A7167;
+    --amber:      #9C6B08;
+    --amber-soft: #F0E3C4;
+    --go:         #2F6B41;
+    --go-soft:    #DCEBE0;
+    --stop:       #97341F;
+    --stop-soft:  #F3DED8;
+    --hold:       #6A5A20;
+    --hold-soft:  #EFE8CE;
+
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+
+    --measure: 40rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #12150F;
+      --bar:        #1A1E16;
+      --rule:       #333A2F;
+      --ink:        #DAD9CA;
+      --muted:      #8B9080;
+      --amber:      #DDA43C;
+      --amber-soft: #2E2612;
+      --go:         #74B184;
+      --go-soft:    #1A2A1E;
+      --stop:       #D9765F;
+      --stop-soft:  #2E1C17;
+      --hold:       #C4B26A;
+      --hold-soft:  #282415;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #12150F;
+    --bar:        #1A1E16;
+    --rule:       #333A2F;
+    --ink:        #DAD9CA;
+    --muted:      #8B9080;
+    --amber:      #DDA43C;
+    --amber-soft: #2E2612;
+    --go:         #74B184;
+    --go-soft:    #1A2A1E;
+    --stop:       #D9765F;
+    --stop-soft:  #2E1C17;
+    --hold:       #C4B26A;
+    --hold-soft:  #282415;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 1.25rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: var(--measure);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* tractor-feed perforation rails */
+  .sheet::before,
+  .sheet::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+    background-image: radial-gradient(circle at 50% 6px, var(--rule) 2.2px, transparent 2.4px);
+    background-size: 7px 24px;
+    opacity: .55;
+    pointer-events: none;
+  }
+  .sheet::before { left: -2.75rem; }
+  .sheet::after  { right: -2.75rem; }
+
+  @media (max-width: 46rem) {
+    .sheet::before, .sheet::after { display: none; }
+  }
+
+  /* ---- masthead ---- */
+
+  header.masthead {
+    padding: 4.5rem 0 2rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .6875rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.25rem;
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(2rem, 7vw, 3.25rem);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    font-size: 1.1875rem;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 1.25rem 0 0;
+    text-wrap: pretty;
+  }
+
+  /* ---- the thesis block ---- */
+
+  .thesis {
+    margin: 3rem 0;
+    padding: 1.75rem 0 1.75rem 1.5rem;
+    border-left: 3px solid var(--amber);
+  }
+
+  .thesis p { margin: 0; font-size: 1.25rem; line-height: 1.45; text-wrap: pretty; }
+  .thesis strong { color: var(--amber); font-weight: 600; }
+
+  /* ---- sections ---- */
+
+  section { margin-top: 3.5rem; }
+
+  h2 {
+    font-family: var(--mono);
+    font-size: .8125rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+    padding-bottom: .625rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: .875rem;
+  }
+
+  h2 .num { color: var(--amber); }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: 1.3125rem;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 2.5rem 0 .625rem;
+    text-wrap: balance;
+  }
+
+  h3 .tier-tag {
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: .375rem;
+    font-weight: 400;
+  }
+
+  p { margin: 0 0 1.125rem; text-wrap: pretty; }
+
+  a { color: var(--amber); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  strong { font-weight: 600; }
+
+  ul { margin: 0 0 1.125rem; padding-left: 1.125rem; }
+  li { margin-bottom: .4375rem; }
+
+  /* ---- data tables: green-bar paper ---- */
+
+  .scroll {
+    overflow-x: auto;
+    margin: 1.5rem 0 1.75rem;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 30rem;
+    font-family: var(--mono);
+    font-size: .8125rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.45;
+  }
+
+  thead th {
+    text-align: left;
+    font-size: .625rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    padding: .625rem .875rem;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: .6875rem .875rem;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(odd) { background: var(--bar); }
+
+  tbody td:first-child { font-weight: 600; }
+
+  /* ---- verdict chips ---- */
+
+  .chip {
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: .1875rem .5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .chip.go   { background: var(--go-soft);   color: var(--go); }
+  .chip.stop { background: var(--stop-soft); color: var(--stop); }
+  .chip.hold { background: var(--hold-soft); color: var(--hold); }
+
+  /* ---- pull metric ---- */
+
+  .metric {
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.375rem;
+    background: var(--amber-soft);
+    border-radius: 3px;
+  }
+  .metric .label {
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: .5rem;
+  }
+  .metric .formula {
+    font-family: var(--mono);
+    font-size: .9375rem;
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 0;
+  }
+  .metric .note {
+    font-size: .9375rem;
+    color: var(--muted);
+    margin: .625rem 0 0;
+    font-family: var(--serif);
+  }
+
+  /* ---- report mock ---- */
+
+  .report {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 1.75rem 0;
+  }
+  .report-row {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .report-row:last-child { border-bottom: 0; }
+  .report-row .head {
+    font-family: var(--mono);
+    font-size: .6875rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--amber);
+    margin-bottom: .375rem;
+  }
+  .report-row .desc { font-size: .9688rem; color: var(--muted); margin: 0; }
+
+  /* ---- example callout ---- */
+
+  .example {
+    font-family: var(--mono);
+    font-size: .875rem;
+    line-height: 1.55;
+    background: var(--bar);
+    border-left: 3px solid var(--go);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* ---- watchlist ---- */
+
+  .watchlist { display: grid; gap: 1.125rem; margin: 1.5rem 0; }
+  .watch-group .cat {
+    font-family: var(--mono);
+    font-size: .625rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .3125rem;
+  }
+  .watch-group .terms { font-size: 1rem; line-height: 1.5; }
+
+  /* ---- closing ---- */
+
+  .closing {
+    margin-top: 3.5rem;
+    padding: 1.75rem;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+  }
+  .closing h2 { border: 0; padding: 0; margin-bottom: .875rem; }
+  .closing p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: .6875rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <p class="eyebrow">
+      <span>Our Gen X Life</span>
+      <span>Research phase</span>
+      <span>16 Aug 2026</span>
+    </p>
+    <h1>Nostalgia Desk</h1>
+    <p class="standfirst">
+      A weekly bot that reads the internet for Keith and Abby — video ideas, merch ideas, and
+      a list of what to grab at Saturday's estate sale. This is the research: which numbers
+      are worth watching, and which doors are actually open.
+    </p>
+  </header>
+
+  <div class="thesis">
+    <p>
+      The instinct is to point a bot at <em>what's trending right now</em>. That doesn't work here.
+      The fix is to invert it: <strong>you supply the vocabulary, the bot measures the movement.</strong>
+    </p>
+  </div>
+
+  <section>
+    <h2><span class="num">01</span> Why general trend feeds fail this brand</h2>
+
+    <p>
+      Two facts settle the architecture before any code gets written.
+    </p>
+
+    <p>
+      <strong>Google Trends' daily list is news.</strong> Elections, sports scores, celebrity
+      deaths, last night's Netflix drop. It refreshes hourly and it will never once surface a
+      Trapper Keeper.
+    </p>
+
+    <p>
+      <strong>YouTube's "most popular" chart is no longer general.</strong> In July 2025 YouTube
+      changed what that endpoint returns — it now feeds from the Trending Music, Movies and
+      Gaming charts. The first endpoint anyone reaches for is now structurally incapable of
+      showing a nostalgia channel.
+    </p>
+
+    <p>
+      So instead: a watchlist of a few hundred Gen X terms — objects, brands, shows, snacks —
+      measured every week against <em>their own</em> 90-day baseline. Not what's big, but what
+      <em>moved</em>. "Fisher-Price Little People up 240% week over week" is a video idea.
+      "Star Wars is popular" is not.
+    </p>
+
+    <p>
+      A second layer reads the nostalgia subreddits and surfaces terms that are spiking but
+      aren't on the watchlist yet. That's the half that finds things before you do.
+    </p>
+
+    <p>
+      <strong>One consequence to plan around: this bot is worth nothing in week one.</strong>
+      Every metric is relative to a baseline it has to build first. It gets genuinely useful
+      around week four to six. Anything it says before then is noise.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span> Three surfaces, three kinds of data</h2>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Surface</th><th>The question</th><th>Signal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>YouTube</td><td>What do we film this week?</td><td>Attention</td></tr>
+          <tr><td>Merch</td><td>What's worth printing?</td><td>Attention, filtered</td></tr>
+          <tr><td>Retro Rescue</td><td>What do I grab Saturday?</td><td>Money</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Attention data is free and plentiful. Money data is gated and expensive. That asymmetry
+      drives every recommendation below.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span> The sources, in build order</h2>
+
+    <h3><span class="tier-tag">Tier 1 · free, no gates</span>Wikipedia pageviews — the sleeper pick</h3>
+    <p>
+      No key, no meaningful rate limit, no terms-of-service exposure, and near-perfect for this
+      brand specifically: every Gen X artifact has an article. Teddy Ruxpin. Zima. Blockbuster.
+      Pyrex. The metric is daily views scored against that article's own 90-day mean — a spike
+      means something reminded a lot of people of that object this week. Cheapest real signal
+      in the list, and almost nobody uses it this way.
+    </p>
+
+    <h3><span class="tier-tag">Tier 1</span>YouTube Data API — but not the obvious endpoint</h3>
+    <p>
+      Free, 10,000 units a day. The catch: a search costs 100 units, so the real budget is about
+      <strong>100 searches a day</strong>, not 10,000. That's why the watchlist cycles across the
+      week instead of hitting everything daily. Fetching stats for videos you've already found
+      is nearly free — 50 at a time for a single unit.
+    </p>
+
+    <div class="metric">
+      <span class="label">The metric that matters</span>
+      <p class="formula">outlier = (views ÷ days since publish) ÷ channel subscribers</p>
+      <p class="note">
+        A 12k-subscriber channel pulling 300k views in two weeks proves the topic is hungry
+        <em>and</em> that you don't need a big channel to catch it. Cross it with how many videos
+        on that topic exist — high demand against low supply is the gap you film into.
+      </p>
+    </div>
+
+    <h3><span class="tier-tag">Tier 1 · access is messy</span>Google Trends</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Route</th><th>Status, Aug 2026</th><th>Verdict</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Official API</td><td>Gated alpha, allowlist only</td><td><span class="chip hold">Apply</span></td></tr>
+          <tr><td>pytrends</td><td>Archived Apr 2025, read-only</td><td><span class="chip stop">Dead</span></td></tr>
+          <tr><td>Community forks</td><td>Maintained, unofficial</td><td><span class="chip go">Start here</span></td></tr>
+          <tr><td>Paid APIs</td><td>Reliable, cents per call</td><td><span class="chip hold">Fallback</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      The part worth paying for isn't the trend line — it's <strong>rising related queries</strong>.
+      Google flags anything growing past 5000% as "Breakout." That's a purpose-built discovery
+      mechanism and the most direct route to "this is about to be a video" anywhere in this
+      document. Build it so nothing breaks when Trends is unavailable; treat it as a bonus,
+      not a spine.
+    </p>
+
+    <h3><span class="tier-tag">Tier 1 · apply in week one</span>Reddit — the discovery layer</h3>
+    <p>
+      Free for non-commercial use at 100 queries a minute. But new app registration now goes
+      through manual review rather than self-service, and the unauthenticated endpoints free
+      tools relied on started refusing requests in May 2026. <strong>The credential is the long
+      pole on this entire project</strong> — apply now even though it's the fourth thing on the list.
+    </p>
+    <p>
+      Two metrics. Top posts of the week is the obvious one. The interesting one is
+      <strong>noun frequency against a trailing baseline</strong>: when "Caboodles" starts appearing in
+      r/GenX four times as often as its 90-day average, that's a term to promote — and nobody
+      had to think of it. Watch r/whatisthisthing and r/ThriftStoreHauls for Abby especially;
+      they're a live feed of objects people found and cared enough to ask about.
+    </p>
+
+    <h3><span class="tier-tag">Tier 2 · the money layer</span>eBay — and the sold-comps problem</h3>
+    <p>
+      This is the one place where the obvious answer genuinely isn't available:
+    </p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>What</th><th>Gives you</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>findCompletedItems</td><td>Sold prices</td><td><span class="chip stop">Shut off Feb 2025</span></td></tr>
+          <tr><td>Marketplace Insights</td><td>90 days sold</td><td><span class="chip stop">Business-only</span></td></tr>
+          <tr><td>Browse API</td><td>Active listings</td><td><span class="chip go">Free, 5k/day</span></td></tr>
+          <tr><td>Terapeak</td><td>1 year sold</td><td><span class="chip go">Free w/ seller acct</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Browse gives asking prices and listing counts — not what things sell for, and any tool
+      that blurs that is lying to you. But it still earns its place: <strong>rising asking prices
+      against falling listing counts means supply is tightening</strong>, which is a real buy signal
+      without sold data.
+    </p>
+    <p>
+      For actual sold prices the practical answer isn't an API at all. Terapeak comes free with
+      an eBay seller account, which Abby likely already has. The bot narrows the field to ten
+      objects a week; Terapeak confirms them by hand in five minutes. That division of labour
+      beats a worse automated answer.
+    </p>
+
+    <h3><span class="tier-tag">Tier 2</span>Etsy — small scope, but it's the scoreboard</h3>
+    <p>
+      No market-wide trending endpoint exists. But seller access approves in minutes and gives
+      full data on <em>her own shop</em> — views, favourites and sales per listing. That isn't
+      discovery, it's something arguably more useful: the <strong>feedback loop</strong>. Check the
+      bot's predictions against what actually sold, then weight the sources that earn it. A
+      trend bot with no scoreboard drifts.
+    </p>
+
+    <h3><span class="tier-tag">Tier 2 · recommend against</span>Estate sale listings</h3>
+    <p>
+      EstateSales.net has no public API and its robots.txt disallows a number of paths. Scraping
+      it is the greyest thing in this document for the least return — and Abby doesn't need a
+      list of sales. She needs to know what to look for once she's already standing there:
+    </p>
+    <div class="example">
+      BUTTERPRINT PYREX — asking +30% this month, listings −18%,<br>
+      3 front-page ThriftStoreHauls posts this week.<br>
+      Target buy under $15 · comps $45–70
+    </div>
+    <p>
+      That's built entirely from Tier 1 and 2 data, with no scraping exposure at all.
+    </p>
+
+    <h3><span class="tier-tag">Tier 3 · later</span>Known, not yet worth building</h3>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Why interesting</th><th>Why not now</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pinterest</td><td>Strong for merch — retro aesthetic is huge there</td><td>Needs review; 50 results, current day only</td></tr>
+          <tr><td>TikTok</td><td>Where nostalgia formats go viral first</td><td>Not built for automated scanning</td></tr>
+          <tr><td>Spreadshop</td><td>Other half of the feedback loop</td><td>Prove the loop on Etsy first</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> How a topic gets scored</h2>
+    <p>
+      Raw movement isn't enough — things spike for useless reasons. Five factors, and the last
+      two are what keep the report true <em>for this brand</em> rather than just true.
+    </p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Factor</th><th>The question</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Momentum</td><td>Moving now, against its own baseline?</td></tr>
+          <tr><td>Volume floor</td><td>Is anyone looking at all? Kills noise.</td></tr>
+          <tr><td>Competition</td><td>How crowded is it already?</td></tr>
+          <tr><td>Cohort fit</td><td>Gen X nostalgia, or Gen Z's?</td></tr>
+          <tr><td>Monetizable</td><td>Can it be a shirt, or a findable object?</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Cohort fit earns its own note. A lot of what's "retro" right now is Y2K and early-2000s —
+      that's Gen Z's nostalgia, not this audience's. Without that filter the bot will
+      confidently recommend filming about things your audience has no memory of. One rule that
+      prevents a systematic failure.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span> What lands Monday morning</h2>
+    <div class="report">
+      <div class="report-row">
+        <div class="head">Film this — 5 ideas</div>
+        <p class="desc">Topic, why it moved, the numbers behind it, the best recent video on it and how small that channel was, and a suggested title.</p>
+      </div>
+      <div class="report-row">
+        <div class="head">Print this — 3 concepts</div>
+        <p class="desc">Phrase or object, the momentum behind it, and whether it's trademark-clear.</p>
+      </div>
+      <div class="report-row">
+        <div class="head">Grab this — 10 objects</div>
+        <p class="desc">Object, target buy price, comp range, direction of travel, confidence.</p>
+      </div>
+      <div class="report-row">
+        <div class="head">New terms — yes / no</div>
+        <p class="desc">What Reddit surfaced that isn't on the watchlist yet. Ten seconds a week of human input; it's the bot getting smarter.</p>
+      </div>
+    </div>
+    <p>
+      Emailed, and archived at a private page on the site. No dashboard to remember to log into.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span> Build shape and cost</h2>
+    <p>
+      Nothing here needs new infrastructure. A scheduled job in the repo that already exists,
+      TypeScript to match the site, and a small local database — <strong>history is mandatory,
+      because every metric is relative</strong>. Each source stays isolated, so one going down
+      degrades the report instead of breaking it. Given the state of Google Trends, that
+      isolation isn't optional.
+    </p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Line item</th><th>Monthly</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wikipedia, YouTube, Reddit, eBay, Etsy, scheduling</td><td>$0</td></tr>
+          <tr><td>Google Trends, only if the free route flakes</td><td>$5–20</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span> A watchlist to start from</h2>
+    <p>
+      The bot is only as good as its vocabulary, and this is the part that wants Keith and
+      Abby's input rather than mine — they know what their audience answers to. Fifty to a
+      hundred terms is enough; the discovery layer grows it from there.
+    </p>
+    <div class="watchlist">
+      <div class="watch-group">
+        <div class="cat">Toys</div>
+        <div class="terms">Teddy Ruxpin · Speak &amp; Spell · Lite-Brite · Micro Machines · My Buddy · Pound Puppies · Skip-It</div>
+      </div>
+      <div class="watch-group">
+        <div class="cat">School</div>
+        <div class="terms">Trapper Keeper · Lisa Frank · Scholastic Book Fair · Oregon Trail · mimeograph</div>
+      </div>
+      <div class="watch-group">
+        <div class="cat">Kitchen &amp; home</div>
+        <div class="terms">Pyrex Butterprint · CorningWare · Tupperware Servalier · avocado appliances</div>
+      </div>
+      <div class="watch-group">
+        <div class="cat">Tech</div>
+        <div class="terms">Walkman · Zenith console TV · rotary phone · Commodore 64 · VHS rewinder</div>
+      </div>
+      <div class="watch-group">
+        <div class="cat">Snacks</div>
+        <div class="terms">Ecto Cooler · Squeezit · Dunkaroos · Crystal Pepsi · Zima</div>
+      </div>
+      <div class="watch-group">
+        <div class="cat">Media</div>
+        <div class="terms">Blockbuster · Columbia House · MTV VJs · TGIF · Saturday morning cartoons</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span> Two things worth raising</h2>
+    <p>
+      <strong>The credential timeline is the schedule.</strong> Reddit's manual review is the long
+      pole; everything else is fast. Applying for Reddit and the eBay keyset in week one means
+      they land around when the code is ready instead of after it.
+    </p>
+    <p>
+      <strong>The bot makes ideas, not uploads.</strong> Your Life On Tape has been idle about two
+      years and the podcast hasn't published since December 2024. A trend bot pointed at
+      dormant channels produces a very good list of videos nobody makes. Worth deciding up
+      front which surface this feeds — my read is the main channel and Abby's sourcing, with
+      the merch list as a bonus rather than a third job.
+    </p>
+  </section>
+
+  <div class="closing">
+    <h2><span class="num">→</span> Recommended next step</h2>
+    <p>
+      Build Tier 1 only — Wikipedia, YouTube, Reddit — against a 50-term seed watchlist, and let
+      it collect for a month before trusting a word it says. Small build, costs nothing, proves
+      the scoring model, and it starts the baseline clock immediately.
+    </p>
+    <p>
+      The baseline is the one thing you can't buy later. Every week of delay is a week the bot
+      isn't smart yet.
+    </p>
+  </div>
+
+  <footer>Nostalgia Desk · Research phase · Our Gen X Life</footer>
+
+</div>
