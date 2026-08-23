@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo_Black, VT323 } from "next/font/google";
 import { Desktop } from "@/components/Desktop";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 // Matches the blocky poster letters in the channel banner.
@@ -31,7 +33,24 @@ export const metadata: Metadata = {
     url: "https://www.ourgenxlife.com",
     siteName: "Our Gen X Life",
     type: "website",
+    // Every page inherits this card unless it sets its own.
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Keith and Abby beside the Our Gen X Life logo",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Gen X Life",
+    description:
+      "70s, 80s and 90s nostalgia with Keith and Abby. Videos, a podcast, rescued vintage, and the Gen X Files.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: { canonical: "https://www.ourgenxlife.com" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -44,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
         <Desktop>{children}</Desktop>
       </body>
     </html>

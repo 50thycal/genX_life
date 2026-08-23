@@ -1,6 +1,7 @@
 import { CONTACT, SOCIALS } from "@/lib/links";
 import { HERO_BANNER, HERO_VIDEO, photoUrl } from "@/lib/media";
 import { HeroVideo } from "./HeroVideo";
+import { JoinList } from "./JoinList";
 
 /** Fallback wordmark, rebuilt in CSS. Used only when no banner image is set. */
 function Wordmark() {
@@ -100,7 +101,9 @@ export function Hero() {
       </div>
 
       {HERO_VIDEO ? (
-        <HeroVideo video={HERO_VIDEO} />
+        <div>
+          <HeroVideo video={HERO_VIDEO} />
+        </div>
       ) : (
         /* Placeholder until an intro MP4 lands in public/video/ */
         <div className="bevel-in p-1">
@@ -117,6 +120,10 @@ export function Hero() {
           </div>
         </div>
       )}
+
+      <div className="lg:col-span-2">
+        <JoinList />
+      </div>
     </div>
   );
 }
