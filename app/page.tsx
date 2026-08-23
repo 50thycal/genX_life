@@ -1,44 +1,19 @@
-import { About } from "@/components/About";
-import { Channels } from "@/components/Channels";
-import { Footer } from "@/components/Footer";
-import { Gallery } from "@/components/Gallery";
-import { GenXFiles } from "@/components/GenXFiles";
 import { Hero } from "@/components/Hero";
-import { Podcast } from "@/components/Podcast";
-import { Shop } from "@/components/Shop";
-import { Tapes } from "@/components/Tapes";
-import { Videos } from "@/components/Videos";
-import { getListings } from "@/lib/etsy";
-import { FALLBACK_VIDEOS } from "@/lib/media";
-import { getShow } from "@/lib/podcast";
-import { getLatestVideos } from "@/lib/youtube";
 
-// Everything on this page refreshes itself hourly. Nothing needs hand-editing.
-export const revalidate = 3600;
+import { pageMetadata } from "@/lib/seo";
 
-export default async function Home() {
-  const [show, latestVideos, listings] = await Promise.all([
-    getShow(),
-    getLatestVideos(8),
-    getListings(4),
-  ]);
+export const metadata = pageMetadata({
+  title: "Our Gen X Life: 70s, 80s and 90s Nostalgia with Keith & Abby",
+  description:
+    "Keith and Abby rescue the toys, tapes and television everyone else threw out. Three YouTube channels, a podcast, restored vintage, and the Gen X Files.",
+  path: "/",
+});
 
-  const videos = latestVideos.length > 0 ? latestVideos : FALLBACK_VIDEOS;
 
+export default function WelcomePage() {
   return (
     <>
       <Hero />
-      <main id="main">
-        <Videos videos={videos} />
-        <Channels />
-        <GenXFiles />
-        <Podcast show={show} />
-        <Shop listings={listings} />
-        <Gallery />
-        <Tapes />
-        <About />
-      </main>
-      <Footer />
     </>
   );
 }

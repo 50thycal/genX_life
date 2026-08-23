@@ -37,7 +37,7 @@ export function HeroVideo({ video }: { video: HeroVideoSlot }) {
   return (
     <div className="window">
       <div className="title-bar">
-        <span className="title-bar-text flex-1 truncate">{video.file} — Media Player</span>
+        <span className="title-bar-text flex-1 truncate">{video.file}</span>
         <div className="flex shrink-0 gap-0.5" aria-hidden="true">
           <span className="title-bar-button">_</span>
           <span className="title-bar-button">□</span>
@@ -64,15 +64,12 @@ export function HeroVideo({ video }: { video: HeroVideoSlot }) {
         </video>
       </div>
 
-      {!reduceMotion ? (
-        <div className="flex gap-1 px-1 pb-1">
-          {/* No button on a file with no audio track — it would do nothing. */}
-          {video.silent ? null : (
-            <button type="button" onClick={toggleSound} className="btn-95 !min-w-0 !py-1">
-              {muted ? "🔇 Sound on" : "🔊 Sound off"}
-            </button>
-          )}
-          <p className="status-field flex-1 truncate">Now playing — the intro</p>
+      {/* No button on a file with no audio track: it would do nothing. */}
+      {!reduceMotion && !video.silent ? (
+        <div className="px-1 pb-1">
+          <button type="button" onClick={toggleSound} className="btn-95 !min-w-0 !py-1">
+            {muted ? "🔇 Sound on" : "🔊 Sound off"}
+          </button>
         </div>
       ) : null}
     </div>

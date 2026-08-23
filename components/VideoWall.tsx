@@ -101,19 +101,20 @@ export function VideoWall({ videos }: { videos: Video[] }) {
                 </div>
               </div>
 
-              <p className="px-2 pb-1 text-[13px] font-bold leading-snug text-ink line-clamp-2">
-                {video.title}
-              </p>
-
-              <p className="status-field mx-1 mb-1 truncate">
-                {video.published
-                  ? new Date(video.published).toLocaleDateString("en-US", {
+              <div className="px-2 pb-2">
+                <p className="line-clamp-2 text-[13px] font-bold leading-snug text-ink">
+                  {video.title}
+                </p>
+                {video.published ? (
+                  <p className="label-strip mt-1.5 text-ink-faint">
+                    {new Date(video.published).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                       year: "numeric",
-                    })
-                  : "Watch on YouTube"}
-              </p>
+                    })}
+                  </p>
+                ) : null}
+              </div>
             </a>
           </li>
         );

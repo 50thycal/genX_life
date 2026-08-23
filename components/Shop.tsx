@@ -1,6 +1,6 @@
 import { SHOP } from "@/lib/links";
 import type { Listing } from "@/lib/etsy";
-import { BENCH_PHOTO } from "@/lib/media";
+import { BENCH_PHOTO, SHOP_IMAGES, photoUrl } from "@/lib/media";
 import { Framed } from "./Framed";
 import { Section } from "./Section";
 
@@ -9,20 +9,19 @@ import { Section } from "./Section";
  * Etsy is one-of-a-kind and sells on scarcity; Spreadshop is unlimited stock
  * and sells on identity. Giving them equal weight would flatten both.
  */
+
 export function Shop({ listings }: { listings: Listing[] | null }) {
   return (
     <Section
       id="shop"
       eyebrow="The shop"
       title="Take something home"
-      intro={<p>Two very different things live here, so they get two different shelves.</p>}
+      intro={<p>Check out our Etsy shop and merch!</p>}
     >
-      {/* Just rescued — the scarcity play, live from Etsy */}
+      {/* Just rescued: the scarcity play, live from Etsy */}
       {listings && listings.length > 0 ? (
         <div className="mb-6">
-          <p className="label-strip mb-3 text-rec-deep">
-            Just rescued — one of each, when it&apos;s gone it&apos;s gone
-          </p>
+          <p className="label-strip mb-3 text-rec-deep">Just rescued</p>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {listings.map((listing) => (
               <li key={listing.id}>
@@ -70,8 +69,20 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           data-track="shop:etsy"
           className="card-surface group flex flex-col p-6"
         >
+          {SHOP_IMAGES.etsy ? (
+            <div className="bevel-in mb-4 p-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={photoUrl(SHOP_IMAGES.etsy)}
+                alt={SHOP_IMAGES.etsy.alt}
+                loading="lazy"
+                className="block w-full object-cover"
+              />
+            </div>
+          ) : null}
+
           <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-rec-deep">
-            One of each — when it&apos;s gone, it&apos;s gone
+            Abby&apos;s Etsy Store
           </span>
 
           <h3 className="font-display text-xl leading-tight text-balance">
@@ -102,8 +113,20 @@ export function Shop({ listings }: { listings: Listing[] | null }) {
           data-track="shop:spreadshop"
           className="card-surface group flex flex-col p-6"
         >
+          {SHOP_IMAGES.merch ? (
+            <div className="bevel-in mb-4 p-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={photoUrl(SHOP_IMAGES.merch)}
+                alt={SHOP_IMAGES.merch.alt}
+                loading="lazy"
+                className="block w-full object-cover"
+              />
+            </div>
+          ) : null}
+
           <span className="label-strip bevel-in mb-4 inline-flex w-fit px-2 py-1 text-tape">
-            Shirts, mugs, the usual
+            Gen X Life Merch
           </span>
 
           <h3 className="font-display text-xl leading-tight text-balance">

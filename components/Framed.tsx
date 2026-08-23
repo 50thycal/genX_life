@@ -34,7 +34,9 @@ export function Framed({
           src={photoUrl(photo)}
           alt={photo.alt}
           loading="lazy"
-          className={`block w-full object-cover ${aspect}`}
+          className={`block w-full ${aspect} ${
+            photo.fit === "contain" ? "bg-black object-contain" : "object-cover"
+          }`}
         />
       </div>
 

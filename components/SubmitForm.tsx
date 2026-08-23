@@ -66,7 +66,7 @@ export function SubmitForm({
     } catch {
       setStatus({
         kind: "error",
-        message: "That didn't send — check your connection and try again.",
+        message: "That didn't send. Check your connection and try again.",
       });
     }
   }
@@ -123,9 +123,17 @@ export function SubmitForm({
           </div>
         ))}
 
-        <fieldset className="bevel-in p-4">
-          <legend className="label-strip px-2 text-ink">Your name</legend>
-          <div className="space-y-2">
+        {/*
+          A <legend> sits on the border of a fieldset, which collided with the
+          bevel drawn in box-shadow. Keep it for screen readers, show a normal
+          label above the box instead.
+        */}
+        <fieldset>
+          <legend className="sr-only">How should we credit you?</legend>
+          <p className="label-strip mb-2 text-ink" aria-hidden="true">
+            How should we credit you?
+          </p>
+          <div className="bevel-in space-y-2 p-4">
             {[
               ["credit", "Use my name when you share it"],
               ["anonymous", "Keep me anonymous"],

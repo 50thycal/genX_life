@@ -28,15 +28,15 @@ export const CHANNELS: Channel[] = [
     name: "Our Gen X Life",
     href: "https://www.youtube.com/@OurGenXLife",
     pitch:
-      "The main show. Keith and Abby on everything that made the 70s, 80s and 90s worth remembering — the music, the toys, the TV, the stuff your parents threw out.",
-    cadence: "New videos regularly",
+      "The main show. Keith and Abby on everything that made the 70s, 80s and 90s worth remembering: the music, the toys, the TV.",
+    cadence: "Main Channel",
     active: true,
   },
   {
     name: "Abby's Retro Rescue",
     href: "https://www.youtube.com/channel/UCXybtY7smTIi1fVjRiZa7_Q",
     pitch:
-      "Abby brings thrown-away toys back to life. Estate-sale Cabbage Patch Kids, matted hair and marker stains, restored on camera — then rehomed in the shop.",
+      "Abby brings thrown-away toys back to life. Estate-sale Cabbage Patch Kids, matted hair and marker stains, restored on camera and then rehomed in the shop.",
     cadence: "Restorations, start to finish",
     active: true,
   },
@@ -44,8 +44,8 @@ export const CHANNELS: Channel[] = [
     name: "Your Life On Tape",
     href: "https://www.youtube.com/@YourLifeOnTape",
     pitch:
-      "Other people's memories, rescued from forgotten videotapes. Vintage VHS and camcorder reels found at estate sales, digitised and shared — a time capsule of ordinary life.",
-    cadence: "Back soon — send us your tapes",
+      "Other people's memories, rescued from forgotten videotapes. Vintage VHS and camcorder reels found at estate sales, digitized and shared. A time capsule of ordinary life.",
+    cadence: "Original VHS tapes",
     active: false,
   },
 ];

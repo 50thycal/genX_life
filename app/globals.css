@@ -210,8 +210,49 @@
     font-size: 11px;
   }
 
+  /*
+    Moving between windows.
+
+    Both animations pull toward the bottom left, where the Start button sits,
+    so a window looks like it drops into the taskbar and the next one climbs
+    back out. The blanket reduced-motion rule above switches them off, and
+    Desktop.tsx skips the delay in that case so navigation stays instant.
+  */
+  .window-opening {
+    animation: window-open 260ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+    transform-origin: bottom left;
+  }
+
+  .window-minimising {
+    animation: window-minimise 190ms ease-in both;
+    transform-origin: bottom left;
+    pointer-events: none;
+  }
+
   /* One letter of the wordmark on its colour block, from the logo. */
   .ransom {
     @apply inline-block px-[0.12em] leading-[0.95];
+  }
+}
+
+@keyframes window-open {
+  from {
+    opacity: 0;
+    transform: scale(0.55) translate3d(-10%, 24%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes window-minimise {
+  from {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5) translate3d(-12%, 30%, 0);
   }
 }
