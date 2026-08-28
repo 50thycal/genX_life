@@ -43,31 +43,62 @@ function formatPrice(price: EtsyListing["price"]): string | null {
   }
 }
 
+/**
+ * Failures here are deliberately loud in the server log and silent on the page.
+ *
+ * A visitor should never see a broken shop section, but when the strip stays
+ * empty we need to know whether Etsy rejected the key, refused the endpoint
+ * without OAuth, or simply found no shop by that name. Etsy's docs list both
+ * api_key and oauth2 against some listing endpoints, so which one applies is
+ * worth reading out of a real response rather than guessing.
+ */
+async function call(url: string, key: string, label: string) {
+  const response = await fetch(url, {
+    headers: { "x-api-key": key },
+    next: { revalidate: 1800 },
+  });
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    console.error(
+      `[etsy] ${label} failed: ${response.status} ${response.statusText} ${body.slice(0, 300)}`,
+    );
+    return null;
+  }
+
+  return response.json().catch((error) => {
+    console.error(`[etsy] ${label} returned unreadable JSON`, error);
+    return null;
+  });
+}
+
 export async function getListings(limit = 4): Promise<Listing[] | null> {
   const key = process.env.ETSY_API_KEY;
   if (!key) return null;
 
-  const headers = { "x-api-key": key };
-
   try {
-    const shopResponse = await fetch(
+    const shopData = await call(
       `${API}/shops?shop_name=${encodeURIComponent(SHOP_NAME)}`,
-      { headers, next: { revalidate: 1800 } },
+      key,
+      "shop lookup",
     );
-    if (!shopResponse.ok) return null;
+    if (!shopData) return null;
 
-    const shopData = await shopResponse.json();
     const shopId = shopData?.results?.[0]?.shop_id;
-    if (!shopId) return null;
+    if (!shopId) {
+      console.error(`[etsy] no shop found named ${SHOP_NAME}`);
+      return null;
+    }
 
-    const listingsResponse = await fetch(
+    const listingsData = await call(
       `${API}/shops/${shopId}/listings/active?limit=${limit}&includes=Images`,
-      { headers, next: { revalidate: 1800 } },
+      key,
+      "active listings",
     );
-    if (!listingsResponse.ok) return null;
+    if (!listingsData) return null;
 
-    const listingsData = await listingsResponse.json();
     const results: EtsyListing[] = listingsData?.results ?? [];
+    console.info(`[etsy] ${results.length} listing(s) for shop ${shopId}`);
 
     return results.map((listing) => ({
       id: listing.listing_id,
@@ -76,7 +107,8 @@ export async function getListings(limit = 4): Promise<Listing[] | null> {
       price: formatPrice(listing.price),
       image: listing.images?.[0]?.url_570xN ?? listing.images?.[0]?.url_fullxfull ?? null,
     }));
-  } catch {
+  } catch (error) {
+    console.error("[etsy] request threw", error);
     return null;
   }
 }
