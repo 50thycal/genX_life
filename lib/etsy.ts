@@ -5,9 +5,10 @@
  * paid, inject their own scripts and can't be styled — so this talks to Etsy's
  * v3 API directly and renders in our own markup.
  *
- * Public shop data only needs an app key (no OAuth dance): register a free app
- * at etsy.com/developers, then set ETSY_API_KEY. Without it every call here
- * returns null and the shop section falls back to its written pitch.
+ * Public shop data needs an app credential but no OAuth dance. Register a free
+ * app at etsy.com/developers, then set both ETSY_API_KEY (the keystring) and
+ * ETSY_SHARED_SECRET. Without them every call here returns null and the shop
+ * section falls back to its written pitch.
  */
 
 export type Listing = {
@@ -44,13 +45,37 @@ function formatPrice(price: EtsyListing["price"]): string | null {
 }
 
 /**
+ * The x-api-key header wants "keystring:shared_secret", not the keystring on
+ * its own. Etsy started rejecting the bare keystring with a 403 on 9 February
+ * 2026, and the two halves are stored as separate environment variables so
+ * nobody has to hand-assemble the string and get the punctuation right.
+ *
+ * A keystring that already carries the colon is passed through untouched, so
+ * the combined form keeps working if it is ever set that way.
+ */
+function credential(): string | null {
+  const keystring = process.env.ETSY_API_KEY?.trim();
+  if (!keystring) return null;
+  if (keystring.includes(":")) return keystring;
+
+  const secret = process.env.ETSY_SHARED_SECRET?.trim();
+  if (!secret) {
+    console.error(
+      "[etsy] ETSY_API_KEY is set but ETSY_SHARED_SECRET is not; Etsy rejects " +
+        "the keystring on its own with a 403",
+    );
+    return null;
+  }
+
+  return `${keystring}:${secret}`;
+}
+
+/**
  * Failures here are deliberately loud in the server log and silent on the page.
  *
  * A visitor should never see a broken shop section, but when the strip stays
- * empty we need to know whether Etsy rejected the key, refused the endpoint
- * without OAuth, or simply found no shop by that name. Etsy's docs list both
- * api_key and oauth2 against some listing endpoints, so which one applies is
- * worth reading out of a real response rather than guessing.
+ * empty we need to know whether Etsy rejected the credential, refused the
+ * endpoint without OAuth, or simply found no shop by that name.
  */
 async function call(url: string, key: string, label: string) {
   const response = await fetch(url, {
@@ -73,7 +98,7 @@ async function call(url: string, key: string, label: string) {
 }
 
 export async function getListings(limit = 4): Promise<Listing[] | null> {
-  const key = process.env.ETSY_API_KEY;
+  const key = credential();
   if (!key) return null;
 
   try {
