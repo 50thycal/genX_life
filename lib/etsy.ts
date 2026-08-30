@@ -27,6 +27,8 @@ type EtsyListing = {
   listing_id: number;
   title: string;
   url: string;
+  original_creation_timestamp?: number;
+  created_timestamp?: number;
   price?: { amount: number; divisor: number; currency_code: string };
   images?: EtsyImage[];
 };
@@ -97,6 +99,13 @@ async function call(url: string, key: string, label: string) {
   });
 }
 
+/** How many active listings to pull before picking the newest. Etsy caps a page at 100. */
+const POOL = 100;
+
+function listedAt(listing: EtsyListing): number {
+  return listing.original_creation_timestamp ?? listing.created_timestamp ?? 0;
+}
+
 function firstImage(listing: EtsyListing): string | null {
   const image = listing.images?.[0];
   return image?.url_570xN ?? image?.url_fullxfull ?? null;
@@ -156,15 +165,28 @@ export async function getListings(limit = 4): Promise<Listing[] | null> {
       return null;
     }
 
+    /**
+     * "Just rescued" has to mean newest, so the order is ours rather than
+     * Etsy's.
+     *
+     * sort_on is asked for, but Etsy only honours it alongside a search term,
+     * and the ids that come back are visibly not in creation order. So a wider
+     * page is pulled and sorted here on the timestamp Etsy reports. Still one
+     * request, and the strip cannot silently drift into showing whatever
+     * happened to be at the top of an unsorted response.
+     */
     const listingsData = await call(
-      `${API}/shops/${shopId}/listings/active?limit=${limit}&includes=Images`,
+      `${API}/shops/${shopId}/listings/active?limit=${POOL}&sort_on=created&sort_order=desc&includes=Images`,
       key,
       "active listings",
     );
     if (!listingsData) return null;
 
-    const results: EtsyListing[] = listingsData?.results ?? [];
-    console.info(`[etsy] ${results.length} listing(s) for shop ${shopId}`);
+    const all: EtsyListing[] = listingsData?.results ?? [];
+    const results = [...all].sort((a, b) => listedAt(b) - listedAt(a)).slice(0, limit);
+    console.info(
+      `[etsy] ${all.length} active listing(s) for shop ${shopId}, showing the newest ${results.length}`,
+    );
 
     const images = await imagesFor(results, key);
 

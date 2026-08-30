@@ -172,9 +172,11 @@ export function Desktop({ children }: { children: React.ReactNode }) {
         )}
       </main>
 
-      {/* Taskbar */}
-      <div className="sticky bottom-0 z-20 px-3 pb-3 sm:px-6">
-        <div className="bevel-out relative mx-auto flex w-full max-w-6xl items-center gap-2 p-1">
+      {/* Taskbar. Full bleed and flush to the bottom edge, like the real one:
+          the bar itself is the sticky element, so there is no gap under it for
+          the wallpaper to show through. Contents stay on the page grid. */}
+      <div className="bevel-out sticky bottom-0 z-20 p-1">
+        <div className="relative mx-auto flex w-full max-w-6xl items-center gap-2">
           <StartMenu
             open={startOpen}
             onClose={() => setStartOpen(false)}
