@@ -338,10 +338,6 @@ signing up for. Neither is worth building before there's traffic to serve.
 
 ### Blocked — needs Abby in person
 
-- [ ] **Etsy API key.** Register a free app at etsy.com/developers under Abby's Etsy
-      account, then set `ETSY_API_KEY` in the Vercel project. Public shop listings only
-      need the app key — no OAuth. Until it's set, the "Just Rescued" strip on the
-      homepage stays hidden and the shop section falls back to its written pitch.
 - [ ] **Your Life On Tape channel ID.** YouTube Studio → Settings → Channel → Advanced,
       copy the `UC…` id. Goes into `CHANNEL_IDS.yourLifeOnTape` in `lib/youtube.ts`.
       Only the `@handle` is known, and the RSS feed needs the id. Once it's in, that
@@ -349,6 +345,13 @@ signing up for. Neither is worth building before there's traffic to serve.
 
 ### Everything else
 
+- [ ] **Etsy shared secret.** The app is registered and approved as `genx-website`, and
+      `ETSY_API_KEY` (the keystring) is set in Vercel. Still needed: `ETSY_SHARED_SECRET`,
+      the second value on the same Your Apps row. Since 9 February 2026 Etsy rejects the
+      keystring on its own with `403 Shared secret is required in x-api-key header`, so
+      both halves have to be present. No OAuth involved. Until the secret is set, the
+      "Just Rescued" strip stays hidden and the shop section falls back to its written
+      pitch. Environment variables only reach a **new** build, so redeploy after adding it.
 - [ ] **Does Your Life On Tape restart, or get listed as an archive?** Move 4 assumes it
       restarts. If there's no appetite for that right now, say so and it gets presented
       honestly as a back catalogue rather than sending people to a channel that looks
