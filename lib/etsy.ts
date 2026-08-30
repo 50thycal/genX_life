@@ -97,6 +97,47 @@ async function call(url: string, key: string, label: string) {
   });
 }
 
+function firstImage(listing: EtsyListing): string | null {
+  const image = listing.images?.[0];
+  return image?.url_570xN ?? image?.url_fullxfull ?? null;
+}
+
+/**
+ * Pictures need a second request.
+ *
+ * The shop listing endpoints accept includes=Images and then return the
+ * listings without any, a gap carried over from v2 that Etsy has never closed.
+ * The batch endpoint does honour it, so the ids come from the first call and
+ * the pictures from this one. That is one extra request per rebuild against a
+ * 10-per-second budget, and the strip revalidates every 30 minutes.
+ *
+ * Failure here is not fatal: the cards already render without a picture, so a
+ * refused or malformed response costs the thumbnails and nothing else.
+ */
+async function imagesFor(
+  listings: EtsyListing[],
+  key: string,
+): Promise<Map<number, string>> {
+  const found = new Map<number, string>();
+
+  const ids = listings.filter((listing) => !firstImage(listing)).map((l) => l.listing_id);
+  if (ids.length === 0) return found;
+
+  const data = await call(
+    `${API}/listings/batch?listing_ids=${ids.join(",")}&includes=Images`,
+    key,
+    "listing images",
+  );
+
+  for (const listing of (data?.results ?? []) as EtsyListing[]) {
+    const image = firstImage(listing);
+    if (image) found.set(listing.listing_id, image);
+  }
+
+  console.info(`[etsy] ${found.size}/${ids.length} thumbnail(s) resolved`);
+  return found;
+}
+
 export async function getListings(limit = 4): Promise<Listing[] | null> {
   const key = credential();
   if (!key) return null;
@@ -125,12 +166,14 @@ export async function getListings(limit = 4): Promise<Listing[] | null> {
     const results: EtsyListing[] = listingsData?.results ?? [];
     console.info(`[etsy] ${results.length} listing(s) for shop ${shopId}`);
 
+    const images = await imagesFor(results, key);
+
     return results.map((listing) => ({
       id: listing.listing_id,
       title: listing.title,
       url: listing.url,
       price: formatPrice(listing.price),
-      image: listing.images?.[0]?.url_570xN ?? listing.images?.[0]?.url_fullxfull ?? null,
+      image: firstImage(listing) ?? images.get(listing.listing_id) ?? null,
     }));
   } catch (error) {
     console.error("[etsy] request threw", error);
