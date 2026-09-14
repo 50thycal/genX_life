@@ -1,0 +1,2687 @@
+{
+  "date": "2026-09-14",
+  "terms": [
+    {
+      "term": "Jordache jeans",
+      "signals": [
+        {
+          "term": "Jordache jeans",
+          "source": "wikipedia",
+          "level": 115.71428571428571,
+          "ratio": 1.1128921456377374,
+          "z": 0.5465765318753978,
+          "detail": {
+            "article": "Jordache",
+            "recentDailyAvg": 116,
+            "baselineDailyAvg": 104
+          }
+        },
+        {
+          "term": "Jordache jeans",
+          "source": "youtube",
+          "level": 49476,
+          "ratio": 1.4514411441144115,
+          "z": 7.3151682032196215,
+          "detail": {
+            "recentVideoCount": 85,
+            "topOutlierScore": 0.6275114280421366
+          }
+        }
+      ],
+      "score": 88.3
+    },
+    {
+      "term": "Pop Rocks",
+      "signals": [
+        {
+          "term": "Pop Rocks",
+          "source": "wikipedia",
+          "level": 219,
+          "ratio": 1.1238316329647504,
+          "z": 0.8655014741646538,
+          "detail": {
+            "article": "Pop_Rocks",
+            "recentDailyAvg": 219,
+            "baselineDailyAvg": 195
+          }
+        },
+        {
+          "term": "Pop Rocks",
+          "source": "youtube",
+          "level": 46473263,
+          "ratio": 1.2777552315928218,
+          "z": 6.320042104781161,
+          "detail": {
+            "recentVideoCount": 71928,
+            "topOutlierScore": 32.42159940335015
+          }
+        }
+      ],
+      "score": 79.4
+    },
+    {
+      "term": "conversation pit",
+      "signals": [
+        {
+          "term": "conversation pit",
+          "source": "wikipedia",
+          "level": 106.71428571428571,
+          "ratio": 1.584865629420085,
+          "z": 3.0410701888334013,
+          "detail": {
+            "article": "Conversation_pit",
+            "recentDailyAvg": 107,
+            "baselineDailyAvg": 67
+          }
+        }
+      ],
+      "score": 79.2
+    },
+    {
+      "term": "Rainbow Brite",
+      "signals": [
+        {
+          "term": "Rainbow Brite",
+          "source": "wikipedia",
+          "level": 141.28571428571428,
+          "ratio": 1.066403091023452,
+          "z": 0.3583813742854793,
+          "detail": {
+            "article": "Rainbow_Brite",
+            "recentDailyAvg": 141,
+            "baselineDailyAvg": 132
+          }
+        },
+        {
+          "term": "Rainbow Brite",
+          "source": "youtube",
+          "level": 538778,
+          "ratio": 6.131772482376693,
+          "z": 11.448414298062046,
+          "detail": {
+            "recentVideoCount": 22718,
+            "topOutlierScore": 2.172540465415894
+          }
+        }
+      ],
+      "score": 78.8
+    },
+    {
+      "term": "TV dinner tray",
+      "signals": [
+        {
+          "term": "TV dinner tray",
+          "source": "wikipedia",
+          "level": 32.57142857142857,
+          "ratio": 1.075049115913556,
+          "z": 0.33839104186650226,
+          "detail": {
+            "article": "TV_dinner",
+            "recentDailyAvg": 33,
+            "baselineDailyAvg": 30
+          }
+        },
+        {
+          "term": "TV dinner tray",
+          "source": "youtube",
+          "level": 1081536,
+          "ratio": 5.954004574769404,
+          "z": 248.60971031647168,
+          "detail": {
+            "recentVideoCount": 35195,
+            "topOutlierScore": 0.7509468359705525
+          }
+        }
+      ],
+      "score": 78.8
+    },
+    {
+      "term": "Schoolhouse Rock",
+      "signals": [
+        {
+          "term": "Schoolhouse Rock",
+          "source": "wikipedia",
+          "level": 385.42857142857144,
+          "ratio": 1.1261217391304348,
+          "z": 0.590150397744898,
+          "detail": {
+            "article": "Schoolhouse_Rock!",
+            "recentDailyAvg": 385,
+            "baselineDailyAvg": 342
+          }
+        },
+        {
+          "term": "Schoolhouse Rock",
+          "source": "youtube",
+          "level": 1143939,
+          "ratio": 4.381875535075069,
+          "z": 33.03202027604043,
+          "detail": {
+            "recentVideoCount": 34559,
+            "topOutlierScore": 0.10839574086871334
+          }
+        }
+      ],
+      "score": 78.8
+    },
+    {
+      "term": "Are You Afraid of the Dark",
+      "signals": [
+        {
+          "term": "Are You Afraid of the Dark",
+          "source": "wikipedia",
+          "level": 871.7142857142857,
+          "ratio": 1.1203868045780034,
+          "z": 0.8684527923727189,
+          "detail": {
+            "article": "Are_You_Afraid_of_the_Dark?",
+            "recentDailyAvg": 872,
+            "baselineDailyAvg": 778
+          }
+        },
+        {
+          "term": "Are You Afraid of the Dark",
+          "source": "youtube",
+          "level": 226886313,
+          "ratio": 5.902883615521763,
+          "z": 202.472174017115,
+          "detail": {
+            "recentVideoCount": 114364,
+            "topOutlierScore": 22.932175620063628
+          }
+        }
+      ],
+      "score": 77
+    },
+    {
+      "term": "roller rink",
+      "signals": [
+        {
+          "term": "roller rink",
+          "source": "youtube",
+          "level": 55110351,
+          "ratio": 1.4420474682840871,
+          "z": 59.01285155867686,
+          "detail": {
+            "recentVideoCount": 211352,
+            "topOutlierScore": 36.4129329896103
+          }
+        }
+      ],
+      "score": 77
+    },
+    {
+      "term": "hair metal",
+      "signals": [
+        {
+          "term": "hair metal",
+          "source": "wikipedia",
+          "level": 712.7142857142857,
+          "ratio": 1.0093571392443477,
+          "z": 0.1599771183152096,
+          "detail": {
+            "article": "Glam_metal",
+            "recentDailyAvg": 713,
+            "baselineDailyAvg": 706
+          }
+        },
+        {
+          "term": "hair metal",
+          "source": "youtube",
+          "level": 13530737,
+          "ratio": 1.3145867411668688,
+          "z": 6.672824301649514,
+          "detail": {
+            "recentVideoCount": 79459,
+            "topOutlierScore": 23.816584874619114
+          }
+        }
+      ],
+      "score": 76.4
+    },
+    {
+      "term": "Beanie Babies",
+      "signals": [
+        {
+          "term": "Beanie Babies",
+          "source": "wikipedia",
+          "level": 800.5714285714286,
+          "ratio": 1.9903513185544734,
+          "z": 5.31164698938344,
+          "detail": {
+            "article": "Beanie_Babies",
+            "recentDailyAvg": 801,
+            "baselineDailyAvg": 402
+          }
+        },
+        {
+          "term": "Beanie Babies",
+          "source": "youtube",
+          "level": 1765539,
+          "ratio": 0.8432412186880479,
+          "z": -0.9692140803217651,
+          "detail": {
+            "recentVideoCount": 49449,
+            "topOutlierScore": 3.3594973639219647
+          }
+        }
+      ],
+      "score": 76.1
+    },
+    {
+      "term": "macrame plant hanger",
+      "signals": [
+        {
+          "term": "macrame plant hanger",
+          "source": "wikipedia",
+          "level": 235.85714285714286,
+          "ratio": 1.4018255147527066,
+          "z": 2.0832755713608675,
+          "detail": {
+            "article": "Macramé",
+            "recentDailyAvg": 236,
+            "baselineDailyAvg": 168
+          }
+        }
+      ],
+      "score": 74.3
+    },
+    {
+      "term": "Popples",
+      "signals": [
+        {
+          "term": "Popples",
+          "source": "wikipedia",
+          "level": 72.42857142857143,
+          "ratio": 1.1128589720139017,
+          "z": 0.6559225917452389,
+          "detail": {
+            "article": "Popples",
+            "recentDailyAvg": 72,
+            "baselineDailyAvg": 65
+          }
+        },
+        {
+          "term": "Popples",
+          "source": "youtube",
+          "level": 644426,
+          "ratio": 1.0616440387237327,
+          "z": 4.105084300279004,
+          "detail": {
+            "recentVideoCount": 39488,
+            "topOutlierScore": 0.34404690902098317
+          }
+        }
+      ],
+      "score": 73.8
+    },
+    {
+      "term": "Atari 2600",
+      "signals": [
+        {
+          "term": "Atari 2600",
+          "source": "wikipedia",
+          "level": 923,
+          "ratio": 1.1276069693708368,
+          "z": 1.505147324857579,
+          "detail": {
+            "article": "Atari_2600",
+            "recentDailyAvg": 923,
+            "baselineDailyAvg": 819
+          }
+        }
+      ],
+      "score": 73.4
+    },
+    {
+      "term": "Etch A Sketch",
+      "signals": [
+        {
+          "term": "Etch A Sketch",
+          "source": "wikipedia",
+          "level": 305,
+          "ratio": 1.5618141916605706,
+          "z": 1.4822681849099422,
+          "detail": {
+            "article": "Etch_A_Sketch",
+            "recentDailyAvg": 305,
+            "baselineDailyAvg": 195
+          }
+        },
+        {
+          "term": "Etch A Sketch",
+          "source": "youtube",
+          "level": 31058851,
+          "ratio": 1.4269750437366113,
+          "z": 3.420015488827033,
+          "detail": {
+            "recentVideoCount": 23447,
+            "topOutlierScore": 17.366825399463554
+          }
+        }
+      ],
+      "score": 73.1
+    },
+    {
+      "term": "Furby",
+      "signals": [
+        {
+          "term": "Furby",
+          "source": "wikipedia",
+          "level": 355.14285714285717,
+          "ratio": 1.0557010404133342,
+          "z": 0.4911767299415978,
+          "detail": {
+            "article": "Furby",
+            "recentDailyAvg": 355,
+            "baselineDailyAvg": 336
+          }
+        },
+        {
+          "term": "Furby",
+          "source": "youtube",
+          "level": 11536524,
+          "ratio": 1.2561903984547294,
+          "z": 3.736546337622691,
+          "detail": {
+            "recentVideoCount": 66393,
+            "topOutlierScore": 4.138386647898995
+          }
+        }
+      ],
+      "score": 72.4
+    },
+    {
+      "term": "Zenith console television",
+      "signals": [
+        {
+          "term": "Zenith console television",
+          "source": "wikipedia",
+          "level": 301.2857142857143,
+          "ratio": 1.37178166838311,
+          "z": 1.7790302146782757,
+          "detail": {
+            "article": "Zenith_Electronics",
+            "recentDailyAvg": 301,
+            "baselineDailyAvg": 220
+          }
+        }
+      ],
+      "score": 71.9
+    },
+    {
+      "term": "Sit'n Spin",
+      "signals": [
+        {
+          "term": "Sit'n Spin",
+          "source": "youtube",
+          "level": 23564,
+          "ratio": 3.467333725721012,
+          "z": 2.0433805995264165,
+          "detail": {
+            "recentVideoCount": 81,
+            "topOutlierScore": 0.6331881238629233
+          }
+        }
+      ],
+      "score": 71.3
+    },
+    {
+      "term": "Salute Your Shorts",
+      "signals": [
+        {
+          "term": "Salute Your Shorts",
+          "source": "wikipedia",
+          "level": 222.71428571428572,
+          "ratio": 0.6888831608793313,
+          "z": -0.6213165490381454,
+          "detail": {
+            "article": "Salute_Your_Shorts",
+            "recentDailyAvg": 223,
+            "baselineDailyAvg": 323
+          }
+        },
+        {
+          "term": "Salute Your Shorts",
+          "source": "youtube",
+          "level": 2302031,
+          "ratio": 1.0969177122664435,
+          "z": 4.644812807112706,
+          "detail": {
+            "recentVideoCount": 71887,
+            "topOutlierScore": 0.2984840839460708
+          }
+        }
+      ],
+      "score": 70.4
+    },
+    {
+      "term": "My Little Pony G1",
+      "signals": [
+        {
+          "term": "My Little Pony G1",
+          "source": "wikipedia",
+          "level": 1011.8571428571429,
+          "ratio": 0.8943370020412887,
+          "z": -0.38298464514478925,
+          "detail": {
+            "article": "My_Little_Pony",
+            "recentDailyAvg": 1012,
+            "baselineDailyAvg": 1131
+          }
+        },
+        {
+          "term": "My Little Pony G1",
+          "source": "youtube",
+          "level": 17312039,
+          "ratio": 1.153777769946135,
+          "z": 2.332206335132346,
+          "detail": {
+            "recentVideoCount": 5808,
+            "topOutlierScore": 9.133808611539385
+          }
+        }
+      ],
+      "score": 70.1
+    },
+    {
+      "term": "overhead projector",
+      "signals": [
+        {
+          "term": "overhead projector",
+          "source": "wikipedia",
+          "level": 134.57142857142858,
+          "ratio": 1.049777117384844,
+          "z": 0.19995018327850564,
+          "detail": {
+            "article": "Overhead_projector",
+            "recentDailyAvg": 135,
+            "baselineDailyAvg": 128
+          }
+        },
+        {
+          "term": "overhead projector",
+          "source": "youtube",
+          "level": 6113995,
+          "ratio": 3.6034167302402467,
+          "z": 2.572717254303893,
+          "detail": {
+            "recentVideoCount": 22905,
+            "topOutlierScore": 0.8256652323868048
+          }
+        }
+      ],
+      "score": 69.2
+    },
+    {
+      "term": "Starter jacket",
+      "signals": [
+        {
+          "term": "Starter jacket",
+          "source": "wikipedia",
+          "level": 77.42857142857143,
+          "ratio": 0.9688663786682556,
+          "z": -0.14103936382296703,
+          "detail": {
+            "article": "Starter_(clothing_line)",
+            "recentDailyAvg": 77,
+            "baselineDailyAvg": 80
+          }
+        },
+        {
+          "term": "Starter jacket",
+          "source": "youtube",
+          "level": 61765,
+          "ratio": 1.5188737243329644,
+          "z": 2.9021499869745484,
+          "detail": {
+            "recentVideoCount": 65254,
+            "topOutlierScore": 0.0988927089902961
+          }
+        }
+      ],
+      "score": 69.1
+    },
+    {
+      "term": "VHS camcorder",
+      "signals": [
+        {
+          "term": "VHS camcorder",
+          "source": "wikipedia",
+          "level": 211.57142857142858,
+          "ratio": 1.1666776078251166,
+          "z": 1.4820684826123192,
+          "detail": {
+            "article": "Camcorder",
+            "recentDailyAvg": 212,
+            "baselineDailyAvg": 181
+          }
+        }
+      ],
+      "score": 68.5
+    },
+    {
+      "term": "TGIF ABC",
+      "signals": [
+        {
+          "term": "TGIF ABC",
+          "source": "wikipedia",
+          "level": 279.14285714285717,
+          "ratio": 1.0204987596291946,
+          "z": 0.11599080964812945,
+          "detail": {
+            "article": "TGIF_(TV_programming_block)",
+            "recentDailyAvg": 279,
+            "baselineDailyAvg": 274
+          }
+        },
+        {
+          "term": "TGIF ABC",
+          "source": "youtube",
+          "level": 101940,
+          "ratio": 1.5270880614790014,
+          "z": 2.5754262874011973,
+          "detail": {
+            "recentVideoCount": 1036,
+            "topOutlierScore": 0.41752348863945105
+          }
+        }
+      ],
+      "score": 68.1
+    },
+    {
+      "term": "Teddy Ruxpin",
+      "signals": [
+        {
+          "term": "Teddy Ruxpin",
+          "source": "wikipedia",
+          "level": 257.42857142857144,
+          "ratio": 1.2809667673716012,
+          "z": 2.1253716898761645,
+          "detail": {
+            "article": "Teddy_Ruxpin",
+            "recentDailyAvg": 257,
+            "baselineDailyAvg": 201
+          }
+        },
+        {
+          "term": "Teddy Ruxpin",
+          "source": "youtube",
+          "level": 451869,
+          "ratio": 0.557409603152399,
+          "z": -1.429091689967042,
+          "detail": {
+            "recentVideoCount": 6200,
+            "topOutlierScore": 1.2779209642891314
+          }
+        }
+      ],
+      "score": 67.6
+    },
+    {
+      "term": "Cabbage Patch Kids",
+      "signals": [
+        {
+          "term": "Cabbage Patch Kids",
+          "source": "wikipedia",
+          "level": 313.85714285714283,
+          "ratio": 1.037462616086888,
+          "z": 0.311798959967148,
+          "detail": {
+            "article": "Cabbage_Patch_Kids",
+            "recentDailyAvg": 314,
+            "baselineDailyAvg": 303
+          }
+        },
+        {
+          "term": "Cabbage Patch Kids",
+          "source": "youtube",
+          "level": 5644087,
+          "ratio": 1.6706259061540658,
+          "z": 1.8378894879802232,
+          "detail": {
+            "recentVideoCount": 17895,
+            "topOutlierScore": 1.1512379754087148
+          }
+        }
+      ],
+      "score": 67.2
+    },
+    {
+      "term": "Nintendo Entertainment System",
+      "signals": [
+        {
+          "term": "Nintendo Entertainment System",
+          "source": "wikipedia",
+          "level": 1726.857142857143,
+          "ratio": 1.117216201853093,
+          "z": 0.9477292965343398,
+          "detail": {
+            "article": "Nintendo_Entertainment_System",
+            "recentDailyAvg": 1727,
+            "baselineDailyAvg": 1546
+          }
+        }
+      ],
+      "score": 66.9
+    },
+    {
+      "term": "Zima",
+      "signals": [
+        {
+          "term": "Zima",
+          "source": "wikipedia",
+          "level": 377.42857142857144,
+          "ratio": 1.1476561085972852,
+          "z": 0.8940833186835244,
+          "detail": {
+            "article": "Zima_(drink)",
+            "recentDailyAvg": 377,
+            "baselineDailyAvg": 329
+          }
+        }
+      ],
+      "score": 64.4
+    },
+    {
+      "term": "Care Bears",
+      "signals": [
+        {
+          "term": "Care Bears",
+          "source": "wikipedia",
+          "level": 630,
+          "ratio": 1.2045889101338432,
+          "z": 1.8099015324642198,
+          "detail": {
+            "article": "Care_Bears",
+            "recentDailyAvg": 630,
+            "baselineDailyAvg": 523
+          }
+        },
+        {
+          "term": "Care Bears",
+          "source": "youtube",
+          "level": 23304895,
+          "ratio": 0.905420157367511,
+          "z": -0.8970184753577918,
+          "detail": {
+            "recentVideoCount": 90189,
+            "topOutlierScore": 82.25086315725265
+          }
+        }
+      ],
+      "score": 64.2
+    },
+    {
+      "term": "vinyl record collecting",
+      "signals": [
+        {
+          "term": "vinyl record collecting",
+          "source": "youtube",
+          "level": 21303414,
+          "ratio": 3.299095704824402,
+          "z": 2.270261775450702,
+          "detail": {
+            "recentVideoCount": 63346,
+            "topOutlierScore": 12.466851610264177
+          }
+        }
+      ],
+      "score": 64
+    },
+    {
+      "term": "Glo Worm",
+      "signals": [
+        {
+          "term": "Glo Worm",
+          "source": "wikipedia",
+          "level": 49,
+          "ratio": 0.9865771812080537,
+          "z": -0.05981421586751477,
+          "detail": {
+            "article": "Glo_Worm",
+            "recentDailyAvg": 49,
+            "baselineDailyAvg": 50
+          }
+        },
+        {
+          "term": "Glo Worm",
+          "source": "youtube",
+          "level": 45276,
+          "ratio": 1.3966056523107107,
+          "z": 1.7947117059311368,
+          "detail": {
+            "recentVideoCount": 4474,
+            "topOutlierScore": 0.12845827351913736
+          }
+        }
+      ],
+      "score": 62.9
+    },
+    {
+      "term": "Tab cola",
+      "signals": [
+        {
+          "term": "Tab cola",
+          "source": "wikipedia",
+          "level": 725,
+          "ratio": 1.3145681783840955,
+          "z": 0.7564326946867105,
+          "detail": {
+            "article": "Tab_(drink)",
+            "recentDailyAvg": 725,
+            "baselineDailyAvg": 552
+          }
+        }
+      ],
+      "score": 62.9
+    },
+    {
+      "term": "Troll dolls",
+      "signals": [
+        {
+          "term": "Troll dolls",
+          "source": "wikipedia",
+          "level": 234.42857142857142,
+          "ratio": 0.9975683890577507,
+          "z": -0.017681393765872577,
+          "detail": {
+            "article": "Troll_doll",
+            "recentDailyAvg": 234,
+            "baselineDailyAvg": 235
+          }
+        },
+        {
+          "term": "Troll dolls",
+          "source": "youtube",
+          "level": 30189698,
+          "ratio": 1.2683627595456848,
+          "z": 1.8969837902858855,
+          "detail": {
+            "recentVideoCount": 59847,
+            "topOutlierScore": 5.326805704876198
+          }
+        }
+      ],
+      "score": 62.7
+    },
+    {
+      "term": "Dunkaroos",
+      "signals": [
+        {
+          "term": "Dunkaroos",
+          "source": "wikipedia",
+          "level": 85.42857142857143,
+          "ratio": 1.2613816136403586,
+          "z": 0.8839921117765994,
+          "detail": {
+            "article": "Dunkaroos",
+            "recentDailyAvg": 85,
+            "baselineDailyAvg": 68
+          }
+        }
+      ],
+      "score": 62.7
+    },
+    {
+      "term": "Blockbuster Video",
+      "signals": [
+        {
+          "term": "Blockbuster Video",
+          "source": "wikipedia",
+          "level": 1072.857142857143,
+          "ratio": 1.2337093418026503,
+          "z": 1.938716958411907,
+          "detail": {
+            "article": "Blockbuster_(retailer)",
+            "recentDailyAvg": 1073,
+            "baselineDailyAvg": 870
+          }
+        },
+        {
+          "term": "Blockbuster Video",
+          "source": "youtube",
+          "level": 111004238,
+          "ratio": 0.8342391440461996,
+          "z": -20.280973236404687,
+          "detail": {
+            "recentVideoCount": 284028,
+            "topOutlierScore": 15.434856815864642
+          }
+        }
+      ],
+      "score": 62.1
+    },
+    {
+      "term": "Weekly Reader",
+      "signals": [
+        {
+          "term": "Weekly Reader",
+          "source": "wikipedia",
+          "level": 46.142857142857146,
+          "ratio": 1.2555879494655007,
+          "z": 1.0610964068044226,
+          "detail": {
+            "article": "Weekly_Reader",
+            "recentDailyAvg": 46,
+            "baselineDailyAvg": 37
+          }
+        }
+      ],
+      "score": 61.6
+    },
+    {
+      "term": "Big Wheel trike",
+      "signals": [
+        {
+          "term": "Big Wheel trike",
+          "source": "wikipedia",
+          "level": 64.42857142857143,
+          "ratio": 1.1138094258077795,
+          "z": 0.5663507539186099,
+          "detail": {
+            "article": "Big_Wheel_(tricycle)",
+            "recentDailyAvg": 64,
+            "baselineDailyAvg": 58
+          }
+        },
+        {
+          "term": "Big Wheel trike",
+          "source": "youtube",
+          "level": 3590062,
+          "ratio": 1.0556692103836536,
+          "z": 1.2373319104089244,
+          "detail": {
+            "recentVideoCount": 20440,
+            "topOutlierScore": 0.10299465242671177
+          }
+        }
+      ],
+      "score": 57.6
+    },
+    {
+      "term": "Betamax",
+      "signals": [
+        {
+          "term": "Betamax",
+          "source": "wikipedia",
+          "level": 473.2857142857143,
+          "ratio": 1.065273311897106,
+          "z": 0.6223285370649915,
+          "detail": {
+            "article": "Betamax",
+            "recentDailyAvg": 473,
+            "baselineDailyAvg": 444
+          }
+        }
+      ],
+      "score": 57.2
+    },
+    {
+      "term": "vintage thrift haul",
+      "signals": [
+        {
+          "term": "vintage thrift haul",
+          "source": "youtube",
+          "level": 42957823,
+          "ratio": 1.5238420396952732,
+          "z": 1.8813960891173818,
+          "detail": {
+            "recentVideoCount": 57743,
+            "topOutlierScore": 107.10477180634147
+          }
+        }
+      ],
+      "score": 57.1
+    },
+    {
+      "term": "Scholastic Book Fair",
+      "signals": [
+        {
+          "term": "Scholastic Book Fair",
+          "source": "wikipedia",
+          "level": 365,
+          "ratio": 1.0684043628253823,
+          "z": 0.4543825947684694,
+          "detail": {
+            "article": "Scholastic_Corporation",
+            "recentDailyAvg": 365,
+            "baselineDailyAvg": 342
+          }
+        },
+        {
+          "term": "Scholastic Book Fair",
+          "source": "youtube",
+          "level": 954714,
+          "ratio": 1.1565609491534952,
+          "z": 1.0835346293374417,
+          "detail": {
+            "recentVideoCount": 9473,
+            "topOutlierScore": 8.683843363582833
+          }
+        }
+      ],
+      "score": 56.8
+    },
+    {
+      "term": "Chuck E Cheese animatronics",
+      "signals": [
+        {
+          "term": "Chuck E Cheese animatronics",
+          "source": "wikipedia",
+          "level": 755.4285714285714,
+          "ratio": 0.9957006119566923,
+          "z": -0.03936368719945976,
+          "detail": {
+            "article": "Chuck_E._Cheese",
+            "recentDailyAvg": 755,
+            "baselineDailyAvg": 759
+          }
+        },
+        {
+          "term": "Chuck E Cheese animatronics",
+          "source": "youtube",
+          "level": 7047161,
+          "ratio": 1.1180569448756736,
+          "z": 1.512611206369795,
+          "detail": {
+            "recentVideoCount": 36418,
+            "topOutlierScore": 8.770799517010621
+          }
+        }
+      ],
+      "score": 55.8
+    },
+    {
+      "term": "Swatch watch",
+      "signals": [
+        {
+          "term": "Swatch watch",
+          "source": "wikipedia",
+          "level": 238.14285714285714,
+          "ratio": 0.584519183005581,
+          "z": -0.2825950145148394,
+          "detail": {
+            "article": "Swatch",
+            "recentDailyAvg": 238,
+            "baselineDailyAvg": 407
+          }
+        },
+        {
+          "term": "Swatch watch",
+          "source": "youtube",
+          "level": 19856911,
+          "ratio": 1.6818921061843883,
+          "z": 1.0360559254762334,
+          "detail": {
+            "recentVideoCount": 89277,
+            "topOutlierScore": 32.81199358911121
+          }
+        }
+      ],
+      "score": 55.3
+    },
+    {
+      "term": "Micro Machines",
+      "signals": [
+        {
+          "term": "Micro Machines",
+          "source": "wikipedia",
+          "level": 147.71428571428572,
+          "ratio": 0.8457501192829392,
+          "z": -0.06051544908209115,
+          "detail": {
+            "article": "Micro_Machines",
+            "recentDailyAvg": 148,
+            "baselineDailyAvg": 175
+          }
+        },
+        {
+          "term": "Micro Machines",
+          "source": "youtube",
+          "level": 299140,
+          "ratio": 1.6032594714185262,
+          "z": 1.2657091255646955,
+          "detail": {
+            "recentVideoCount": 63305,
+            "topOutlierScore": 2.7746755462058514
+          }
+        }
+      ],
+      "score": 54.7
+    },
+    {
+      "term": "Toys R Us",
+      "signals": [
+        {
+          "term": "Toys R Us",
+          "source": "youtube",
+          "level": 19967977,
+          "ratio": 1.2304962150550967,
+          "z": 1.1827874375137684,
+          "detail": {
+            "recentVideoCount": 80921,
+            "topOutlierScore": 6.105475453150072
+          }
+        }
+      ],
+      "score": 54.5
+    },
+    {
+      "term": "Pound Puppies",
+      "signals": [
+        {
+          "term": "Pound Puppies",
+          "source": "wikipedia",
+          "level": 123.28571428571429,
+          "ratio": 1.3400621118012424,
+          "z": 1.0482597091350718,
+          "detail": {
+            "article": "Pound_Puppies",
+            "recentDailyAvg": 123,
+            "baselineDailyAvg": 92
+          }
+        },
+        {
+          "term": "Pound Puppies",
+          "source": "youtube",
+          "level": 521011,
+          "ratio": 0.299554702075853,
+          "z": -1.4721772069715446,
+          "detail": {
+            "recentVideoCount": 31670,
+            "topOutlierScore": 0.5624709547605251
+          }
+        }
+      ],
+      "score": 53.6
+    },
+    {
+      "term": "Strawberry Shortcake doll",
+      "signals": [
+        {
+          "term": "Strawberry Shortcake doll",
+          "source": "wikipedia",
+          "level": 450,
+          "ratio": 0.8874281018898932,
+          "z": -1.0208083164581403,
+          "detail": {
+            "article": "Strawberry_Shortcake",
+            "recentDailyAvg": 450,
+            "baselineDailyAvg": 507
+          }
+        },
+        {
+          "term": "Strawberry Shortcake doll",
+          "source": "youtube",
+          "level": 1049699,
+          "ratio": 1.1742040864175656,
+          "z": 0.9899157759339868,
+          "detail": {
+            "recentVideoCount": 47245,
+            "topOutlierScore": 0.6513124340733015
+          }
+        }
+      ],
+      "score": 52.7
+    },
+    {
+      "term": "drive-in theater",
+      "signals": [
+        {
+          "term": "drive-in theater",
+          "source": "wikipedia",
+          "level": 140.85714285714286,
+          "ratio": 0.9468629961587709,
+          "z": -0.40512545692647334,
+          "detail": {
+            "article": "Drive-in_theater",
+            "recentDailyAvg": 141,
+            "baselineDailyAvg": 149
+          }
+        },
+        {
+          "term": "drive-in theater",
+          "source": "youtube",
+          "level": 4772057,
+          "ratio": 1.065316968754015,
+          "z": 1.0656618555376187,
+          "detail": {
+            "recentVideoCount": 569291,
+            "topOutlierScore": 5.92504191950938
+          }
+        }
+      ],
+      "score": 52.5
+    },
+    {
+      "term": "Fruit Stripe gum",
+      "signals": [
+        {
+          "term": "Fruit Stripe gum",
+          "source": "wikipedia",
+          "level": 91.71428571428571,
+          "ratio": 1.066150013838915,
+          "z": 0.4754020783077755,
+          "detail": {
+            "article": "Fruit_Stripe",
+            "recentDailyAvg": 92,
+            "baselineDailyAvg": 86
+          }
+        },
+        {
+          "term": "Fruit Stripe gum",
+          "source": "youtube",
+          "level": 59251,
+          "ratio": 0.4989116751781948,
+          "z": -3.480958844771547,
+          "detail": {
+            "recentVideoCount": 667,
+            "topOutlierScore": 0.37195620831444304
+          }
+        }
+      ],
+      "score": 51.3
+    },
+    {
+      "term": "dial-up modem sound",
+      "signals": [
+        {
+          "term": "dial-up modem sound",
+          "source": "wikipedia",
+          "level": 290.85714285714283,
+          "ratio": 1.0595429116613904,
+          "z": 0.3109573453012692,
+          "detail": {
+            "article": "Dial-up_Internet_access",
+            "recentDailyAvg": 291,
+            "baselineDailyAvg": 275
+          }
+        }
+      ],
+      "score": 50.5
+    },
+    {
+      "term": "Saturday morning cartoons",
+      "signals": [
+        {
+          "term": "Saturday morning cartoons",
+          "source": "wikipedia",
+          "level": 215.71428571428572,
+          "ratio": 0.9996138357146799,
+          "z": -0.001970582741572395,
+          "detail": {
+            "article": "Saturday-morning_cartoon",
+            "recentDailyAvg": 216,
+            "baselineDailyAvg": 216
+          }
+        },
+        {
+          "term": "Saturday morning cartoons",
+          "source": "youtube",
+          "level": 6375531,
+          "ratio": 1.252404490011801,
+          "z": 0.8436739043405441,
+          "detail": {
+            "recentVideoCount": 67632,
+            "topOutlierScore": 0.8645850696209568
+          }
+        }
+      ],
+      "score": 49.9
+    },
+    {
+      "term": "The Oregon Trail game",
+      "signals": [
+        {
+          "term": "The Oregon Trail game",
+          "source": "wikipedia",
+          "level": 200,
+          "ratio": 1.079136690647482,
+          "z": 0.20315047434335848,
+          "detail": {
+            "article": "The_Oregon_Trail_(1985_video_game)",
+            "recentDailyAvg": 200,
+            "baselineDailyAvg": 185
+          }
+        },
+        {
+          "term": "The Oregon Trail game",
+          "source": "youtube",
+          "level": 5651511,
+          "ratio": 1.1008432815167615,
+          "z": 0.7867343882311988,
+          "detail": {
+            "recentVideoCount": 50138,
+            "topOutlierScore": 0.7958022579013956
+          }
+        }
+      ],
+      "score": 49.5
+    },
+    {
+      "term": "latchkey kid",
+      "signals": [
+        {
+          "term": "latchkey kid",
+          "source": "wikipedia",
+          "level": 375.7142857142857,
+          "ratio": 1.0990771373846422,
+          "z": 0.6102098653285656,
+          "detail": {
+            "article": "Latchkey_kid",
+            "recentDailyAvg": 376,
+            "baselineDailyAvg": 342
+          }
+        },
+        {
+          "term": "latchkey kid",
+          "source": "youtube",
+          "level": 1018599,
+          "ratio": 0.3607494188727027,
+          "z": -1.0616298475508126,
+          "detail": {
+            "recentVideoCount": 11543,
+            "topOutlierScore": 1.7250807668539707
+          }
+        }
+      ],
+      "score": 49
+    },
+    {
+      "term": "Fraggle Rock",
+      "signals": [
+        {
+          "term": "Fraggle Rock",
+          "source": "wikipedia",
+          "level": 660.8571428571429,
+          "ratio": 1.0758348030000582,
+          "z": 0.8264920300517843,
+          "detail": {
+            "article": "Fraggle_Rock",
+            "recentDailyAvg": 661,
+            "baselineDailyAvg": 614
+          }
+        },
+        {
+          "term": "Fraggle Rock",
+          "source": "youtube",
+          "level": 70035,
+          "ratio": 0.25779390842951294,
+          "z": -0.7496895317810003,
+          "detail": {
+            "recentVideoCount": 19369,
+            "topOutlierScore": 0.22435016054478527
+          }
+        }
+      ],
+      "score": 48.9
+    },
+    {
+      "term": "retro toys",
+      "signals": [
+        {
+          "term": "retro toys",
+          "source": "wikipedia",
+          "level": 320.42857142857144,
+          "ratio": 0.8224653180957038,
+          "z": -0.4353769318357435,
+          "detail": {
+            "article": "Toy_Story:_Retro_Roundup!",
+            "recentDailyAvg": 320,
+            "baselineDailyAvg": 390
+          }
+        },
+        {
+          "term": "retro toys",
+          "source": "youtube",
+          "level": 34113380,
+          "ratio": 2.0435380599437383,
+          "z": 1.1138700248371143,
+          "detail": {
+            "recentVideoCount": 71037,
+            "topOutlierScore": 39.24753682444462
+          }
+        }
+      ],
+      "score": 48.3
+    },
+    {
+      "term": "MTV VJs",
+      "signals": [
+        {
+          "term": "MTV VJs",
+          "source": "wikipedia",
+          "level": 1914.4285714285713,
+          "ratio": 0.9400197576473202,
+          "z": -0.16651152886231,
+          "detail": {
+            "article": "MTV",
+            "recentDailyAvg": 1914,
+            "baselineDailyAvg": 2037
+          }
+        },
+        {
+          "term": "MTV VJs",
+          "source": "youtube",
+          "level": 547324,
+          "ratio": 1.3136128048231692,
+          "z": 0.8346914051381888,
+          "detail": {
+            "recentVideoCount": 10566,
+            "topOutlierScore": 2.159737143116535
+          }
+        }
+      ],
+      "score": 48.3
+    },
+    {
+      "term": "Commodore 64",
+      "signals": [
+        {
+          "term": "Commodore 64",
+          "source": "wikipedia",
+          "level": 1012.2857142857143,
+          "ratio": 1.0037775049579754,
+          "z": 0.023902415307007426,
+          "detail": {
+            "article": "Commodore_64",
+            "recentDailyAvg": 1012,
+            "baselineDailyAvg": 1008
+          }
+        }
+      ],
+      "score": 48.1
+    },
+    {
+      "term": "Game Boy",
+      "signals": [
+        {
+          "term": "Game Boy",
+          "source": "wikipedia",
+          "level": 1305,
+          "ratio": 0.989725347153253,
+          "z": -0.12875732896200057,
+          "detail": {
+            "article": "Game_Boy",
+            "recentDailyAvg": 1305,
+            "baselineDailyAvg": 1319
+          }
+        }
+      ],
+      "score": 47.8
+    },
+    {
+      "term": "Sony Walkman",
+      "signals": [
+        {
+          "term": "Sony Walkman",
+          "source": "wikipedia",
+          "level": 501.2857142857143,
+          "ratio": 0.9897983169573598,
+          "z": -0.05254280102750525,
+          "detail": {
+            "article": "Walkman",
+            "recentDailyAvg": 501,
+            "baselineDailyAvg": 506
+          }
+        }
+      ],
+      "score": 46.8
+    },
+    {
+      "term": "Speak & Spell",
+      "signals": [
+        {
+          "term": "Speak & Spell",
+          "source": "wikipedia",
+          "level": 126.28571428571429,
+          "ratio": 0.9076751946607342,
+          "z": -0.5594031218285828,
+          "detail": {
+            "article": "Speak_&_Spell_(toy)",
+            "recentDailyAvg": 126,
+            "baselineDailyAvg": 139
+          }
+        },
+        {
+          "term": "Speak & Spell",
+          "source": "youtube",
+          "level": 13293385,
+          "ratio": 1.3509949490329989,
+          "z": 0.6297874307985941,
+          "detail": {
+            "recentVideoCount": 66937,
+            "topOutlierScore": 35.76131953980972
+          }
+        }
+      ],
+      "score": 46.3
+    },
+    {
+      "term": "Fire-King jadeite",
+      "signals": [
+        {
+          "term": "Fire-King jadeite",
+          "source": "wikipedia",
+          "level": 52,
+          "ratio": 1.0409914204003814,
+          "z": 0.2019137289385265,
+          "detail": {
+            "article": "Fire-King",
+            "recentDailyAvg": 52,
+            "baselineDailyAvg": 50
+          }
+        }
+      ],
+      "score": 46.2
+    },
+    {
+      "term": "Squeezit",
+      "signals": [
+        {
+          "term": "Squeezit",
+          "source": "wikipedia",
+          "level": 40.42857142857143,
+          "ratio": 1.0228915662650602,
+          "z": 0.08475236634555758,
+          "detail": {
+            "article": "Squeezit",
+            "recentDailyAvg": 40,
+            "baselineDailyAvg": 40
+          }
+        }
+      ],
+      "score": 46.2
+    },
+    {
+      "term": "Crystal Pepsi",
+      "signals": [
+        {
+          "term": "Crystal Pepsi",
+          "source": "wikipedia",
+          "level": 285.14285714285717,
+          "ratio": 0.9955939812120709,
+          "z": -0.024897135136706484,
+          "detail": {
+            "article": "Crystal_Pepsi",
+            "recentDailyAvg": 285,
+            "baselineDailyAvg": 286
+          }
+        }
+      ],
+      "score": 46.1
+    },
+    {
+      "term": "boombox",
+      "signals": [
+        {
+          "term": "boombox",
+          "source": "wikipedia",
+          "level": 190.42857142857142,
+          "ratio": 0.9587628865979381,
+          "z": -0.3056458305438772,
+          "detail": {
+            "article": "Boombox",
+            "recentDailyAvg": 190,
+            "baselineDailyAvg": 199
+          }
+        }
+      ],
+      "score": 45.7
+    },
+    {
+      "term": "Ecto Cooler",
+      "signals": [
+        {
+          "term": "Ecto Cooler",
+          "source": "wikipedia",
+          "level": 128.42857142857142,
+          "ratio": 0.9220512820512821,
+          "z": -0.3334495868090128,
+          "detail": {
+            "article": "Hi-C",
+            "recentDailyAvg": 128,
+            "baselineDailyAvg": 139
+          }
+        }
+      ],
+      "score": 45.3
+    },
+    {
+      "term": "Slip'N Slide",
+      "signals": [
+        {
+          "term": "Slip'N Slide",
+          "source": "youtube",
+          "level": 133601414,
+          "ratio": 1.0996896598327621,
+          "z": 0.47701162747074466,
+          "detail": {
+            "recentVideoCount": 56973,
+            "topOutlierScore": 1.5937987547615204
+          }
+        }
+      ],
+      "score": 43.7
+    },
+    {
+      "term": "Tupperware Servalier",
+      "signals": [
+        {
+          "term": "Tupperware Servalier",
+          "source": "wikipedia",
+          "level": 436.42857142857144,
+          "ratio": 0.9270920264016388,
+          "z": -0.3776272937531738,
+          "detail": {
+            "article": "Tupperware",
+            "recentDailyAvg": 436,
+            "baselineDailyAvg": 471
+          }
+        }
+      ],
+      "score": 43.6
+    },
+    {
+      "term": "mixtape",
+      "signals": [
+        {
+          "term": "mixtape",
+          "source": "wikipedia",
+          "level": 288.57142857142856,
+          "ratio": 0.980701541449205,
+          "z": -0.19709214503024033,
+          "detail": {
+            "article": "Mixtape",
+            "recentDailyAvg": 289,
+            "baselineDailyAvg": 294
+          }
+        }
+      ],
+      "score": 43.2
+    },
+    {
+      "term": "Pyrex Butterprint",
+      "signals": [
+        {
+          "term": "Pyrex Butterprint",
+          "source": "wikipedia",
+          "level": 257.7142857142857,
+          "ratio": 0.8881230769230769,
+          "z": -0.36966297080488897,
+          "detail": {
+            "article": "Pyrex",
+            "recentDailyAvg": 258,
+            "baselineDailyAvg": 290
+          }
+        }
+      ],
+      "score": 43
+    },
+    {
+      "term": "Pyrex Gooseberry",
+      "signals": [
+        {
+          "term": "Pyrex Gooseberry",
+          "source": "wikipedia",
+          "level": 257.7142857142857,
+          "ratio": 0.8881230769230769,
+          "z": -0.36966297080488897,
+          "detail": {
+            "article": "Pyrex",
+            "recentDailyAvg": 258,
+            "baselineDailyAvg": 290
+          }
+        }
+      ],
+      "score": 43
+    },
+    {
+      "term": "Pyrex Friendship",
+      "signals": [
+        {
+          "term": "Pyrex Friendship",
+          "source": "wikipedia",
+          "level": 257.7142857142857,
+          "ratio": 0.8881230769230769,
+          "z": -0.36966297080488897,
+          "detail": {
+            "article": "Pyrex",
+            "recentDailyAvg": 258,
+            "baselineDailyAvg": 290
+          }
+        }
+      ],
+      "score": 43
+    },
+    {
+      "term": "avocado green appliances",
+      "signals": [
+        {
+          "term": "avocado green appliances",
+          "source": "wikipedia",
+          "level": 78,
+          "ratio": 1.0070703965570242,
+          "z": 0.04636050227532927,
+          "detail": {
+            "article": "Shades_of_chartreuse",
+            "recentDailyAvg": 78,
+            "baselineDailyAvg": 77
+          }
+        }
+      ],
+      "score": 42.9
+    },
+    {
+      "term": "rotary phone",
+      "signals": [
+        {
+          "term": "rotary phone",
+          "source": "wikipedia",
+          "level": 191.85714285714286,
+          "ratio": 0.9673469387755101,
+          "z": -0.09906222265086664,
+          "detail": {
+            "article": "Rotary_dial",
+            "recentDailyAvg": 192,
+            "baselineDailyAvg": 198
+          }
+        }
+      ],
+      "score": 42.7
+    },
+    {
+      "term": "Woolworth lunch counter",
+      "signals": [
+        {
+          "term": "Woolworth lunch counter",
+          "source": "wikipedia",
+          "level": 167.28571428571428,
+          "ratio": 1.0360539703605396,
+          "z": 0.27239433344381064,
+          "detail": {
+            "article": "F._W._Woolworth_Company",
+            "recentDailyAvg": 167,
+            "baselineDailyAvg": 161
+          }
+        },
+        {
+          "term": "Woolworth lunch counter",
+          "source": "youtube",
+          "level": 752477,
+          "ratio": 0.9876938121224252,
+          "z": -0.21883442958340546,
+          "detail": {
+            "recentVideoCount": 789,
+            "topOutlierScore": 0.6606421671097024
+          }
+        }
+      ],
+      "score": 42.6
+    },
+    {
+      "term": "CorningWare Cornflower",
+      "signals": [
+        {
+          "term": "CorningWare Cornflower",
+          "source": "wikipedia",
+          "level": 128.57142857142858,
+          "ratio": 0.9697405046242256,
+          "z": -0.1778089452370836,
+          "detail": {
+            "article": "CorningWare",
+            "recentDailyAvg": 129,
+            "baselineDailyAvg": 133
+          }
+        }
+      ],
+      "score": 42.3
+    },
+    {
+      "term": "Hi-C Double Fruit Cooler",
+      "signals": [
+        {
+          "term": "Hi-C Double Fruit Cooler",
+          "source": "wikipedia",
+          "level": 128.42857142857142,
+          "ratio": 0.9220512820512821,
+          "z": -0.3334495868090128,
+          "detail": {
+            "article": "Hi-C",
+            "recentDailyAvg": 128,
+            "baselineDailyAvg": 139
+          }
+        }
+      ],
+      "score": 42.3
+    },
+    {
+      "term": "Polaroid SX-70",
+      "signals": [
+        {
+          "term": "Polaroid SX-70",
+          "source": "wikipedia",
+          "level": 116.28571428571429,
+          "ratio": 0.9882638607851073,
+          "z": -0.07823744971165271,
+          "detail": {
+            "article": "Polaroid_SX-70",
+            "recentDailyAvg": 116,
+            "baselineDailyAvg": 118
+          }
+        }
+      ],
+      "score": 42.2
+    },
+    {
+      "term": "answering machine cassette",
+      "signals": [
+        {
+          "term": "answering machine cassette",
+          "source": "wikipedia",
+          "level": 92.42857142857143,
+          "ratio": 0.7975346687211095,
+          "z": -0.8555582682029763,
+          "detail": {
+            "article": "Answering_machine",
+            "recentDailyAvg": 92,
+            "baselineDailyAvg": 116
+          }
+        }
+      ],
+      "score": 41.9
+    },
+    {
+      "term": "8-track tape",
+      "signals": [
+        {
+          "term": "8-track tape",
+          "source": "wikipedia",
+          "level": 41.714285714285715,
+          "ratio": 0.9216201998947923,
+          "z": -0.36220833850587647,
+          "detail": {
+            "article": "8-track_tape",
+            "recentDailyAvg": 42,
+            "baselineDailyAvg": 45
+          }
+        }
+      ],
+      "score": 41.1
+    },
+    {
+      "term": "View-Master",
+      "signals": [
+        {
+          "term": "View-Master",
+          "source": "wikipedia",
+          "level": 191.57142857142858,
+          "ratio": 0.9865129965669446,
+          "z": -0.0710028768590005,
+          "detail": {
+            "article": "View-Master",
+            "recentDailyAvg": 192,
+            "baselineDailyAvg": 194
+          }
+        },
+        {
+          "term": "View-Master",
+          "source": "youtube",
+          "level": 1043031,
+          "ratio": 1.079518956638161,
+          "z": 0.34978091278899154,
+          "detail": {
+            "recentVideoCount": 86569,
+            "topOutlierScore": 0.4948862305181501
+          }
+        }
+      ],
+      "score": 40.4
+    },
+    {
+      "term": "Generation X",
+      "signals": [
+        {
+          "term": "Generation X",
+          "source": "wikipedia",
+          "level": 4836.571428571428,
+          "ratio": 0.9865496550602096,
+          "z": -0.14422564828415785,
+          "detail": {
+            "article": "Generation_X",
+            "recentDailyAvg": 4837,
+            "baselineDailyAvg": 4903
+          }
+        },
+        {
+          "term": "Generation X",
+          "source": "youtube",
+          "level": 47656997,
+          "ratio": 1.0299261411276346,
+          "z": 0.6229015085147241,
+          "detail": {
+            "recentVideoCount": 92186,
+            "topOutlierScore": 198.52155650859822
+          }
+        }
+      ],
+      "score": 40.1
+    },
+    {
+      "term": "Lite-Brite",
+      "signals": [
+        {
+          "term": "Lite-Brite",
+          "source": "wikipedia",
+          "level": 86.14285714285714,
+          "ratio": 0.9461297071129706,
+          "z": -0.0637557031662294,
+          "detail": {
+            "article": "Lite-Brite",
+            "recentDailyAvg": 86,
+            "baselineDailyAvg": 91
+          }
+        },
+        {
+          "term": "Lite-Brite",
+          "source": "youtube",
+          "level": 1514892,
+          "ratio": 1.0039762946617392,
+          "z": 0.21293700785591865,
+          "detail": {
+            "recentVideoCount": 19393,
+            "topOutlierScore": 0.1605605693622815
+          }
+        }
+      ],
+      "score": 40
+    },
+    {
+      "term": "Transformers G1",
+      "signals": [
+        {
+          "term": "Transformers G1",
+          "source": "wikipedia",
+          "level": 78.57142857142857,
+          "ratio": 0.8683068017366136,
+          "z": -0.21380500093004284,
+          "detail": {
+            "article": "Transformers_(toy_line)",
+            "recentDailyAvg": 79,
+            "baselineDailyAvg": 90
+          }
+        },
+        {
+          "term": "Transformers G1",
+          "source": "youtube",
+          "level": 25745680,
+          "ratio": 1.1003362636251433,
+          "z": 0.2869670828683047,
+          "detail": {
+            "recentVideoCount": 60439,
+            "topOutlierScore": 4.126531498350102
+          }
+        }
+      ],
+      "score": 39.7
+    },
+    {
+      "term": "Sears Wish Book",
+      "signals": [
+        {
+          "term": "Sears Wish Book",
+          "source": "youtube",
+          "level": 152245,
+          "ratio": 0.5598282033980574,
+          "z": -4.313392803961836,
+          "detail": {
+            "recentVideoCount": 2358,
+            "topOutlierScore": 0.5188130292329171
+          }
+        }
+      ],
+      "score": 39.5
+    },
+    {
+      "term": "Caboodles",
+      "signals": [
+        {
+          "term": "Caboodles",
+          "source": "wikipedia",
+          "level": 438.85714285714283,
+          "ratio": 0.7973697871604083,
+          "z": -0.9528667568959537,
+          "detail": {
+            "article": "Shithead_(card_game)",
+            "recentDailyAvg": 439,
+            "baselineDailyAvg": 550
+          }
+        },
+        {
+          "term": "Caboodles",
+          "source": "youtube",
+          "level": 267914,
+          "ratio": 0.6396067543145536,
+          "z": -5.121587783376836,
+          "detail": {
+            "recentVideoCount": 3567,
+            "topOutlierScore": 0.07534546895671858
+          }
+        }
+      ],
+      "score": 39.4
+    },
+    {
+      "term": "80s nostalgia",
+      "signals": [
+        {
+          "term": "80s nostalgia",
+          "source": "wikipedia",
+          "level": 199,
+          "ratio": 1.389410689053279,
+          "z": 0.46409366754498715,
+          "detail": {
+            "article": "1980s_nostalgia",
+            "recentDailyAvg": 199,
+            "baselineDailyAvg": 143
+          }
+        },
+        {
+          "term": "80s nostalgia",
+          "source": "youtube",
+          "level": 51625572,
+          "ratio": 0.9668513504271933,
+          "z": -0.1380482288133944,
+          "detail": {
+            "recentVideoCount": 100720,
+            "topOutlierScore": 4.025380844656554
+          }
+        }
+      ],
+      "score": 38.5
+    },
+    {
+      "term": "Kmart Blue Light Special",
+      "signals": [
+        {
+          "term": "Kmart Blue Light Special",
+          "source": "wikipedia",
+          "level": 1091.142857142857,
+          "ratio": 0.9204812501255347,
+          "z": -0.7967818523613411,
+          "detail": {
+            "article": "Kmart",
+            "recentDailyAvg": 1091,
+            "baselineDailyAvg": 1185
+          }
+        },
+        {
+          "term": "Kmart Blue Light Special",
+          "source": "youtube",
+          "level": 282353,
+          "ratio": 0.24553150026544251,
+          "z": -29.97998335079506,
+          "detail": {
+            "recentVideoCount": 1546,
+            "topOutlierScore": 0.3767213472057968
+          }
+        }
+      ],
+      "score": 37.9
+    },
+    {
+      "term": "shopping mall arcade",
+      "signals": [
+        {
+          "term": "shopping mall arcade",
+          "source": "wikipedia",
+          "level": 116,
+          "ratio": 1.0318754633061527,
+          "z": 0.20711514328216488,
+          "detail": {
+            "article": "Amusement_arcade",
+            "recentDailyAvg": 116,
+            "baselineDailyAvg": 112
+          }
+        },
+        {
+          "term": "shopping mall arcade",
+          "source": "youtube",
+          "level": 5390147,
+          "ratio": 0.7986964266570332,
+          "z": -0.4660496276923603,
+          "detail": {
+            "recentVideoCount": 66080,
+            "topOutlierScore": 4.945273931071083
+          }
+        }
+      ],
+      "score": 37.7
+    },
+    {
+      "term": "mimeograph",
+      "signals": [
+        {
+          "term": "mimeograph",
+          "source": "wikipedia",
+          "level": 259.57142857142856,
+          "ratio": 1.0599902771025764,
+          "z": 0.2188987003163065,
+          "detail": {
+            "article": "Mimeograph",
+            "recentDailyAvg": 260,
+            "baselineDailyAvg": 245
+          }
+        },
+        {
+          "term": "mimeograph",
+          "source": "youtube",
+          "level": 65382,
+          "ratio": 0.8534796048371939,
+          "z": -17.31988707532205,
+          "detail": {
+            "recentVideoCount": 15749,
+            "topOutlierScore": 0.078640417320143
+          }
+        }
+      ],
+      "score": 37.5
+    },
+    {
+      "term": "Polly Pocket",
+      "signals": [
+        {
+          "term": "Polly Pocket",
+          "source": "wikipedia",
+          "level": 157.71428571428572,
+          "ratio": 0.8061336254107339,
+          "z": -1.2956673638345637,
+          "detail": {
+            "article": "Polly_Pocket",
+            "recentDailyAvg": 158,
+            "baselineDailyAvg": 196
+          }
+        },
+        {
+          "term": "Polly Pocket",
+          "source": "youtube",
+          "level": 14442406,
+          "ratio": 1.0347656584617306,
+          "z": 0.22540427312231737,
+          "detail": {
+            "recentVideoCount": 106571,
+            "topOutlierScore": 2.3112245389483688
+          }
+        }
+      ],
+      "score": 37.4
+    },
+    {
+      "term": "Garbage Pail Kids",
+      "signals": [
+        {
+          "term": "Garbage Pail Kids",
+          "source": "wikipedia",
+          "level": 314.7142857142857,
+          "ratio": 0.849977493408784,
+          "z": -1.028693108999089,
+          "detail": {
+            "article": "Garbage_Pail_Kids",
+            "recentDailyAvg": 315,
+            "baselineDailyAvg": 370
+          }
+        },
+        {
+          "term": "Garbage Pail Kids",
+          "source": "youtube",
+          "level": 604097,
+          "ratio": 0.8556445056330327,
+          "z": -8.069331578430292,
+          "detail": {
+            "recentVideoCount": 19017,
+            "topOutlierScore": 1.0535791866862445
+          }
+        }
+      ],
+      "score": 37.3
+    },
+    {
+      "term": "Presidential Physical Fitness Test",
+      "signals": [
+        {
+          "term": "Presidential Physical Fitness Test",
+          "source": "wikipedia",
+          "level": 169.71428571428572,
+          "ratio": 1.0412679862683516,
+          "z": 0.11424032174161226,
+          "detail": {
+            "article": "Presidential_Fitness_Test",
+            "recentDailyAvg": 170,
+            "baselineDailyAvg": 163
+          }
+        },
+        {
+          "term": "Presidential Physical Fitness Test",
+          "source": "youtube",
+          "level": 964982,
+          "ratio": 0.974689714619669,
+          "z": -0.263595640450455,
+          "detail": {
+            "recentVideoCount": 26648,
+            "topOutlierScore": 0.5051483671034572
+          }
+        }
+      ],
+      "score": 37.1
+    },
+    {
+      "term": "Trapper Keeper",
+      "signals": [
+        {
+          "term": "Trapper Keeper",
+          "source": "wikipedia",
+          "level": 119.28571428571429,
+          "ratio": 0.9367112274469478,
+          "z": -0.23130497831495095,
+          "detail": {
+            "article": "Trapper_Keeper",
+            "recentDailyAvg": 119,
+            "baselineDailyAvg": 127
+          }
+        },
+        {
+          "term": "Trapper Keeper",
+          "source": "youtube",
+          "level": 86378,
+          "ratio": 0.6026899096293071,
+          "z": -1.70070170496033,
+          "detail": {
+            "recentVideoCount": 7095,
+            "topOutlierScore": 0.2364237797299822
+          }
+        }
+      ],
+      "score": 36.9
+    },
+    {
+      "term": "Lisa Frank",
+      "signals": [
+        {
+          "term": "Lisa Frank",
+          "source": "wikipedia",
+          "level": 346.2857142857143,
+          "ratio": 0.8167574549334531,
+          "z": -0.6202555515709929,
+          "detail": {
+            "article": "Lisa_Frank",
+            "recentDailyAvg": 346,
+            "baselineDailyAvg": 424
+          }
+        },
+        {
+          "term": "Lisa Frank",
+          "source": "youtube",
+          "level": 1047933,
+          "ratio": 0.9432642486113867,
+          "z": -0.9020920864872072,
+          "detail": {
+            "recentVideoCount": 68990,
+            "topOutlierScore": 0.46765016979146795
+          }
+        }
+      ],
+      "score": 35.6
+    },
+    {
+      "term": "scrunchie",
+      "signals": [
+        {
+          "term": "scrunchie",
+          "source": "wikipedia",
+          "level": 67.85714285714286,
+          "ratio": 0.9563758389261746,
+          "z": -0.22079134107523885,
+          "detail": {
+            "article": "Scrunchie",
+            "recentDailyAvg": 68,
+            "baselineDailyAvg": 71
+          }
+        },
+        {
+          "term": "scrunchie",
+          "source": "youtube",
+          "level": 59075920,
+          "ratio": 0.9536343577445264,
+          "z": -19.04118865996083,
+          "detail": {
+            "recentVideoCount": 69407,
+            "topOutlierScore": 19.7059481031736
+          }
+        }
+      ],
+      "score": 35.6
+    },
+    {
+      "term": "Jem and the Holograms",
+      "signals": [
+        {
+          "term": "Jem and the Holograms",
+          "source": "wikipedia",
+          "level": 431.85714285714283,
+          "ratio": 0.9444907310976879,
+          "z": -0.3560496306759099,
+          "detail": {
+            "article": "Jem_(TV_series)",
+            "recentDailyAvg": 432,
+            "baselineDailyAvg": 457
+          }
+        },
+        {
+          "term": "Jem and the Holograms",
+          "source": "youtube",
+          "level": 158711,
+          "ratio": 0.7212742992830931,
+          "z": -8.898721565680258,
+          "detail": {
+            "recentVideoCount": 5785,
+            "topOutlierScore": 0.08771499129302915
+          }
+        }
+      ],
+      "score": 35
+    },
+    {
+      "term": "Casey Kasem American Top 40",
+      "signals": [
+        {
+          "term": "Casey Kasem American Top 40",
+          "source": "wikipedia",
+          "level": 166.71428571428572,
+          "ratio": 0.859879651234189,
+          "z": -0.5770678901001143,
+          "detail": {
+            "article": "American_Top_40",
+            "recentDailyAvg": 167,
+            "baselineDailyAvg": 194
+          }
+        },
+        {
+          "term": "Casey Kasem American Top 40",
+          "source": "youtube",
+          "level": 59812,
+          "ratio": 0.21095995739322737,
+          "z": -610.7627997143774,
+          "detail": {
+            "recentVideoCount": 533,
+            "topOutlierScore": 0.8539150323926211
+          }
+        }
+      ],
+      "score": 34
+    },
+    {
+      "term": "Monchhichi",
+      "signals": [
+        {
+          "term": "Monchhichi",
+          "source": "wikipedia",
+          "level": 433.85714285714283,
+          "ratio": 0.9794931061359421,
+          "z": -0.16755942820611908,
+          "detail": {
+            "article": "Monchhichi",
+            "recentDailyAvg": 434,
+            "baselineDailyAvg": 443
+          }
+        },
+        {
+          "term": "Monchhichi",
+          "source": "youtube",
+          "level": 2068277,
+          "ratio": 0.9445932339828628,
+          "z": -0.5221563271819292,
+          "detail": {
+            "recentVideoCount": 33444,
+            "topOutlierScore": 1.961669728309147
+          }
+        }
+      ],
+      "score": 33.9
+    },
+    {
+      "term": "Masters of the Universe figures",
+      "signals": [
+        {
+          "term": "Masters of the Universe figures",
+          "source": "wikipedia",
+          "level": 889.1428571428571,
+          "ratio": 0.3406491160856001,
+          "z": -0.74276907463737,
+          "detail": {
+            "article": "Masters_of_the_Universe",
+            "recentDailyAvg": 889,
+            "baselineDailyAvg": 2610
+          }
+        },
+        {
+          "term": "Masters of the Universe figures",
+          "source": "youtube",
+          "level": 7006374,
+          "ratio": 0.5270611836774118,
+          "z": -0.8945736020043169,
+          "detail": {
+            "recentVideoCount": 53701,
+            "topOutlierScore": 8.415334419859768
+          }
+        }
+      ],
+      "score": 33.1
+    },
+    {
+      "term": "Simon electronic game",
+      "signals": [
+        {
+          "term": "Simon electronic game",
+          "source": "wikipedia",
+          "level": 179.14285714285714,
+          "ratio": 0.9710266503194166,
+          "z": -0.18128961281883185,
+          "detail": {
+            "article": "Simon_(game)",
+            "recentDailyAvg": 179,
+            "baselineDailyAvg": 184
+          }
+        },
+        {
+          "term": "Simon electronic game",
+          "source": "youtube",
+          "level": 2681148,
+          "ratio": 0.8548769456464104,
+          "z": -0.6384667053910821,
+          "detail": {
+            "recentVideoCount": 55604,
+            "topOutlierScore": 3.3625423571824196
+          }
+        }
+      ],
+      "score": 33
+    },
+    {
+      "term": "Def Leppard",
+      "signals": [
+        {
+          "term": "Def Leppard",
+          "source": "wikipedia",
+          "level": 2463.4285714285716,
+          "ratio": 0.9754956959542913,
+          "z": -0.1045437784345466,
+          "detail": {
+            "article": "Def_Leppard",
+            "recentDailyAvg": 2463,
+            "baselineDailyAvg": 2525
+          }
+        },
+        {
+          "term": "Def Leppard",
+          "source": "youtube",
+          "level": 7412062,
+          "ratio": 0.7754301184498307,
+          "z": -6.848392887440529,
+          "detail": {
+            "recentVideoCount": 57987,
+            "topOutlierScore": 1.291082449668228
+          }
+        }
+      ],
+      "score": 32.9
+    },
+    {
+      "term": "cassette single",
+      "signals": [
+        {
+          "term": "cassette single",
+          "source": "youtube",
+          "level": 2205726,
+          "ratio": 0.33422860955294326,
+          "z": -0.6581425189503953,
+          "detail": {
+            "recentVideoCount": 67493,
+            "topOutlierScore": 3.384941174625552
+          }
+        }
+      ],
+      "score": 32.7
+    },
+    {
+      "term": "jelly shoes",
+      "signals": [
+        {
+          "term": "jelly shoes",
+          "source": "wikipedia",
+          "level": 43.57142857142857,
+          "ratio": 0.7277788824816066,
+          "z": -1.0555215175038217,
+          "detail": {
+            "article": "Jelly_shoes",
+            "recentDailyAvg": 44,
+            "baselineDailyAvg": 60
+          }
+        },
+        {
+          "term": "jelly shoes",
+          "source": "youtube",
+          "level": 14058394,
+          "ratio": 0.9102139386312994,
+          "z": -57.3761473523224,
+          "detail": {
+            "recentVideoCount": 68227,
+            "topOutlierScore": 41.49507484087996
+          }
+        }
+      ],
+      "score": 32.7
+    },
+    {
+      "term": "My Buddy",
+      "signals": [
+        {
+          "term": "My Buddy",
+          "source": "youtube",
+          "level": 81903321,
+          "ratio": 0.9840004387959411,
+          "z": -0.033925731146594355,
+          "detail": {
+            "recentVideoCount": 1000000,
+            "topOutlierScore": 2.081005405718009
+          }
+        }
+      ],
+      "score": 32
+    },
+    {
+      "term": "Skip-It",
+      "signals": [
+        {
+          "term": "Skip-It",
+          "source": "youtube",
+          "level": 8991799,
+          "ratio": 0.5367874923999173,
+          "z": -1.369736350253439,
+          "detail": {
+            "recentVideoCount": 253140,
+            "topOutlierScore": 38.16052638231498
+          }
+        }
+      ],
+      "score": 32
+    },
+    {
+      "term": "Columbia House",
+      "signals": [
+        {
+          "term": "Columbia House",
+          "source": "wikipedia",
+          "level": 174,
+          "ratio": 0.40462875809755827,
+          "z": -0.21047972787317834,
+          "detail": {
+            "article": "Columbia_House",
+            "recentDailyAvg": 174,
+            "baselineDailyAvg": 430
+          }
+        },
+        {
+          "term": "Columbia House",
+          "source": "youtube",
+          "level": 678250,
+          "ratio": 0.05337161873188404,
+          "z": -47.74135553003573,
+          "detail": {
+            "recentVideoCount": 76255,
+            "topOutlierScore": 0.269350535180657
+          }
+        }
+      ],
+      "score": 32
+    },
+    {
+      "term": "Members Only jacket",
+      "signals": [
+        {
+          "term": "Members Only jacket",
+          "source": "youtube",
+          "level": 29811,
+          "ratio": 0.8695436580279143,
+          "z": -0.25777683326053175,
+          "detail": {
+            "recentVideoCount": 67183,
+            "topOutlierScore": 0.04711239159826798
+          }
+        }
+      ],
+      "score": 31.9
+    },
+    {
+      "term": "70s nostalgia",
+      "signals": [
+        {
+          "term": "70s nostalgia",
+          "source": "wikipedia",
+          "level": 52.714285714285715,
+          "ratio": 1.003854001360236,
+          "z": 0.021858562242502804,
+          "detail": {
+            "article": "1970s_nostalgia",
+            "recentDailyAvg": 53,
+            "baselineDailyAvg": 53
+          }
+        },
+        {
+          "term": "70s nostalgia",
+          "source": "youtube",
+          "level": 13561045,
+          "ratio": 0.6445756526963949,
+          "z": -2.5265844796920063,
+          "detail": {
+            "recentVideoCount": 73989,
+            "topOutlierScore": 2.3119258566865195
+          }
+        }
+      ],
+      "score": 29.1
+    },
+    {
+      "term": "The Electric Company",
+      "signals": [
+        {
+          "term": "The Electric Company",
+          "source": "wikipedia",
+          "level": 385.42857142857144,
+          "ratio": 0.8685481274814895,
+          "z": -0.5906933803227721,
+          "detail": {
+            "article": "The_Electric_Company",
+            "recentDailyAvg": 385,
+            "baselineDailyAvg": 444
+          }
+        },
+        {
+          "term": "The Electric Company",
+          "source": "youtube",
+          "level": 12824534,
+          "ratio": 0.48668898989997317,
+          "z": -13.388113174704765,
+          "detail": {
+            "recentVideoCount": 83244,
+            "topOutlierScore": 3.964982496008052
+          }
+        }
+      ],
+      "score": 28.3
+    },
+    {
+      "term": "90s nostalgia",
+      "signals": [
+        {
+          "term": "90s nostalgia",
+          "source": "wikipedia",
+          "level": 32.714285714285715,
+          "ratio": 0.8126032425818293,
+          "z": -0.17149859008497928,
+          "detail": {
+            "article": "1990s_nostalgia",
+            "recentDailyAvg": 33,
+            "baselineDailyAvg": 40
+          }
+        },
+        {
+          "term": "90s nostalgia",
+          "source": "youtube",
+          "level": 302341658,
+          "ratio": 0.8664977624533273,
+          "z": -1.981963719140759,
+          "detail": {
+            "recentVideoCount": 161873,
+            "topOutlierScore": 19.042266584663437
+          }
+        }
+      ],
+      "score": 28
+    },
+    {
+      "term": "estate sale finds",
+      "signals": [
+        {
+          "term": "estate sale finds",
+          "source": "wikipedia",
+          "level": 48,
+          "ratio": 0.8486634392759419,
+          "z": -0.4771401869094114,
+          "detail": {
+            "article": "Estate_sale",
+            "recentDailyAvg": 48,
+            "baselineDailyAvg": 57
+          }
+        },
+        {
+          "term": "estate sale finds",
+          "source": "youtube",
+          "level": 5398292,
+          "ratio": 0.8797377786619948,
+          "z": -1.9233183931942601,
+          "detail": {
+            "recentVideoCount": 63782,
+            "topOutlierScore": 2.2404889265337613
+          }
+        }
+      ],
+      "score": 27.3
+    }
+  ],
+  "candidates": [],
+  "degraded": [
+    "Reddit (no credentials)",
+    "eBay (no credentials)"
+  ]
+}
